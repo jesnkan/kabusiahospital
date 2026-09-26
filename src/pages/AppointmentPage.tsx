@@ -13,7 +13,7 @@ import {
   HelpCircle,
   MapPin
 } from 'lucide-react';
-import { DEPARTMENTS, DOCTORS, HOSPITAL_INFO } from '../data/hospitalData';
+import { useHospital } from '../context/HospitalContext';
 
 interface AppointmentPageProps {
   initialDepartmentId?: string;
@@ -24,6 +24,9 @@ export const AppointmentPage: React.FC<AppointmentPageProps> = ({
   initialDepartmentId = 'opd',
   initialDoctorId = '',
 }) => {
+  const { addAppointment, doctors: contextDoctors, departments: DEPARTMENTS, hospitalInfo } = useHospital();
+  const HOSPITAL_INFO = hospitalInfo;
+
   const [fullName, setFullName] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
   const [emailAddress, setEmailAddress] = useState('');
@@ -64,17 +67,35 @@ export const AppointmentPage: React.FC<AppointmentPageProps> = ({
 
     setIsSubmitting(true);
     setTimeout(() => {
+      const deptObj = DEPARTMENTS.find((d: any) => d.id === department);
+      const docObj = contextDoctors.find((d: any) => d.id === doctor);
+
+      const code = addAppointment({
+        fullName,
+        phoneNumber,
+        emailAddress,
+        departmentId: department,
+        departmentName: deptObj?.name || 'General OPD',
+        doctorId: doctor || undefined,
+        doctorName: docObj?.name,
+        date,
+        timeSlot: time,
+        reason,
+        message,
+        insuranceType,
+      });
+
       setIsSubmitting(false);
       setIsSubmitted(true);
-      const code = 'KAB-' + Math.floor(100000 + Math.random() * 900000);
       setReferenceId(code);
       window.scrollTo({ top: 200, behavior: 'smooth' });
-    }, 600);
+    }, 400);
   };
 
-  const filteredDoctors = DOCTORS.filter(
+  const filteredDoctors = contextDoctors.filter(
     (doc) => !department || doc.departmentId === department
   );
+
 
   return (
     <div className="min-h-screen bg-[#F7FAF8]">

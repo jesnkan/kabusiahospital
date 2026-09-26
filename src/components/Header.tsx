@@ -10,7 +10,7 @@ import {
   Calendar,
   ChevronDown
 } from 'lucide-react';
-import { HOSPITAL_INFO } from '../data/hospitalData';
+import { useHospital } from '../context/HospitalContext';
 
 interface HeaderProps {
   currentPage: string;
@@ -25,9 +25,13 @@ export const Header: React.FC<HeaderProps> = ({
   onOpenAppointment,
   onOpenSearch,
 }) => {
+  const { hospitalInfo } = useHospital();
+  const HOSPITAL_INFO = hospitalInfo;
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   const [isScrolled, setIsScrolled] = useState(false);
   const [emergencyModalOpen, setEmergencyModalOpen] = useState(false);
+
 
   useEffect(() => {
     const handleScroll = () => {

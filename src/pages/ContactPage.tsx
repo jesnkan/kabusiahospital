@@ -11,9 +11,14 @@ import {
   ShieldCheck, 
   Building2 
 } from 'lucide-react';
-import { HOSPITAL_INFO, DEPARTMENTS } from '../data/hospitalData';
+import { useHospital } from '../context/HospitalContext';
 
 export const ContactPage: React.FC = () => {
+  const { hospitalInfo, departments, addContactMessage } = useHospital();
+  const HOSPITAL_INFO = hospitalInfo;
+  const DEPARTMENTS = departments;
+
+
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
@@ -24,8 +29,16 @@ export const ContactPage: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!name || !phone) return;
+    addContactMessage({
+      name,
+      phone,
+      email,
+      subject,
+      message,
+    });
     setSubmitted(true);
   };
+
 
   return (
     <div className="min-h-screen bg-[#F7FAF8]">

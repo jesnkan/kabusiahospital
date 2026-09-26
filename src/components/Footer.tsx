@@ -9,7 +9,7 @@ import {
   ExternalLink,
   ChevronRight
 } from 'lucide-react';
-import { HOSPITAL_INFO } from '../data/hospitalData';
+import { useHospital } from '../context/HospitalContext';
 
 interface FooterProps {
   onNavigate: (page: string) => void;
@@ -17,6 +17,10 @@ interface FooterProps {
 }
 
 export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenAppointment }) => {
+  const { hospitalInfo } = useHospital();
+  const HOSPITAL_INFO = hospitalInfo;
+
+
   return (
     <footer className="bg-[#05453E] text-[#E1EBE7] pt-14 pb-8 border-t-4 border-[#D6A84F]" aria-label="Site Footer">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -241,8 +245,13 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenAppointment })
             <button onClick={() => onNavigate('contact')} className="hover:text-white transition-colors">Patient Charter</button>
             <span>•</span>
             <button onClick={() => onNavigate('contact')} className="hover:text-white transition-colors">Accessibility</button>
+            <span>•</span>
+            <button onClick={() => onNavigate('admin')} className="text-[#D6A84F] hover:underline font-semibold flex items-center gap-1">
+              <span>Staff Admin Portal</span>
+            </button>
           </div>
         </div>
+
 
       </div>
     </footer>

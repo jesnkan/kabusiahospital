@@ -11,7 +11,7 @@ import {
   CheckCircle2, 
   AlertCircle 
 } from 'lucide-react';
-import { DEPARTMENTS, DOCTORS, HOSPITAL_INFO } from '../data/hospitalData';
+import { useHospital } from '../context/HospitalContext';
 
 interface AppointmentModalProps {
   isOpen: boolean;
@@ -26,6 +26,10 @@ export const AppointmentModal: React.FC<AppointmentModalProps> = ({
   preselectedDepartmentId,
   preselectedDoctorId,
 }) => {
+  const { addAppointment, doctors: contextDoctors, departments: DEPARTMENTS, hospitalInfo } = useHospital();
+  const HOSPITAL_INFO = hospitalInfo;
+
+
   const [fullName, setFullName] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
   const [emailAddress, setEmailAddress] = useState('');
@@ -69,11 +73,28 @@ export const AppointmentModal: React.FC<AppointmentModalProps> = ({
 
     setIsSubmitting(true);
     setTimeout(() => {
+      const deptObj = DEPARTMENTS.find((d: any) => d.id === department);
+      const docObj = contextDoctors.find((d: any) => d.id === doctor);
+
+      const generatedCode = addAppointment({
+        fullName,
+        phoneNumber,
+        emailAddress,
+        departmentId: department,
+        departmentName: deptObj?.name || 'General OPD',
+        doctorId: doctor || undefined,
+        doctorName: docObj?.name,
+        date,
+        timeSlot: time,
+        reason,
+        message,
+        insuranceType: hasInsurance,
+      });
+
       setIsSubmitting(false);
       setIsSubmitted(true);
-      const randomCode = 'KAB-' + Math.floor(100000 + Math.random() * 900000);
-      setReferenceId(randomCode);
-    }, 600);
+      setReferenceId(generatedCode);
+    }, 400);
   };
 
   const handleReset = () => {
@@ -88,9 +109,10 @@ export const AppointmentModal: React.FC<AppointmentModalProps> = ({
   };
 
   // Filter available doctors for the chosen department
-  const filteredDoctors = DOCTORS.filter(
+  const filteredDoctors = contextDoctors.filter(
     (doc) => !department || doc.departmentId === department
   );
+
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/60 backdrop-blur-xs overflow-y-auto">
