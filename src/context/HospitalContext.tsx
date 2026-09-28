@@ -155,7 +155,28 @@ export const HospitalProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   // Load from localStorage or defaults
   const [hospitalInfo, setHospitalInfo] = useState(() => {
     const saved = localStorage.getItem('kabusia_hospital_info');
-    return saved ? JSON.parse(saved) : DEFAULT_HOSPITAL_INFO;
+    if (saved) {
+      try {
+        const parsed = JSON.parse(saved);
+        if (
+          !parsed.contacts?.addressPlaceholder ||
+          parsed.contacts.addressPlaceholder.includes('Sunyani') ||
+          parsed.contacts.addressPlaceholder.includes('Cantonments') ||
+          parsed.contacts.addressPlaceholder.startsWith('[')
+        ) {
+          parsed.contacts = {
+            ...parsed.contacts,
+            addressPlaceholder: 'Hospital Road, Bogoso, Tarkwa, Western Region, Ghana',
+            digitalAddress: 'WP-0024-8192',
+          };
+          localStorage.setItem('kabusia_hospital_info', JSON.stringify(parsed));
+        }
+        return parsed;
+      } catch {
+        return DEFAULT_HOSPITAL_INFO;
+      }
+    }
+    return DEFAULT_HOSPITAL_INFO;
   });
 
   const [doctors, setDoctors] = useState<Doctor[]>(() => {

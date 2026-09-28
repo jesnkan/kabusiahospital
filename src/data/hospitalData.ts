@@ -92,8 +92,8 @@ export const HOSPITAL_INFO = {
   adminNotice: 'CMS Placeholder Content — All contact, statistical, and personnel fields are configurable by the hospital administrative team.',
 
   contacts: {
-    addressPlaceholder: '[Hospital Campus Road, Off Sunyani–Wenchi Highway / Cantonments Medical Enclave, Ghana]',
-    digitalAddress: 'GA-382-9102 [Sample GhanaPost GPS]',
+    addressPlaceholder: 'Hospital Road, Bogoso, Tarkwa, Western Region, Ghana',
+    digitalAddress: 'WP-0024-8192',
     generalPhone: '+233 (0) 30 200 1100',
     generalPhonePlaceholder: '[HOSPITAL PHONE NUMBER]',
     emergencyPhone: '+233 (0) 30 200 9999',
@@ -712,7 +712,7 @@ export const TESTIMONIALS: Testimonial[] = [
   {
     id: 'test-1',
     patientName: 'Kwesi A. [Patient First Name]',
-    location: 'Sunyani / Local Community',
+    location: 'Bogoso / Tarkwa Community',
     serviceReceived: 'General Outpatient & Diagnostic Services',
     quote: 'PLACEHOLDER PATIENT TESTIMONIAL — "The nursing staff and medical officers treated my elderly mother with so much dignity and gentleness. The waiting hall was calm, and we received her laboratory results without delay."',
     isPlaceholderNote: 'Replace with approved patient testimonial from hospital feedback archives.',
@@ -720,7 +720,7 @@ export const TESTIMONIALS: Testimonial[] = [
   {
     id: 'test-2',
     patientName: 'Ama B. [Patient First Name]',
-    location: 'Accra / Returning Visitor',
+    location: 'Tarkwa / Returning Visitor',
     serviceReceived: 'Maternal Care & Child Welfare',
     quote: 'PLACEHOLDER PATIENT TESTIMONIAL — "Delivering my baby at K..A Busia Memorial Hospital was a reassuring and peaceful experience. The midwives explained every step to me and supported my recovery with immense kindness."',
     isPlaceholderNote: 'Replace with approved patient testimonial from hospital feedback archives.',
@@ -728,7 +728,7 @@ export const TESTIMONIALS: Testimonial[] = [
   {
     id: 'test-3',
     patientName: 'Kofi M. [Patient First Name]',
-    location: 'Regional Community Resident',
+    location: 'Western Region Resident',
     serviceReceived: 'Emergency & Trauma Services',
     quote: 'PLACEHOLDER PATIENT TESTIMONIAL — "When I had a sudden accident, the emergency response was prompt and professional. The surgical team acted quickly and kept my family informed with complete transparency."',
     isPlaceholderNote: 'Replace with approved patient testimonial from hospital feedback archives.',
@@ -769,7 +769,7 @@ export const FAQS: FAQItem[] = [
   {
     category: 'General',
     question: 'Where is the hospital located and how do I get directions?',
-    answer: 'The hospital campus is located at [Hospital Address, Ghana - Off Sunyani-Wenchi Highway / Cantonments Medical Enclave]. Detailed driving directions, public transport drop-offs, and an interactive Google Maps location are provided on our Contact page.',
+    answer: 'The hospital campus is located at Hospital Road, Bogoso, near Tarkwa, Western Region, Ghana (GhanaPost GPS: WP-0024-8192). Detailed driving directions, public transport drop-offs, and an interactive Google Maps location are provided on our Contact page.',
   },
   {
     category: 'General',

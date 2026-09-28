@@ -23,10 +23,6 @@ import {
   Search
 } from 'lucide-react';
 import { 
-  HOSPITAL_INFO, 
-  DEPARTMENTS, 
-  SERVICES, 
-  DOCTORS, 
   FACILITIES, 
   HEALTH_ARTICLES, 
   TESTIMONIALS, 
@@ -36,6 +32,7 @@ import {
   Doctor,
   HealthArticle
 } from '../data/hospitalData';
+import { useHospital } from '../context/HospitalContext';
 
 interface HomePageProps {
   onNavigate: (page: string) => void;
@@ -52,6 +49,12 @@ export const HomePage: React.FC<HomePageProps> = ({
   onSelectDoctor,
   onSelectArticle,
 }) => {
+  const { hospitalInfo, doctors, departments, services } = useHospital();
+  const HOSPITAL_INFO = hospitalInfo;
+  const DOCTORS = doctors;
+  const DEPARTMENTS = departments;
+  const SERVICES = services;
+
   // Facilities category filter
   const [selectedFacilityCategory, setSelectedFacilityCategory] = useState<string>('All');
   

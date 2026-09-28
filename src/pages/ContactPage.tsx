@@ -302,12 +302,14 @@ export const ContactPage: React.FC = () => {
 
                 <div className="pt-2 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-[#64736F]">
                   <span>Campus includes free visitor parking and ambulance ramp access.</span>
-                  <button
-                    onClick={() => alert(`Directions placeholder: Navigating to ${HOSPITAL_INFO.name}, ${HOSPITAL_INFO.contacts.addressPlaceholder}`)}
-                    className="text-[#075E54] font-bold hover:underline"
+                  <a
+                    href="https://www.google.com/maps/search/?api=1&query=Bogoso,+Tarkwa,+Ghana"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-[#075E54] font-bold hover:underline"
                   >
                     Open in Google Maps →
-                  </button>
+                  </a>
                 </div>
               </div>
 
