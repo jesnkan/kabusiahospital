@@ -87,7 +87,7 @@ export const ArticleModal: React.FC<ArticleModalProps> = ({
           <div className="mt-6 p-3.5 rounded-xl bg-[#F7FAF8] border border-[#E1EBE7] flex items-start gap-2.5 text-xs text-[#64736F]">
             <AlertTriangle className="w-4 h-4 text-amber-600 flex-shrink-0 mt-0.5" />
             <div>
-              <strong className="text-[#172321]">Medical Information Disclaimer:</strong> This article provides general public education and is not a clinical diagnosis or treatment prescription. If you are experiencing symptoms, please consult a medical officer at K..A Busia Memorial Hospital or your nearest clinic.
+              <strong className="text-[#172321]">Medical Information Disclaimer:</strong> This article provides general public education and is not a clinical diagnosis or treatment prescription. If you are experiencing symptoms, please consult a medical officer at K.A. Busia Memorial Hospital or your nearest clinic.
             </div>
           </div>
 

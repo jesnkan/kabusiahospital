@@ -224,7 +224,7 @@ export const AdminPortalPage: React.FC<AdminPortalPageProps> = ({ onNavigateHome
               Hospital Admin Portal
             </h1>
             <p className="text-xs text-[#64736F]">
-              K..A Busia Memorial Hospital • Clinical & Content Management
+              K.A. Busia Memorial Hospital • Clinical & Content Management
             </p>
           </div>
 
@@ -299,7 +299,7 @@ export const AdminPortalPage: React.FC<AdminPortalPageProps> = ({ onNavigateHome
             </div>
             <div>
               <h2 className="text-base sm:text-lg font-bold font-heading leading-tight">
-                K..A Busia Admin Portal
+                K.A. Busia Admin Portal
               </h2>
               <p className="text-[11px] text-[#D6A84F]">
                 Live Hospital CMS & Appointments Management

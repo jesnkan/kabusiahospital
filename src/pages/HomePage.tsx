@@ -112,7 +112,7 @@ export const HomePage: React.FC<HomePageProps> = ({
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#E7F5F3] border border-[#2F8F83]/30">
                 <span className="w-2 h-2 rounded-full bg-[#075E54] animate-ping" />
                 <span className="text-xs font-bold text-[#075E54] tracking-wider uppercase font-heading">
-                  WELCOME TO K..A BUSIA MEMORIAL HOSPITAL
+                  WELCOME TO K.A. BUSIA MEMORIAL HOSPITAL
                 </span>
               </div>
 
@@ -171,7 +171,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                 <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white aspect-[4/3] sm:aspect-square bg-gray-100">
                   <img
                     src="/images/hero-doctor.jpg"
-                    alt="Ghanaian doctor consulting warmly with an elderly patient at K..A Busia Memorial Hospital"
+                    alt="Ghanaian doctor consulting warmly with an elderly patient at K.A. Busia Memorial Hospital"
                     className="w-full h-full object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
@@ -305,7 +305,7 @@ export const HomePage: React.FC<HomePageProps> = ({
               <div className="relative rounded-3xl overflow-hidden shadow-xl border border-[#E1EBE7] bg-gray-100 aspect-[4/3]">
                 <img
                   src="/images/medical-team.jpg"
-                  alt="A dedicated team of Ghanaian doctors, nurses, and medical specialists at K..A Busia Memorial Hospital"
+                  alt="A dedicated team of Ghanaian doctors, nurses, and medical specialists at K.A. Busia Memorial Hospital"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
@@ -328,7 +328,7 @@ export const HomePage: React.FC<HomePageProps> = ({
               </h2>
 
               <p className="text-sm sm:text-base text-[#64736F] leading-relaxed">
-                K..A Busia Memorial Hospital is committed to providing compassionate and accessible healthcare while treating every patient with dignity and respect. Guided by the values of service to humanity, we ensure that every family receives attentive, evidence-based care in a welcoming environment.
+                K.A. Busia Memorial Hospital is committed to providing compassionate and accessible healthcare while treating every patient with dignity and respect. Guided by the values of service to humanity, we ensure that every family receives attentive, evidence-based care in a welcoming environment.
               </p>
 
               {/* Three Feature Points */}
@@ -1322,7 +1322,7 @@ export const HomePage: React.FC<HomePageProps> = ({
               GET IN TOUCH
             </span>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#172321] tracking-tight font-heading">
-              Contact K..A Busia Memorial Hospital
+              Contact K.A. Busia Memorial Hospital
             </h2>
             <p className="text-sm text-[#64736F]">
               We are here to assist with directions, general inquiries, and clinical guidance.

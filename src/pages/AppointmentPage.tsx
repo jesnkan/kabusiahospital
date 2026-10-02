@@ -110,7 +110,7 @@ export const AppointmentPage: React.FC<AppointmentPageProps> = ({
             Schedule Your Visit
           </h1>
           <p className="text-sm sm:text-base text-[#E1EBE7] leading-relaxed">
-            Request an outpatient consultation with our medical practitioners and clinical specialists at K..A Busia Memorial Hospital.
+            Request an outpatient consultation with our medical practitioners and clinical specialists at K.A. Busia Memorial Hospital.
           </p>
         </div>
       </section>

@@ -173,6 +173,11 @@ export const HospitalProvider: React.FC<{ children: React.ReactNode }> = ({ chil
           };
           localStorage.setItem('kabusia_hospital_info', JSON.stringify(parsed));
         }
+        if (parsed.name && parsed.name.includes('..')) {
+          parsed.name = DEFAULT_HOSPITAL_INFO.name;
+          parsed.legalName = DEFAULT_HOSPITAL_INFO.legalName;
+          localStorage.setItem('kabusia_hospital_info', JSON.stringify(parsed));
+        }
         return parsed;
       } catch {
         return DEFAULT_HOSPITAL_INFO;

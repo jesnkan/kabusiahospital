@@ -104,7 +104,7 @@ export const Header: React.FC<HeaderProps> = ({
           <button 
             onClick={() => handleNavClick('home')}
             className="flex items-center gap-3 text-left group focus:outline-none"
-            aria-label="K..A Busia Memorial Hospital Home"
+            aria-label="K.A. Busia Memorial Hospital Home"
           >
             {/* Custom Healthcare Emblem (Cross + Leaf + Shield Motif) */}
             <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-[#075E54] flex items-center justify-center shadow-md text-white transition-transform group-hover:scale-105 relative overflow-hidden flex-shrink-0">
@@ -122,7 +122,7 @@ export const Header: React.FC<HeaderProps> = ({
 
             <div className="flex flex-col">
               <span className="font-extrabold text-lg sm:text-xl leading-tight text-[#075E54] tracking-tight font-heading">
-                K..A Busia
+                K.A. Busia
               </span>
               <span className="text-xs sm:text-sm font-semibold text-[#172321] tracking-wide uppercase">
                 Memorial Hospital

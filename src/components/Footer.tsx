@@ -221,7 +221,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenAppointment })
         {/* Medical & Data Disclaimer */}
         <div className="py-6 border-b border-[#0C776B]/40 text-xs text-[#E1EBE7]/70">
           <p>
-            <strong>Medical Disclaimer:</strong> The health information provided on this website is for general educational awareness only and does not substitute for professional clinical diagnosis, advice, or treatment. Always consult qualified healthcare professionals at K..A Busia Memorial Hospital or your local health provider regarding medical conditions.
+            <strong>Medical Disclaimer:</strong> The health information provided on this website is for general educational awareness only and does not substitute for professional clinical diagnosis, advice, or treatment. Always consult qualified healthcare professionals at K.A. Busia Memorial Hospital or your local health provider regarding medical conditions.
           </p>
         </div>
 

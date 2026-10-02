@@ -181,7 +181,7 @@ export const ContactPage: React.FC = () => {
                     <CheckCircle2 className="w-12 h-12 text-[#075E54] mx-auto" />
                     <h4 className="text-lg font-bold text-[#075E54]">Message Sent Successfully</h4>
                     <p className="text-xs text-[#172321] max-w-md mx-auto">
-                      Thank you for contacting K..A Busia Memorial Hospital. Our patient relations office will review your message and reply via telephone or email.
+                      Thank you for contacting K.A. Busia Memorial Hospital. Our patient relations office will review your message and reply via telephone or email.
                     </p>
                     <button
                       onClick={() => setSubmitted(false)}

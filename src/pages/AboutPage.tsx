@@ -31,7 +31,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenAppointm
             OUR STORY & VALUES
           </span>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-heading tracking-tight text-white">
-            About K..A Busia Memorial Hospital
+            About K.A. Busia Memorial Hospital
           </h1>
           <p className="text-base sm:text-lg text-[#E1EBE7] leading-relaxed">
             {HOSPITAL_INFO.tagline}
@@ -70,7 +70,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenAppointm
               <div className="rounded-3xl overflow-hidden shadow-xl border-4 border-white aspect-[4/3] bg-gray-100">
                 <img
                   src="/images/hospital-exterior.jpg"
-                  alt="Modern architectural campus of K..A Busia Memorial Hospital with ambulance entrance and gardens"
+                  alt="Modern architectural campus of K.A. Busia Memorial Hospital with ambulance entrance and gardens"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -299,7 +299,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenAppointm
       <section className="py-16 bg-[#075E54] text-white text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
           <h2 className="text-2xl sm:text-3xl font-extrabold font-heading text-white">
-            Experience Quality Healthcare at K..A Busia Memorial Hospital
+            Experience Quality Healthcare at K.A. Busia Memorial Hospital
           </h2>
           <p className="text-xs sm:text-sm text-[#E1EBE7] max-w-xl mx-auto">
             Whether you need a routine check-up, maternal care, or urgent medical evaluation, our dedicated clinical team is here for you.

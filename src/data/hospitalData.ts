@@ -84,8 +84,8 @@ export interface FAQItem {
 }
 
 export const HOSPITAL_INFO = {
-  name: 'K..A Busia Memorial Hospital',
-  legalName: 'K..A Busia Memorial Healthcare Foundation & Hospital Ltd.',
+  name: 'K.A. Busia Memorial Hospital',
+  legalName: 'K.A. Busia Memorial Healthcare Foundation & Hospital Ltd.',
   tagline: 'Compassionate Care. Trusted Health. Stronger Communities.',
   supportingPhrase: 'Quality healthcare for every family, every community, every day.',
   
@@ -133,7 +133,7 @@ export const HOSPITAL_INFO = {
   },
 
   historyAndMission: {
-    heritage: 'Named in honour of Professor Kofi Abrefa Busia — eminent Ghanaian academic, sociologist, and Prime Minister whose legacy championed rural development, human dignity, and social welfare — K..A Busia Memorial Hospital was conceived to bridge tertiary healthcare excellence with warm community accessibility.',
+    heritage: 'Named in honour of Professor Kofi Abrefa Busia — eminent Ghanaian academic, sociologist, and Prime Minister whose legacy championed rural development, human dignity, and social welfare — K.A. Busia Memorial Hospital was conceived to bridge tertiary healthcare excellence with warm community accessibility.',
     mission: 'To deliver compassionate, equitable, and evidence-based healthcare to Ghanaian families and communities, upholding the highest standards of clinical safety, patient dignity, and medical ethics.',
     vision: 'To be a trusted regional healthcare sanctuary recognized across Ghana for clinical excellence, community health transformation, and people-first patient care.',
     coreValues: [
@@ -723,7 +723,7 @@ export const TESTIMONIALS: Testimonial[] = [
     patientName: 'Ama Serwaa Badu',
     location: 'Tarkwa / Returning Visitor',
     serviceReceived: 'Maternal Care & Child Welfare',
-    quote: '"Delivering my baby at K..A Busia Memorial Hospital was a reassuring and peaceful experience. The midwives explained every step to me and supported my recovery with immense kindness."',
+    quote: '"Delivering my baby at K.A. Busia Memorial Hospital was a reassuring and peaceful experience. The midwives explained every step to me and supported my recovery with immense kindness."',
     isPlaceholderNote: 'Maternity ward patient experience.',
   },
   {
@@ -739,7 +739,7 @@ export const TESTIMONIALS: Testimonial[] = [
 export const FAQS: FAQItem[] = [
   {
     category: 'Appointments',
-    question: 'How do I book an appointment at K..A Busia Memorial Hospital?',
+    question: 'How do I book an appointment at K.A. Busia Memorial Hospital?',
     answer: 'You can request an appointment online through our website booking form, by calling our admissions desk at +233 31 202 4819, or by walking into the hospital admissions desk during regular OPD hours. Online requests are acknowledged promptly and confirmed by telephone or SMS.',
   },
   {
@@ -754,7 +754,7 @@ export const FAQS: FAQItem[] = [
   },
   {
     category: 'General',
-    question: 'What services does K..A Busia Memorial Hospital provide?',
+    question: 'What services does K.A. Busia Memorial Hospital provide?',
     answer: 'Our hospital provides comprehensive healthcare including General Medicine, Maternal & Child Health, 24/7 Emergency Care, General Surgery, Laboratory & Pathology, Radiology & Ultrasound Imaging, 24/7 Pharmacy, Chronic Disease Management, Dental Care, Physiotherapy, and Community Health Outreach.',
   },
   {

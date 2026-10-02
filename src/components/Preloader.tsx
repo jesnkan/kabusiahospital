@@ -26,7 +26,7 @@ export const Preloader: React.FC<PreloaderProps> = ({ onLoaded }) => {
         } else if (next >= 70 && next < 95) {
           setStatusText('Verifying Healthcare Accreditation...');
         } else if (next >= 95) {
-          setStatusText('Welcome to K..A Busia Memorial Hospital');
+          setStatusText('Welcome to K.A. Busia Memorial Hospital');
         }
 
         return next;
@@ -92,7 +92,7 @@ export const Preloader: React.FC<PreloaderProps> = ({ onLoaded }) => {
 
         {/* Hospital Branding */}
         <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight font-heading text-white drop-shadow-sm">
-          K..A Busia Memorial Hospital
+          K.A. Busia Memorial Hospital
         </h2>
         <p className="text-xs uppercase tracking-widest text-[#D6A84F] font-semibold mt-1 mb-6">
           Excellence in Healthcare • Bogoso, Ghana
