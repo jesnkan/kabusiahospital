@@ -143,19 +143,17 @@ export const DepartmentsPage: React.FC<DepartmentsPageProps> = ({ onOpenAppointm
                 className="card-hover-lift bg-white rounded-3xl border border-[#E1EBE7] overflow-hidden shadow-sm flex flex-col justify-between group"
               >
                 <div>
-                  <div className="relative h-44 bg-gray-100 overflow-hidden">
-                    <img
-                      src={dept.image}
-                      alt={dept.name}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                    
-                    <span className="absolute top-3 left-3 bg-white/95 text-[#075E54] text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider">
-                      {dept.category}
-                    </span>
+                  <div className="p-6 pb-4 bg-gradient-to-r from-[#075E54] to-[#0D3B35] text-white relative overflow-hidden">
+                    <div className="flex items-center justify-between gap-2 mb-3">
+                      <div className="w-10 h-10 rounded-xl bg-white/10 border border-white/20 text-[#D6A84F] flex items-center justify-center shadow-xs">
+                        <Building2 className="w-5 h-5" />
+                      </div>
+                      <span className="bg-[#D6A84F] text-[#075E54] text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider shadow-xs">
+                        {dept.category}
+                      </span>
+                    </div>
 
-                    <h3 className="absolute bottom-3 left-4 right-4 text-lg font-bold text-white font-heading leading-tight">
+                    <h3 className="text-lg font-bold text-white font-heading leading-tight">
                       {dept.name}
                     </h3>
                   </div>

@@ -10,7 +10,9 @@ import {
   CheckCircle2, 
   Clock, 
   Sparkles,
-  BookOpen
+  BookOpen,
+  Stethoscope,
+  HeartPulse
 } from 'lucide-react';
 import { HOSPITAL_INFO, DOCTORS } from '../data/hospitalData';
 
@@ -67,12 +69,40 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenAppointm
             </div>
 
             <div className="lg:col-span-6">
-              <div className="rounded-3xl overflow-hidden shadow-xl border-4 border-white aspect-[4/3] bg-gray-100">
-                <img
-                  src="/images/hospital-exterior.jpg"
-                  alt="Modern architectural campus of K.A. Busia Memorial Hospital with ambulance entrance and gardens"
-                  className="w-full h-full object-cover"
-                />
+              <div className="bg-gradient-to-br from-[#075E54] to-[#04332D] text-white rounded-3xl p-8 sm:p-10 shadow-2xl border border-[#D6A84F]/30 relative overflow-hidden">
+                <div className="absolute -top-12 -right-12 w-48 h-48 bg-white/5 rounded-full blur-2xl pointer-events-none" />
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-12 h-12 rounded-2xl bg-[#D6A84F] text-[#075E54] flex items-center justify-center font-bold text-lg shadow-md">
+                    <BookOpen className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <span className="text-xs font-bold text-[#D6A84F] uppercase tracking-wider block">
+                      Civic Legacy & Healthcare Charter
+                    </span>
+                    <span className="text-base font-bold text-white font-heading">
+                      Dr. Kofi Abrefa Busia (1913 – 1978)
+                    </span>
+                  </div>
+                </div>
+
+                <p className="text-sm text-[#E1EBE7] leading-relaxed mb-6 italic border-l-2 border-[#D6A84F] pl-4">
+                  "The welfare of the ordinary individual is the supreme test of all social and political institutions."
+                </p>
+
+                <div className="space-y-3 pt-4 border-t border-white/15 text-xs text-[#E1EBE7]">
+                  <div className="flex items-center gap-2.5">
+                    <CheckCircle2 className="w-4 h-4 text-[#D6A84F] flex-shrink-0" />
+                    <span>Established to provide modern medical excellence to Wenchi & the Bono Region</span>
+                  </div>
+                  <div className="flex items-center gap-2.5">
+                    <CheckCircle2 className="w-4 h-4 text-[#D6A84F] flex-shrink-0" />
+                    <span>Affiliated with the Ministry of Health and recognized by Health Facilities Regulatory Agency (HeFRA)</span>
+                  </div>
+                  <div className="flex items-center gap-2.5">
+                    <CheckCircle2 className="w-4 h-4 text-[#D6A84F] flex-shrink-0" />
+                    <span>Commitment to non-profit accessibility, equity, and holistic patient welfare</span>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -169,15 +199,14 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenAppointm
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             
-            <div className="bg-[#F7FAF8] rounded-2xl p-6 border border-[#E1EBE7] text-center space-y-3">
-              <div className="w-24 h-24 rounded-full bg-gray-200 mx-auto overflow-hidden border-2 border-[#075E54]">
-                <img
-                  src="/images/medical-team.jpg"
-                  alt="Dr. Joseph Nana Kwabena Frimpong"
-                  className="w-full h-full object-cover"
-                />
+            <div className="bg-[#F7FAF8] rounded-2xl p-6 border border-[#E1EBE7] text-center space-y-3 shadow-xs">
+              <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-[#075E54] to-[#04332D] mx-auto border-2 border-[#D6A84F] flex items-center justify-center text-white shadow-md relative">
+                <span className="text-xl font-bold font-heading text-[#D6A84F]">JF</span>
+                <span className="absolute -bottom-2 -right-2 p-1.5 rounded-lg bg-white border border-[#E1EBE7] text-[#075E54] shadow-xs">
+                  <Stethoscope className="w-3.5 h-3.5" />
+                </span>
               </div>
-              <h3 className="text-lg font-bold text-[#172321] font-heading">
+              <h3 className="text-lg font-bold text-[#172321] font-heading pt-1">
                 Dr. Joseph Nana Kwabena Frimpong
               </h3>
               <p className="text-xs font-semibold text-[#075E54]">
@@ -188,15 +217,14 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenAppointm
               </p>
             </div>
 
-            <div className="bg-[#F7FAF8] rounded-2xl p-6 border border-[#E1EBE7] text-center space-y-3">
-              <div className="w-24 h-24 rounded-full bg-gray-200 mx-auto overflow-hidden border-2 border-[#075E54]">
-                <img
-                  src="/images/hero-doctor.jpg"
-                  alt="Nurse Evelyn Akosua Mansah Kwarteng"
-                  className="w-full h-full object-cover"
-                />
+            <div className="bg-[#F7FAF8] rounded-2xl p-6 border border-[#E1EBE7] text-center space-y-3 shadow-xs">
+              <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-[#075E54] to-[#04332D] mx-auto border-2 border-[#D6A84F] flex items-center justify-center text-white shadow-md relative">
+                <span className="text-xl font-bold font-heading text-[#D6A84F]">EK</span>
+                <span className="absolute -bottom-2 -right-2 p-1.5 rounded-lg bg-white border border-[#E1EBE7] text-[#075E54] shadow-xs">
+                  <HeartPulse className="w-3.5 h-3.5" />
+                </span>
               </div>
-              <h3 className="text-lg font-bold text-[#172321] font-heading">
+              <h3 className="text-lg font-bold text-[#172321] font-heading pt-1">
                 Nurse Evelyn Akosua Mansah Kwarteng
               </h3>
               <p className="text-xs font-semibold text-[#075E54]">
@@ -207,15 +235,14 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenAppointm
               </p>
             </div>
 
-            <div className="bg-[#F7FAF8] rounded-2xl p-6 border border-[#E1EBE7] text-center space-y-3">
-              <div className="w-24 h-24 rounded-full bg-gray-200 mx-auto overflow-hidden border-2 border-[#075E54]">
-                <img
-                  src="/images/community-health.jpg"
-                  alt="Mr. Samuel Kofi Mensah Oteng"
-                  className="w-full h-full object-cover"
-                />
+            <div className="bg-[#F7FAF8] rounded-2xl p-6 border border-[#E1EBE7] text-center space-y-3 shadow-xs">
+              <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-[#075E54] to-[#04332D] mx-auto border-2 border-[#D6A84F] flex items-center justify-center text-white shadow-md relative">
+                <span className="text-xl font-bold font-heading text-[#D6A84F]">SO</span>
+                <span className="absolute -bottom-2 -right-2 p-1.5 rounded-lg bg-white border border-[#E1EBE7] text-[#075E54] shadow-xs">
+                  <Building2 className="w-3.5 h-3.5" />
+                </span>
               </div>
-              <h3 className="text-lg font-bold text-[#172321] font-heading">
+              <h3 className="text-lg font-bold text-[#172321] font-heading pt-1">
                 Mr. Samuel Kofi Mensah Oteng
               </h3>
               <p className="text-xs font-semibold text-[#075E54]">
@@ -246,12 +273,38 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenAppointm
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
             <div className="lg:col-span-6">
-              <div className="rounded-3xl overflow-hidden shadow-xl border-4 border-white aspect-[4/3] bg-gray-100">
-                <img
-                  src="/images/community-health.jpg"
-                  alt="Community health nurse in Ghana administering health checks"
-                  className="w-full h-full object-cover"
-                />
+              <div className="bg-[#075E54] text-white rounded-3xl p-8 sm:p-10 shadow-2xl border border-[#D6A84F]/30 relative overflow-hidden">
+                <div className="absolute -top-12 -right-12 w-48 h-48 bg-white/5 rounded-full blur-2xl pointer-events-none" />
+                <div className="flex items-center gap-2 mb-4">
+                  <span className="px-3 py-1 rounded-full bg-[#E7F5F3]/15 text-[#D6A84F] text-xs font-bold uppercase tracking-wider border border-[#D6A84F]/30">
+                    DISTRICT HEALTHCARE OUTREACH
+                  </span>
+                </div>
+                <h3 className="text-2xl font-bold font-heading mb-3">
+                  Community Medical Missions
+                </h3>
+                <p className="text-xs sm:text-sm text-[#E1EBE7] leading-relaxed mb-6">
+                  Providing mobile primary health screenings, early diagnostic testing, and healthcare education across Wenchi and rural Bono communities.
+                </p>
+
+                <div className="grid grid-cols-2 gap-3 pt-4 border-t border-white/15">
+                  <div className="p-3 rounded-xl bg-white/10">
+                    <span className="text-lg font-bold text-[#D6A84F] block">Free</span>
+                    <span className="text-xs text-[#E1EBE7]">Mobile Screenings</span>
+                  </div>
+                  <div className="p-3 rounded-xl bg-white/10">
+                    <span className="text-lg font-bold text-[#D6A84F] block">All Wards</span>
+                    <span className="text-xs text-[#E1EBE7]">Childhood Vaccines</span>
+                  </div>
+                  <div className="p-3 rounded-xl bg-white/10">
+                    <span className="text-lg font-bold text-[#D6A84F] block">100% NHIS</span>
+                    <span className="text-xs text-[#E1EBE7]">Supported Registration</span>
+                  </div>
+                  <div className="p-3 rounded-xl bg-white/10">
+                    <span className="text-lg font-bold text-[#D6A84F] block">24/7</span>
+                    <span className="text-xs text-[#E1EBE7]">Referral Network</span>
+                  </div>
+                </div>
               </div>
             </div>
 

@@ -118,15 +118,14 @@ export const HealthInformationPage: React.FC<HealthInformationPageProps> = ({
                 className="bg-white rounded-3xl border border-[#E1EBE7] overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col justify-between group"
               >
                 <div>
-                  <div className="relative h-48 bg-gray-100 overflow-hidden">
-                    <img
-                      src={article.image}
-                      alt={article.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                    <div className="absolute top-3 left-3 bg-[#075E54] text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider">
+                  <div className="p-5 pb-3 bg-gradient-to-r from-[#F7FAF8] to-[#E7F5F3] border-b border-[#E1EBE7] flex items-center justify-between">
+                    <span className="bg-[#075E54] text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">
                       {article.category}
-                    </div>
+                    </span>
+                    <span className="text-[11px] font-medium text-[#64736F] flex items-center gap-1">
+                      <Clock className="w-3.5 h-3.5 text-[#075E54]" />
+                      {article.readTime}
+                    </span>
                   </div>
 
                   <div className="p-6 space-y-3">

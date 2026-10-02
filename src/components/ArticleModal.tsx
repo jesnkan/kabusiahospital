@@ -19,24 +19,17 @@ export const ArticleModal: React.FC<ArticleModalProps> = ({
     <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/60 backdrop-blur-xs overflow-y-auto">
       <div className="bg-white rounded-2xl max-w-2xl w-full shadow-2xl border border-[#E1EBE7] my-8 overflow-hidden animate-in zoom-in-95 duration-200">
         
-        {/* Header Image & Close */}
-        <div className="relative h-48 sm:h-60 w-full overflow-hidden bg-[#075E54]">
-          <img
-            src={article.image}
-            alt={article.title}
-            className="w-full h-full object-cover opacity-90"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-          
+        {/* Header Background & Close */}
+        <div className="relative p-6 sm:p-8 bg-gradient-to-br from-[#075E54] to-[#04332D] text-white">
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 bg-black/50 hover:bg-black/80 text-white p-2 rounded-full backdrop-blur-xs transition-colors"
+            className="absolute top-4 right-4 bg-white/10 hover:bg-white/20 text-white p-2 rounded-full transition-colors"
             aria-label="Close article"
           >
             <X className="w-5 h-5" />
           </button>
 
-          <div className="absolute bottom-4 left-4 right-4 text-white">
+          <div>
             <span className="inline-block text-xs font-semibold px-2.5 py-0.5 rounded-full bg-[#D6A84F] text-[#172321] mb-2 font-heading">
               {article.category}
             </span>

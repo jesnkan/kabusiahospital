@@ -30,11 +30,9 @@ export const DoctorProfileModal: React.FC<DoctorProfileModalProps> = ({
           </button>
 
           <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 text-center sm:text-left">
-            <img
-              src={doctor.image}
-              alt={doctor.name}
-              className="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl object-cover border-2 border-[#D6A84F] shadow-md flex-shrink-0"
-            />
+            <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-white/10 backdrop-blur-md border-2 border-[#D6A84F] text-[#D6A84F] flex items-center justify-center text-2xl font-bold font-heading shadow-md flex-shrink-0">
+              {doctor.name.replace('Dr. ', '').split(' ').map(n => n[0]).slice(0, 2).join('')}
+            </div>
             <div>
               <span className="inline-block text-xs font-semibold px-2.5 py-0.5 rounded-full bg-[#D6A84F] text-[#172321] mb-1.5">
                 {doctor.departmentName}

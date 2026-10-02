@@ -134,19 +134,17 @@ export const FacilitiesPage: React.FC<FacilitiesPageProps> = ({ onOpenAppointmen
                 className="bg-white rounded-3xl border border-[#E1EBE7] overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer group flex flex-col justify-between"
               >
                 <div>
-                  <div className="relative h-56 bg-gray-100 overflow-hidden">
-                    <img
-                      src={facility.image}
-                      alt={facility.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                    
-                    <span className="absolute top-3 left-3 bg-white/95 text-[#075E54] text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-sm">
-                      {facility.category}
-                    </span>
+                  <div className="p-6 pb-4 bg-gradient-to-r from-[#075E54] to-[#0D3B35] text-white relative overflow-hidden">
+                    <div className="flex items-center justify-between gap-2 mb-3">
+                      <div className="w-10 h-10 rounded-xl bg-white/10 border border-white/20 text-[#D6A84F] flex items-center justify-center shadow-xs">
+                        <Building2 className="w-5 h-5" />
+                      </div>
+                      <span className="bg-[#D6A84F] text-[#075E54] text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider shadow-xs">
+                        {facility.category}
+                      </span>
+                    </div>
 
-                    <h3 className="absolute bottom-3 left-4 right-4 text-lg font-bold text-white font-heading leading-tight">
+                    <h3 className="text-lg font-bold text-white font-heading leading-tight">
                       {facility.title}
                     </h3>
                   </div>
@@ -188,15 +186,23 @@ export const FacilitiesPage: React.FC<FacilitiesPageProps> = ({ onOpenAppointmen
       {selectedFacility && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/70 backdrop-blur-xs">
           <div className="bg-white rounded-3xl max-w-2xl w-full shadow-2xl border border-[#E1EBE7] overflow-hidden animate-in zoom-in-95 duration-200">
-            <div className="relative h-64 sm:h-80 bg-gray-900">
-              <img
-                src={selectedFacility.image}
-                alt={selectedFacility.title}
-                className="w-full h-full object-cover"
-              />
+            <div className="p-6 bg-gradient-to-r from-[#075E54] to-[#04332D] text-white relative overflow-hidden flex items-center justify-between">
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 rounded-2xl bg-white/10 border border-white/20 text-[#D6A84F] flex items-center justify-center shadow-xs">
+                  <Building2 className="w-6 h-6" />
+                </div>
+                <div>
+                  <span className="text-xs font-bold text-[#D6A84F] uppercase tracking-wider block">
+                    {selectedFacility.category}
+                  </span>
+                  <h3 className="text-xl font-bold font-heading text-white">
+                    {selectedFacility.title}
+                  </h3>
+                </div>
+              </div>
               <button
                 onClick={() => setSelectedFacility(null)}
-                className="absolute top-4 right-4 bg-black/60 hover:bg-black text-white p-2 rounded-full transition-colors"
+                className="bg-white/10 hover:bg-white/20 text-white p-2 rounded-full transition-colors"
               >
                 ✕
               </button>

@@ -821,11 +821,9 @@ export const AdminPortalPage: React.FC<AdminPortalPageProps> = ({ onNavigateHome
                 >
                   <div className="space-y-3">
                     <div className="flex items-center gap-3">
-                      <img
-                        src={doc.image}
-                        alt={doc.name}
-                        className="w-14 h-14 rounded-xl object-cover border border-[#075E54]"
-                      />
+                      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#075E54] to-[#04332D] text-[#D6A84F] flex items-center justify-center font-bold text-base shadow-xs flex-shrink-0">
+                        {doc.name.replace('Dr. ', '').split(' ').map(n => n[0]).slice(0, 2).join('')}
+                      </div>
                       <div>
                         <span className="text-[10px] font-bold text-[#075E54] uppercase tracking-wider bg-[#E7F5F3] px-2 py-0.5 rounded">
                           {doc.departmentName}

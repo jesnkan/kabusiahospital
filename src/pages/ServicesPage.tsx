@@ -12,7 +12,8 @@ import {
   Scan, 
   Heart, 
   Users,
-  Filter
+  Filter,
+  Activity
 } from 'lucide-react';
 import { SERVICES, HealthcareService, HOSPITAL_INFO } from '../data/hospitalData';
 
@@ -152,24 +153,20 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
                 className="card-hover-lift bg-white rounded-3xl border border-[#E1EBE7] overflow-hidden shadow-sm flex flex-col justify-between group"
               >
                 <div>
-                  {/* Service Top Image Header */}
-                  <div className="relative h-48 bg-gray-100 overflow-hidden">
-                    <img
-                      src={service.image}
-                      alt={service.name}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                    
-                    <div className="absolute top-3 left-3 bg-[#075E54] text-white text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">
-                      {service.departmentName}
+                  {/* Service Header */}
+                  <div className="p-6 pb-4 bg-gradient-to-r from-[#075E54] to-[#0D3B35] text-white relative overflow-hidden">
+                    <div className="flex items-center justify-between gap-2 mb-3">
+                      <div className="w-11 h-11 rounded-xl bg-white/10 border border-white/20 text-[#D6A84F] flex items-center justify-center shadow-xs">
+                        <Activity className="w-5 h-5" />
+                      </div>
+                      <span className="bg-[#D6A84F] text-[#075E54] text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider shadow-xs">
+                        {service.departmentName}
+                      </span>
                     </div>
 
-                    <div className="absolute bottom-3 left-4 right-4 text-white">
-                      <h2 className="text-xl font-bold font-heading">
-                        {service.name}
-                      </h2>
-                    </div>
+                    <h2 className="text-xl font-bold font-heading text-white">
+                      {service.name}
+                    </h2>
                   </div>
 
                   {/* Body Content */}

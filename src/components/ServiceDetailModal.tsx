@@ -20,24 +20,17 @@ export const ServiceDetailModal: React.FC<ServiceDetailModalProps> = ({
       <div className="bg-white rounded-2xl max-w-2xl w-full shadow-2xl border border-[#E1EBE7] my-8 overflow-hidden animate-in zoom-in-95 duration-200">
         
         {/* Header */}
-        <div className="relative h-44 sm:h-52 bg-[#075E54] overflow-hidden">
-          <img
-            src={service.image}
-            alt={service.name}
-            className="w-full h-full object-cover opacity-85"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#05453E] via-[#05453E]/60 to-transparent" />
-          
+        <div className="relative p-6 sm:p-8 bg-gradient-to-br from-[#075E54] to-[#04332D] text-white">
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 bg-black/40 hover:bg-black/70 text-white p-2 rounded-full backdrop-blur-xs transition-colors"
+            className="absolute top-4 right-4 bg-white/10 hover:bg-white/20 text-white p-2 rounded-full transition-colors"
             aria-label="Close service details"
           >
             <X className="w-5 h-5" />
           </button>
 
-          <div className="absolute bottom-4 left-5 right-5 text-white">
-            <span className="text-xs uppercase font-semibold tracking-wider text-[#D6A84F] block mb-1">
+          <div>
+            <span className="text-xs uppercase font-bold tracking-wider text-[#D6A84F] block mb-1">
               {service.departmentName}
             </span>
             <h2 className="text-xl sm:text-2xl font-bold font-heading">

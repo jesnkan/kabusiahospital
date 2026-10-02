@@ -109,14 +109,18 @@ export const DoctorsPage: React.FC<DoctorsPageProps> = ({
                 className="card-hover-lift bg-white rounded-3xl border border-[#E1EBE7] overflow-hidden shadow-sm flex flex-col justify-between group"
               >
                 <div>
-                  <div className="relative h-60 bg-gray-100 overflow-hidden">
-                    <img
-                      src={doc.image}
-                      alt={doc.name}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-xs text-[10px] font-bold text-[#075E54] px-2.5 py-1 rounded-full uppercase tracking-wider shadow-sm">
-                      {doc.departmentName}
+                  <div className="p-6 pb-4 bg-gradient-to-br from-[#075E54] to-[#04332D] text-white relative overflow-hidden">
+                    <div className="flex items-start justify-between gap-3 relative z-10">
+                      <div className="w-16 h-16 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 text-[#D6A84F] flex items-center justify-center text-xl font-bold font-heading shadow-inner">
+                        {doc.name.replace('Dr. ', '').split(' ').map(n => n[0]).slice(0, 2).join('')}
+                      </div>
+                      <span className="bg-[#D6A84F] text-[#075E54] text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider shadow-xs">
+                        {doc.departmentName}
+                      </span>
+                    </div>
+                    <div className="mt-3 flex items-center gap-1.5 text-xs text-[#E1EBE7]">
+                      <ShieldCheck className="w-3.5 h-3.5 text-[#D6A84F]" />
+                      <span>MDC Ghana Verified Practitioner</span>
                     </div>
                   </div>
 
