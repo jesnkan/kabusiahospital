@@ -6,7 +6,6 @@ import {
   Search, 
   Menu, 
   X, 
-  AlertCircle, 
   Calendar,
   ChevronDown
 } from 'lucide-react';
@@ -30,7 +29,6 @@ export const Header: React.FC<HeaderProps> = ({
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const [isScrolled, setIsScrolled] = useState(false);
-  const [emergencyModalOpen, setEmergencyModalOpen] = useState(false);
 
 
   useEffect(() => {
@@ -232,75 +230,6 @@ export const Header: React.FC<HeaderProps> = ({
           </div>
         )}
       </header>
-
-      {/* Emergency Hotline Modal */}
-      {emergencyModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs">
-          <div className="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl border-2 border-red-500 animate-in zoom-in-95 duration-150 relative">
-            <button
-              onClick={() => setEmergencyModalOpen(false)}
-              className="absolute top-4 right-4 text-[#64736F] hover:text-[#172321] p-1"
-            >
-              <X className="w-5 h-5" />
-            </button>
-
-            <div className="flex items-center gap-3 text-[#075E54] mb-3">
-              <div className="w-10 h-10 rounded-full bg-[#E7F5F3] flex items-center justify-center">
-                <Phone className="w-5 h-5 text-[#075E54]" />
-              </div>
-              <div>
-                <h3 className="text-lg font-bold text-[#172321] leading-tight">Hospital Telephone Helpline</h3>
-                <p className="text-xs text-[#64736F]">Direct Clinical & Admissions Desk</p>
-              </div>
-            </div>
-
-            <p className="text-sm text-[#172321] mb-4">
-              Connect directly with our admissions and hospital desk for urgent inquiries, outpatient guidance, or immediate assistance.
-            </p>
-
-            <div className="bg-[#E7F5F3] border border-[#2F8F83]/30 rounded-xl p-4 mb-4 text-center">
-              <span className="block text-xs uppercase font-semibold text-[#075E54] tracking-wider mb-1">
-                Hospital Direct Line
-              </span>
-              <a 
-                href={`tel:${HOSPITAL_INFO.contacts.generalPhone}`}
-                className="text-2xl font-extrabold text-[#075E54] hover:underline block font-mono"
-              >
-                {HOSPITAL_INFO.contacts.generalPhone}
-              </a>
-            </div>
-
-            <div className="space-y-2 text-xs text-[#64736F] mb-5">
-              <div className="flex items-start gap-2">
-                <MapPin className="w-4 h-4 text-[#075E54] flex-shrink-0 mt-0.5" />
-                <span>
-                  <strong>Hospital Campus:</strong> {HOSPITAL_INFO.contacts.addressPlaceholder}
-                </span>
-              </div>
-              <div className="flex items-start gap-2">
-                <Clock className="w-4 h-4 text-[#075E54] flex-shrink-0 mt-0.5" />
-                <span>OPD & Triage desks are available for patient support.</span>
-              </div>
-            </div>
-
-            <div className="flex gap-2">
-              <a
-                href={`tel:${HOSPITAL_INFO.contacts.generalPhone}`}
-                className="flex-1 bg-[#075E54] hover:bg-[#05453E] text-white font-semibold py-2.5 px-4 rounded-xl text-center text-sm flex items-center justify-center gap-2"
-              >
-                <Phone className="w-4 h-4" />
-                <span>Call Now</span>
-              </a>
-              <button
-                onClick={() => setEmergencyModalOpen(false)}
-                className="px-4 py-2.5 rounded-xl border border-[#E1EBE7] text-sm font-medium hover:bg-gray-50"
-              >
-                Close
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
     </>
   );
 };

@@ -229,7 +229,7 @@ export const ContactPage: React.FC = () => {
                         </label>
                         <input
                           type="email"
-                          placeholder="e.g. kwame@example.com"
+                          placeholder="e.g. kwame.mensah@gmail.com"
                           value={email}
                           onChange={(e) => setEmail(e.target.value)}
                           className="w-full px-3.5 py-2.5 text-sm border border-[#E1EBE7] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#075E54]"

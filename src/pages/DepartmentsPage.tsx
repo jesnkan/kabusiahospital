@@ -140,14 +140,14 @@ export const DepartmentsPage: React.FC<DepartmentsPageProps> = ({ onOpenAppointm
             {filteredDepts.map((dept) => (
               <div
                 key={dept.id}
-                className="bg-white rounded-3xl border border-[#E1EBE7] overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col justify-between"
+                className="card-hover-lift bg-white rounded-3xl border border-[#E1EBE7] overflow-hidden shadow-sm flex flex-col justify-between group"
               >
                 <div>
                   <div className="relative h-44 bg-gray-100 overflow-hidden">
                     <img
                       src={dept.image}
                       alt={dept.name}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                     

@@ -106,14 +106,14 @@ export const DoctorsPage: React.FC<DoctorsPageProps> = ({
             {filteredDoctors.map((doc) => (
               <div
                 key={doc.id}
-                className="bg-white rounded-3xl border border-[#E1EBE7] overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col justify-between group"
+                className="card-hover-lift bg-white rounded-3xl border border-[#E1EBE7] overflow-hidden shadow-sm flex flex-col justify-between group"
               >
                 <div>
                   <div className="relative h-60 bg-gray-100 overflow-hidden">
                     <img
                       src={doc.image}
                       alt={doc.name}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-xs text-[10px] font-bold text-[#075E54] px-2.5 py-1 rounded-full uppercase tracking-wider shadow-sm">
                       {doc.departmentName}

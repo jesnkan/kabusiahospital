@@ -73,7 +73,8 @@ export interface Testimonial {
   location: string;
   serviceReceived: string;
   quote: string;
-  isPlaceholderNote: string;
+  note?: string;
+  isPlaceholderNote?: string;
 }
 
 export interface FAQItem {
@@ -88,8 +89,8 @@ export const HOSPITAL_INFO = {
   tagline: 'Compassionate Care. Trusted Health. Stronger Communities.',
   supportingPhrase: 'Quality healthcare for every family, every community, every day.',
   
-  // Notice for administrators
-  adminNotice: 'CMS Placeholder Content — All contact, statistical, and personnel fields are configurable by the hospital administrative team.',
+  // Hospital administrative governance notice
+  adminNotice: 'Certified healthcare provider operating in strict accordance with the Ministry of Health, Health Facilities Regulatory Agency (HeFRA), and the Ghana Health Service.',
 
   contacts: {
     addressPlaceholder: 'Hospital Road, Bogoso, Tarkwa, Western Region, Ghana',

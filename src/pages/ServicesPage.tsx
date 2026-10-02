@@ -149,7 +149,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
             {filteredServices.map((service) => (
               <div
                 key={service.id}
-                className="bg-white rounded-3xl border border-[#E1EBE7] overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col justify-between"
+                className="card-hover-lift bg-white rounded-3xl border border-[#E1EBE7] overflow-hidden shadow-sm flex flex-col justify-between group"
               >
                 <div>
                   {/* Service Top Image Header */}
@@ -157,7 +157,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
                     <img
                       src={service.image}
                       alt={service.name}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                     

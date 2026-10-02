@@ -49,16 +49,6 @@ export const DoctorProfileModal: React.FC<DoctorProfileModalProps> = ({
         {/* Body Details */}
         <div className="p-5 sm:p-6 space-y-5 max-h-[65vh] overflow-y-auto text-sm">
           
-          {/* Admin Placeholder notice */}
-          {doctor.isPlaceholder && (
-            <div className="bg-amber-50 border border-amber-200 rounded-xl p-3 text-xs text-amber-900 flex items-start gap-2">
-              <ShieldCheck className="w-4 h-4 text-amber-700 flex-shrink-0 mt-0.5" />
-              <span>
-                <strong>Administrator Placeholder Profile:</strong> In compliance with healthcare truthfulness standards, real staff names and credentials are configured directly by hospital administration.
-              </span>
-            </div>
-          )}
-
           <div>
             <h4 className="font-bold text-[#172321] font-heading mb-1 text-xs uppercase tracking-wider text-[#075E54]">
               Professional Summary

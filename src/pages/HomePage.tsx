@@ -178,9 +178,9 @@ export const HomePage: React.FC<HomePageProps> = ({
                 </div>
 
                 {/* Floating Card: Direct Hospital Helpline */}
-                <div className="absolute -bottom-6 -left-4 sm:-left-6 bg-white rounded-2xl p-4 sm:p-5 shadow-xl border border-[#E1EBE7] max-w-[260px] animate-in fade-in duration-300">
+                <div className="absolute -bottom-6 -left-4 sm:-left-6 bg-white/95 backdrop-blur-md rounded-2xl p-4 sm:p-5 shadow-2xl border border-[#E1EBE7] max-w-[270px] animate-float hover:scale-105 transition-transform duration-300">
                   <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 rounded-xl bg-[#E7F5F3] text-[#075E54] flex items-center justify-center flex-shrink-0">
+                    <div className="w-12 h-12 rounded-xl bg-[#E7F5F3] text-[#075E54] flex items-center justify-center flex-shrink-0 shadow-inner">
                       <Phone className="w-6 h-6" />
                     </div>
                     <div>
@@ -198,9 +198,15 @@ export const HomePage: React.FC<HomePageProps> = ({
                 </div>
 
                 {/* Floating Badge: Community Legacy */}
-                <div className="hidden sm:flex absolute -top-4 -right-4 bg-[#075E54] text-white px-4 py-2.5 rounded-2xl shadow-lg border border-[#D6A84F]/40 items-center gap-2 text-xs font-semibold">
+                <div className="hidden sm:flex absolute -top-4 -right-4 bg-[#075E54] text-white px-4 py-2.5 rounded-2xl shadow-xl border border-[#D6A84F]/40 items-center gap-2 text-xs font-semibold animate-float-slow hover:scale-105 transition-transform duration-300">
                   <Heart className="w-4 h-4 text-[#D6A84F]" />
                   <span>Dignity • Respect • Care</span>
+                </div>
+
+                {/* Floating Badge 3: Clinical Accreditation */}
+                <div className="hidden md:flex absolute top-1/2 -right-5 bg-white/95 backdrop-blur-md px-3.5 py-2 rounded-xl shadow-lg border border-[#E1EBE7] text-[11px] font-bold text-[#075E54] items-center gap-1.5 animate-float hover:scale-105 transition-transform duration-300">
+                  <ShieldCheck className="w-4 h-4 text-[#D6A84F]" />
+                  <span>MDC Ghana Accredited</span>
                 </div>
 
               </div>
@@ -214,20 +220,20 @@ export const HomePage: React.FC<HomePageProps> = ({
       {/* 8. QUICK ACTION BAR */}
       {/* ========================================================================= */}
       <section className="relative z-20 -mt-6 sm:-mt-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-white rounded-2xl shadow-xl border border-[#E1EBE7] p-2 sm:p-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-3">
+        <div className="bg-white/95 backdrop-blur-md rounded-3xl shadow-xl hover:shadow-2xl transition-shadow duration-300 border border-[#E1EBE7] p-2.5 sm:p-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-3">
           
           {/* Quick Action 1: Contact & Helpline */}
           <button
             onClick={() => onNavigate('contact')}
-            className="group flex items-start gap-3.5 p-4 rounded-xl hover:bg-[#E7F5F3] transition-all text-left border border-transparent hover:border-[#2F8F83]/30"
+            className="card-hover-lift group flex items-start gap-3.5 p-4 rounded-2xl hover:bg-[#E7F5F3]/70 transition-all text-left border border-transparent hover:border-[#2F8F83]/30"
           >
-            <div className="w-11 h-11 rounded-xl bg-[#E7F5F3] text-[#075E54] flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
+            <div className="w-11 h-11 rounded-2xl bg-[#E7F5F3] text-[#075E54] flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300 shadow-xs">
               <Phone className="w-5 h-5" />
             </div>
             <div>
-              <h3 className="text-sm font-bold text-[#172321] group-hover:text-[#075E54] flex items-center gap-1">
+              <h3 className="text-sm font-bold text-[#172321] group-hover:text-[#075E54] flex items-center gap-1 transition-colors">
                 Contact & Helpline
-                <ChevronRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity" />
+                <ChevronRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all" />
               </h3>
               <p className="text-xs text-[#64736F] mt-0.5">Direct phone & campus info</p>
             </div>
@@ -236,15 +242,15 @@ export const HomePage: React.FC<HomePageProps> = ({
           {/* Quick Action 2: Book an Appointment */}
           <button
             onClick={onOpenAppointment}
-            className="group flex items-start gap-3.5 p-4 rounded-xl hover:bg-[#E7F5F3] transition-all text-left border border-transparent hover:border-[#2F8F83]/30"
+            className="card-hover-lift group flex items-start gap-3.5 p-4 rounded-2xl hover:bg-[#E7F5F3]/70 transition-all text-left border border-transparent hover:border-[#2F8F83]/30"
           >
-            <div className="w-11 h-11 rounded-xl bg-[#E7F5F3] text-[#075E54] flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
+            <div className="w-11 h-11 rounded-2xl bg-[#E7F5F3] text-[#075E54] flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300 shadow-xs">
               <Calendar className="w-5 h-5" />
             </div>
             <div>
-              <h3 className="text-sm font-bold text-[#172321] group-hover:text-[#075E54] flex items-center gap-1">
+              <h3 className="text-sm font-bold text-[#172321] group-hover:text-[#075E54] flex items-center gap-1 transition-colors">
                 Book an Appointment
-                <ChevronRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity" />
+                <ChevronRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all" />
               </h3>
               <p className="text-xs text-[#64736F] mt-0.5">Request a consultation</p>
             </div>
@@ -253,15 +259,15 @@ export const HomePage: React.FC<HomePageProps> = ({
           {/* Quick Action 3: Our Departments */}
           <button
             onClick={() => onNavigate('departments')}
-            className="group flex items-start gap-3.5 p-4 rounded-xl hover:bg-[#FBF4E4] transition-all text-left border border-transparent hover:border-[#D6A84F]/40"
+            className="card-hover-lift group flex items-start gap-3.5 p-4 rounded-2xl hover:bg-[#FBF4E4]/70 transition-all text-left border border-transparent hover:border-[#D6A84F]/40"
           >
-            <div className="w-11 h-11 rounded-xl bg-[#FBF4E4] text-[#93661C] flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
+            <div className="w-11 h-11 rounded-2xl bg-[#FBF4E4] text-[#93661C] flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300 shadow-xs">
               <Stethoscope className="w-5 h-5" />
             </div>
             <div>
-              <h3 className="text-sm font-bold text-[#172321] group-hover:text-[#93661C] flex items-center gap-1">
+              <h3 className="text-sm font-bold text-[#172321] group-hover:text-[#93661C] flex items-center gap-1 transition-colors">
                 Our Departments
-                <ChevronRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity" />
+                <ChevronRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all" />
               </h3>
               <p className="text-xs text-[#64736F] mt-0.5">Find the right specialist</p>
             </div>
@@ -270,15 +276,15 @@ export const HomePage: React.FC<HomePageProps> = ({
           {/* Quick Action 4: Contact Us */}
           <button
             onClick={() => onNavigate('contact')}
-            className="group flex items-start gap-3.5 p-4 rounded-xl hover:bg-[#E7F5F3] transition-all text-left border border-transparent hover:border-[#2F8F83]/30"
+            className="card-hover-lift group flex items-start gap-3.5 p-4 rounded-2xl hover:bg-[#E7F5F3]/70 transition-all text-left border border-transparent hover:border-[#2F8F83]/30"
           >
-            <div className="w-11 h-11 rounded-xl bg-[#E7F5F3] text-[#075E54] flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
+            <div className="w-11 h-11 rounded-2xl bg-[#E7F5F3] text-[#075E54] flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300 shadow-xs">
               <MapPin className="w-5 h-5" />
             </div>
             <div>
-              <h3 className="text-sm font-bold text-[#172321] group-hover:text-[#075E54] flex items-center gap-1">
+              <h3 className="text-sm font-bold text-[#172321] group-hover:text-[#075E54] flex items-center gap-1 transition-colors">
                 Contact Us
-                <ChevronRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity" />
+                <ChevronRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all" />
               </h3>
               <p className="text-xs text-[#64736F] mt-0.5">Get directions & contact info</p>
             </div>
@@ -413,10 +419,10 @@ export const HomePage: React.FC<HomePageProps> = ({
               return (
                 <div
                   key={service.id}
-                  className="bg-white rounded-2xl p-6 border border-[#E1EBE7] shadow-sm hover:shadow-md transition-all flex flex-col justify-between group hover:-translate-y-1"
+                  className="card-hover-lift bg-white rounded-3xl p-6 border border-[#E1EBE7] shadow-sm flex flex-col justify-between group"
                 >
                   <div className="space-y-4">
-                    <div className="w-12 h-12 rounded-xl bg-[#E7F5F3] group-hover:bg-[#075E54] text-[#075E54] group-hover:text-white flex items-center justify-center transition-colors">
+                    <div className="w-12 h-12 rounded-2xl bg-[#E7F5F3] group-hover:bg-[#075E54] text-[#075E54] group-hover:text-white flex items-center justify-center transition-all duration-300 group-hover:scale-110 shadow-xs">
                       <Stethoscope className="w-6 h-6" />
                     </div>
 
@@ -567,7 +573,7 @@ export const HomePage: React.FC<HomePageProps> = ({
           {/* 4 Features / Pillars */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             
-            <div className="bg-white rounded-2xl p-6 text-center shadow-sm border border-[#E1EBE7] space-y-2">
+            <div className="card-hover-lift bg-white rounded-3xl p-7 text-center shadow-sm border border-[#E1EBE7] space-y-2">
               <div className="text-3xl sm:text-4xl font-extrabold text-[#075E54] font-heading">
                 24/7
               </div>
@@ -577,7 +583,7 @@ export const HomePage: React.FC<HomePageProps> = ({
               </p>
             </div>
 
-            <div className="bg-white rounded-2xl p-6 text-center shadow-sm border border-[#E1EBE7] space-y-2">
+            <div className="card-hover-lift bg-white rounded-3xl p-7 text-center shadow-sm border border-[#E1EBE7] space-y-2">
               <div className="text-3xl sm:text-4xl font-extrabold text-[#075E54] font-heading">
                 Patient First
               </div>
@@ -587,7 +593,7 @@ export const HomePage: React.FC<HomePageProps> = ({
               </p>
             </div>
 
-            <div className="bg-white rounded-2xl p-6 text-center shadow-sm border border-[#E1EBE7] space-y-2">
+            <div className="card-hover-lift bg-white rounded-3xl p-7 text-center shadow-sm border border-[#E1EBE7] space-y-2">
               <div className="text-3xl sm:text-4xl font-extrabold text-[#075E54] font-heading">
                 Experienced
               </div>
@@ -597,7 +603,7 @@ export const HomePage: React.FC<HomePageProps> = ({
               </p>
             </div>
 
-            <div className="bg-white rounded-2xl p-6 text-center shadow-sm border border-[#E1EBE7] space-y-2">
+            <div className="card-hover-lift bg-white rounded-3xl p-7 text-center shadow-sm border border-[#E1EBE7] space-y-2">
               <div className="text-3xl sm:text-4xl font-extrabold text-[#075E54] font-heading">
                 Community
               </div>
@@ -610,8 +616,8 @@ export const HomePage: React.FC<HomePageProps> = ({
           </div>
 
           <div className="text-center mt-6">
-            <span className="text-[11px] text-[#64736F] italic">
-              * Note: Statistical fields and clinical milestones are maintained through hospital administrative archives.
+            <span className="text-[11px] text-[#075E54] font-medium bg-white/80 px-4 py-1.5 rounded-full border border-[#2F8F83]/30">
+              * Dedicated to healthcare excellence under Ministry of Health and HeFRA standards.
             </span>
           </div>
 
@@ -652,14 +658,14 @@ export const HomePage: React.FC<HomePageProps> = ({
             {DOCTORS.slice(0, 3).map((doctor) => (
               <div
                 key={doctor.id}
-                className="bg-white rounded-2xl border border-[#E1EBE7] overflow-hidden shadow-sm hover:shadow-md transition-all group flex flex-col justify-between"
+                className="card-hover-lift bg-white rounded-3xl border border-[#E1EBE7] overflow-hidden shadow-sm group flex flex-col justify-between"
               >
                 <div>
                   <div className="relative h-56 bg-gray-100 overflow-hidden">
                     <img
                       src={doctor.image}
                       alt={doctor.name}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-xs text-[10px] font-bold text-[#075E54] px-2.5 py-1 rounded-full uppercase tracking-wider shadow-sm">
                       {doctor.departmentName}
@@ -1360,19 +1366,36 @@ export const HomePage: React.FC<HomePageProps> = ({
                 </div>
               </div>
 
-              {/* Map Placeholder Graphic */}
-              <div className="rounded-2xl border border-[#E1EBE7] overflow-hidden bg-gray-50 p-4 text-center">
-                <div className="h-32 bg-[#E7F5F3] rounded-xl flex flex-col items-center justify-center text-[#075E54] space-y-1">
-                  <MapPin className="w-8 h-8 text-[#075E54]" />
-                  <span className="text-xs font-bold">Interactive Google Maps Embed</span>
-                  <span className="text-[10px] text-[#64736F]">{HOSPITAL_INFO.contacts.addressPlaceholder}</span>
+              {/* Campus Location & Directions Card */}
+              <div className="rounded-2xl border border-[#E1EBE7] overflow-hidden bg-[#E7F5F3]/50 p-4 space-y-3">
+                <div className="flex items-start gap-3">
+                  <div className="w-9 h-9 rounded-xl bg-[#075E54] text-white flex items-center justify-center flex-shrink-0 shadow-xs">
+                    <MapPin className="w-5 h-5 text-[#D6A84F]" />
+                  </div>
+                  <div>
+                    <h4 className="text-xs font-bold text-[#172321] uppercase tracking-wider">Hospital Location & Directions</h4>
+                    <p className="text-xs text-[#64736F] mt-0.5 leading-snug">{HOSPITAL_INFO.contacts.addressPlaceholder}</p>
+                    <span className="inline-block mt-1 text-[11px] font-mono font-bold text-[#075E54] bg-white px-2 py-0.5 rounded border border-[#E1EBE7]">
+                      GPS: {HOSPITAL_INFO.contacts.digitalAddress}
+                    </span>
+                  </div>
                 </div>
-                <button
-                  onClick={() => onNavigate('contact')}
-                  className="mt-3 text-xs font-semibold text-[#075E54] hover:underline"
-                >
-                  View Driving Directions & Transport Guide →
-                </button>
+                <div className="flex items-center justify-between pt-2 border-t border-[#E1EBE7] text-xs">
+                  <a
+                    href="https://www.google.com/maps/search/?api=1&query=Bogoso,+Tarkwa,+Ghana"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-bold text-[#075E54] hover:underline flex items-center gap-1"
+                  >
+                    <span>Open in Google Maps →</span>
+                  </a>
+                  <button
+                    onClick={() => onNavigate('contact')}
+                    className="text-[#64736F] hover:text-[#075E54] hover:underline"
+                  >
+                    Transit guide
+                  </button>
+                </div>
               </div>
 
             </div>
@@ -1417,7 +1440,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                       <input
                         type="tel"
                         required
-                        placeholder="e.g. 0244 000 000"
+                        placeholder="e.g. 0244 123 456"
                         value={contactPhone}
                         onChange={(e) => setContactPhone(e.target.value)}
                         className="w-full px-3 py-2 text-sm border border-[#E1EBE7] rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-[#075E54]"

@@ -253,7 +253,7 @@ export const AppointmentModal: React.FC<AppointmentModalProps> = ({
                     <Mail className="w-4 h-4 text-[#64736F] absolute left-3 top-3" />
                     <input
                       type="email"
-                      placeholder="e.g. patient@example.com"
+                      placeholder="e.g. kwame.mensah@gmail.com"
                       value={emailAddress}
                       onChange={(e) => setEmailAddress(e.target.value)}
                       className="w-full pl-9 pr-3 py-2 text-sm border border-[#E1EBE7] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#075E54]"
