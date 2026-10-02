@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Phone, Calendar, Search } from 'lucide-react';
 import { HospitalProvider, useHospital } from './context/HospitalContext';
+import { Preloader } from './components/Preloader';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { AppointmentModal } from './components/AppointmentModal';
@@ -98,7 +99,12 @@ function MainAppContent() {
 
   // If on Admin page, show full-screen admin portal
   if (currentPage === 'admin') {
-    return <AdminPortalPage onNavigateHome={() => handleNavigate('home')} />;
+    return (
+      <>
+        <Preloader />
+        <AdminPortalPage onNavigateHome={() => handleNavigate('home')} />
+      </>
+    );
   }
 
   // Render Page Content
@@ -170,6 +176,7 @@ function MainAppContent() {
 
   return (
     <div className="flex flex-col min-h-screen bg-[#F7FAF8] font-sans antialiased text-[#172321]">
+      <Preloader />
       
       {/* Global Header */}
       <Header

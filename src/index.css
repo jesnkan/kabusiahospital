@@ -122,6 +122,20 @@
   }
 }
 
+@keyframes ecg-line {
+  0% {
+    stroke-dashoffset: 450;
+  }
+  100% {
+    stroke-dashoffset: -450;
+  }
+}
+
+.ecg-draw {
+  stroke-dasharray: 450;
+  animation: ecg-line 2.2s linear infinite;
+}
+
 @keyframes shimmer {
   100% {
     transform: translateX(100%);
