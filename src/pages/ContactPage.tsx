@@ -62,29 +62,29 @@ export const ContactPage: React.FC = () => {
       <section className="py-12 lg:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          {/* Emergency Alert Banner */}
-          <div className="mb-10 p-5 rounded-2xl bg-red-50 border border-red-200 flex flex-col sm:flex-row items-center justify-between gap-4">
+          {/* Hospital Helpline Banner */}
+          <div className="mb-10 p-5 rounded-2xl bg-[#E7F5F3] border border-[#2F8F83]/30 flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-xl bg-red-100 text-red-700 flex items-center justify-center flex-shrink-0">
-                <AlertCircle className="w-6 h-6 animate-pulse" />
+              <div className="w-12 h-12 rounded-xl bg-[#075E54] text-white flex items-center justify-center flex-shrink-0">
+                <Phone className="w-6 h-6" />
               </div>
               <div>
-                <h3 className="text-base font-bold text-red-900 font-heading">
-                  24/7 Clinical Emergency Assistance
+                <h3 className="text-base font-bold text-[#172321] font-heading">
+                  Hospital Direct Telephone Helpline
                 </h3>
-                <p className="text-xs text-red-700">
-                  For acute medical crises, call our emergency hotline directly:
+                <p className="text-xs text-[#64736F]">
+                  For consultations, patient inquiries, or immediate hospital assistance, reach our team directly:
                 </p>
               </div>
             </div>
 
             <div className="flex items-center gap-2">
               <a
-                href={`tel:${HOSPITAL_INFO.contacts.emergencyPhone}`}
-                className="px-5 py-2.5 bg-red-700 hover:bg-red-800 text-white rounded-xl text-xs font-bold shadow-sm transition-colors flex items-center gap-1.5"
+                href={`tel:${HOSPITAL_INFO.contacts.generalPhone}`}
+                className="px-5 py-2.5 bg-[#075E54] hover:bg-[#05453E] text-white rounded-xl text-xs font-bold shadow-sm transition-colors flex items-center gap-1.5 font-mono"
               >
-                <Phone className="w-4 h-4" />
-                <span>Call {HOSPITAL_INFO.contacts.emergencyPhonePlaceholder}</span>
+                <Phone className="w-4 h-4 text-[#D6A84F]" />
+                <span>Call {HOSPITAL_INFO.contacts.generalPhone}</span>
               </a>
             </div>
           </div>
@@ -115,19 +115,24 @@ export const ContactPage: React.FC = () => {
               {/* Telephone & Email Card */}
               <div className="bg-white rounded-3xl p-6 border border-[#E1EBE7] shadow-sm space-y-4 text-xs">
                 <div>
-                  <span className="text-[#64736F] block">General Telephone Enquiries:</span>
-                  <strong className="text-sm text-[#172321]">{HOSPITAL_INFO.contacts.generalPhonePlaceholder}</strong>
-                  <span className="text-[11px] text-[#64736F] block mt-0.5">({HOSPITAL_INFO.contacts.generalPhone})</span>
+                  <span className="text-[#64736F] block">Hospital Telephone Enquiries:</span>
+                  <a href={`tel:${HOSPITAL_INFO.contacts.generalPhone}`} className="text-sm font-bold text-[#075E54] hover:underline font-mono">
+                    {HOSPITAL_INFO.contacts.generalPhone}
+                  </a>
                 </div>
 
                 <div className="pt-2 border-t border-[#E1EBE7]">
                   <span className="text-[#64736F] block">Outpatient Bookings & Enquiries:</span>
-                  <strong className="text-[#172321]">{HOSPITAL_INFO.contacts.appointmentsEmail}</strong>
+                  <a href={`mailto:${HOSPITAL_INFO.contacts.appointmentsEmail}`} className="text-[#172321] hover:underline font-semibold">
+                    {HOSPITAL_INFO.contacts.appointmentsEmail}
+                  </a>
                 </div>
 
                 <div className="pt-2 border-t border-[#E1EBE7]">
                   <span className="text-[#64736F] block">General Administration Email:</span>
-                  <strong className="text-[#172321]">{HOSPITAL_INFO.contacts.emailPlaceholder}</strong>
+                  <a href={`mailto:${HOSPITAL_INFO.contacts.email}`} className="text-[#172321] hover:underline font-semibold">
+                    {HOSPITAL_INFO.contacts.email}
+                  </a>
                 </div>
               </div>
 
@@ -338,7 +343,7 @@ export const ContactPage: React.FC = () => {
                       <td className="py-3 pr-4 font-semibold text-[#172321]">{d.name}</td>
                       <td className="py-3 px-4 text-[#64736F]">{d.location}</td>
                       <td className="py-3 px-4 text-[#64736F]">{d.hours}</td>
-                      <td className="py-3 pl-4 font-mono text-[#075E54]">{HOSPITAL_INFO.contacts.generalPhonePlaceholder}</td>
+                      <td className="py-3 pl-4 font-mono text-[#075E54]">{HOSPITAL_INFO.contacts.generalPhone}</td>
                     </tr>
                   ))}
                 </tbody>

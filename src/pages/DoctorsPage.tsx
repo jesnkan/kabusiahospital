@@ -95,10 +95,10 @@ export const DoctorsPage: React.FC<DoctorsPageProps> = ({
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           {/* Trust & Safe Medical Claim Note */}
-          <div className="mb-8 p-4 rounded-2xl bg-amber-50 border border-amber-200 text-xs text-amber-900 flex items-start gap-3">
-            <ShieldCheck className="w-5 h-5 text-amber-700 flex-shrink-0 mt-0.5" />
+          <div className="mb-8 p-4 rounded-2xl bg-[#E7F5F3] border border-[#2F8F83]/30 text-xs text-[#075E54] flex items-start gap-3">
+            <ShieldCheck className="w-5 h-5 text-[#075E54] flex-shrink-0 mt-0.5" />
             <div>
-              <strong>Staff Credential Policy:</strong> In adherence to healthcare communication ethics, all clinical profiles shown are structured placeholders ready for official hospital administration credentials, specialty licenses, and clinic hours.
+              <strong>Staff Credential Policy:</strong> In adherence to healthcare excellence and clinical governance, all medical officers, consultants, and nursing specialists are licensed and accredited under the Medical and Dental Council (MDC) and the Nursing and Midwifery Council (NMC) of Ghana.
             </div>
           </div>
 

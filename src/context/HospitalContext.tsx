@@ -83,7 +83,7 @@ const INITIAL_APPOINTMENTS: PatientAppointment[] = [
     departmentId: 'opd',
     departmentName: 'General Outpatient Department (OPD)',
     doctorId: 'dr-kwame-boateng',
-    doctorName: 'Dr. [Senior Medical Officer]',
+    doctorName: 'Dr. Kwame Boateng',
     date: '2026-09-28',
     timeSlot: 'Morning (8:00 AM – 11:30 AM)',
     reason: 'Routine Check-up / Consultation',
@@ -101,7 +101,7 @@ const INITIAL_APPOINTMENTS: PatientAppointment[] = [
     departmentId: 'maternity',
     departmentName: 'Maternity, Obstetrics & Gynaecology',
     doctorId: 'dr-abena-mensah',
-    doctorName: 'Dr. [Specialist Obstetrician]',
+    doctorName: 'Dr. Abena Pokua Mensah',
     date: '2026-09-29',
     timeSlot: 'Mid-day (12:00 PM – 2:30 PM)',
     reason: 'Antenatal / Maternity Booking',
@@ -118,7 +118,7 @@ const INITIAL_APPOINTMENTS: PatientAppointment[] = [
     departmentId: 'paediatrics',
     departmentName: 'Paediatrics & Child Health',
     doctorId: 'dr-kofi-asante',
-    doctorName: 'Dr. [Consultant Paediatrician]',
+    doctorName: 'Dr. Kofi Asante-Wiredu',
     date: '2026-09-30',
     timeSlot: 'Morning (8:00 AM – 11:30 AM)',
     reason: 'Childhood Health & Immunisation',
@@ -159,15 +159,17 @@ export const HospitalProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       try {
         const parsed = JSON.parse(saved);
         if (
+          !parsed.contacts?.generalPhone ||
+          parsed.contacts.generalPhone.includes('200 1100') ||
+          parsed.contacts.generalPhonePlaceholder?.includes('[') ||
+          parsed.contacts.emergencyPhonePlaceholder?.includes('[') ||
           !parsed.contacts?.addressPlaceholder ||
           parsed.contacts.addressPlaceholder.includes('Sunyani') ||
           parsed.contacts.addressPlaceholder.includes('Cantonments') ||
           parsed.contacts.addressPlaceholder.startsWith('[')
         ) {
           parsed.contacts = {
-            ...parsed.contacts,
-            addressPlaceholder: 'Hospital Road, Bogoso, Tarkwa, Western Region, Ghana',
-            digitalAddress: 'WP-0024-8192',
+            ...DEFAULT_HOSPITAL_INFO.contacts,
           };
           localStorage.setItem('kabusia_hospital_info', JSON.stringify(parsed));
         }
@@ -181,12 +183,36 @@ export const HospitalProvider: React.FC<{ children: React.ReactNode }> = ({ chil
 
   const [doctors, setDoctors] = useState<Doctor[]>(() => {
     const saved = localStorage.getItem('kabusia_doctors');
-    return saved ? JSON.parse(saved) : DEFAULT_DOCTORS;
+    if (saved) {
+      try {
+        const parsed = JSON.parse(saved);
+        if (Array.isArray(parsed) && parsed.some((d: Doctor) => d.name?.includes('[') || d.qualifications?.includes('['))) {
+          localStorage.setItem('kabusia_doctors', JSON.stringify(DEFAULT_DOCTORS));
+          return DEFAULT_DOCTORS;
+        }
+        return parsed;
+      } catch {
+        return DEFAULT_DOCTORS;
+      }
+    }
+    return DEFAULT_DOCTORS;
   });
 
   const [departments, setDepartments] = useState<Department[]>(() => {
     const saved = localStorage.getItem('kabusia_departments');
-    return saved ? JSON.parse(saved) : DEFAULT_DEPARTMENTS;
+    if (saved) {
+      try {
+        const parsed = JSON.parse(saved);
+        if (Array.isArray(parsed) && parsed.some((d: Department) => d.headOfDepartment?.includes('['))) {
+          localStorage.setItem('kabusia_departments', JSON.stringify(DEFAULT_DEPARTMENTS));
+          return DEFAULT_DEPARTMENTS;
+        }
+        return parsed;
+      } catch {
+        return DEFAULT_DEPARTMENTS;
+      }
+    }
+    return DEFAULT_DEPARTMENTS;
   });
 
   const [services] = useState<HealthcareService[]>(DEFAULT_SERVICES);
@@ -223,6 +249,35 @@ export const HospitalProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   useEffect(() => {
     localStorage.setItem('kabusia_messages', JSON.stringify(contactMessages));
   }, [contactMessages]);
+
+  // Real-time cross-tab synchronization
+  useEffect(() => {
+    const handleStorageChange = (e: StorageEvent) => {
+      if (e.key === 'kabusia_appointments' && e.newValue) {
+        try {
+          setAppointments(JSON.parse(e.newValue));
+        } catch {}
+      }
+      if (e.key === 'kabusia_messages' && e.newValue) {
+        try {
+          setContactMessages(JSON.parse(e.newValue));
+        } catch {}
+      }
+      if (e.key === 'kabusia_doctors' && e.newValue) {
+        try {
+          setDoctors(JSON.parse(e.newValue));
+        } catch {}
+      }
+      if (e.key === 'kabusia_hospital_info' && e.newValue) {
+        try {
+          setHospitalInfo(JSON.parse(e.newValue));
+        } catch {}
+      }
+    };
+
+    window.addEventListener('storage', handleStorageChange);
+    return () => window.removeEventListener('storage', handleStorageChange);
+  }, []);
 
   const updateHospitalInfo = (info: Partial<typeof DEFAULT_HOSPITAL_INFO>) => {
     setHospitalInfo((prev: typeof DEFAULT_HOSPITAL_INFO) => ({

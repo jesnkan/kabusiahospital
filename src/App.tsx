@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Phone, Calendar, Search, ShieldCheck, X } from 'lucide-react';
+import { Phone, Calendar, Search } from 'lucide-react';
 import { HospitalProvider, useHospital } from './context/HospitalContext';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
@@ -42,9 +42,6 @@ function MainAppContent() {
   const [selectedDoctor, setSelectedDoctor] = useState<Doctor | null>(null);
   const [selectedService, setSelectedService] = useState<HealthcareService | null>(null);
   const [selectedArticle, setSelectedArticle] = useState<HealthArticle | null>(null);
-
-  // Admin CMS Badge state
-  const [showAdminBadge, setShowAdminBadge] = useState(true);
 
   // Sync with window.location.hash on mount & on hashchange
   useEffect(() => {
@@ -196,11 +193,11 @@ function MainAppContent() {
       {/* Mobile Sticky Action Bar */}
       <div className="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-[#E1EBE7] px-3 py-2 flex items-center justify-between gap-2 shadow-lg">
         <a
-          href={`tel:${hospitalInfo.contacts.emergencyPhone}`}
-          className="flex-1 bg-red-700 hover:bg-red-800 text-white font-bold py-2.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1.5 transition-colors"
+          href={`tel:${hospitalInfo.contacts.generalPhone}`}
+          className="flex-1 bg-[#075E54] hover:bg-[#05453E] text-white font-bold py-2.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1.5 transition-colors"
         >
-          <Phone className="w-3.5 h-3.5" />
-          <span>Emergency Call</span>
+          <Phone className="w-3.5 h-3.5 text-[#D6A84F]" />
+          <span>Call Hospital</span>
         </a>
 
         <button
@@ -269,35 +266,7 @@ function MainAppContent() {
         }}
       />
 
-      {/* Hospital CMS / Admin Portal Indicator Notice */}
-      {showAdminBadge && (
-        <div className="fixed bottom-16 lg:bottom-4 left-4 z-30 max-w-sm bg-white/95 backdrop-blur-md rounded-2xl p-3.5 shadow-xl border border-[#D6A84F] text-xs text-[#172321] animate-in fade-in duration-300">
-          <div className="flex items-start justify-between gap-2">
-            <div className="flex items-center gap-1.5 font-bold text-[#075E54]">
-              <ShieldCheck className="w-4 h-4 text-[#D6A84F]" />
-              <span>Hospital CMS & Admin Portal</span>
-            </div>
-            <button
-              onClick={() => setShowAdminBadge(false)}
-              className="text-gray-400 hover:text-gray-700 p-0.5"
-              title="Dismiss note"
-            >
-              <X className="w-3.5 h-3.5" />
-            </button>
-          </div>
-          <p className="text-[11px] text-[#64736F] mt-1 leading-snug">
-            Staff can manage appointment queues, doctors, and emergency hotlines live in the Admin Portal.
-          </p>
-          <button
-            onClick={() => handleNavigate('admin')}
-            className="mt-2 w-full py-1.5 px-2 bg-[#075E54] hover:bg-[#05453E] text-white rounded-lg font-bold text-[11px] flex items-center justify-center gap-1.5 transition-colors shadow-2xs"
-          >
-            <ShieldCheck className="w-3.5 h-3.5 text-[#D6A84F]" />
-            <span>Open Staff Admin Portal (Demo PIN: 1234) →</span>
-          </button>
-        </div>
-      )}
-
+      {/* Footer and modals */}
     </div>
   );
 }

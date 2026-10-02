@@ -67,7 +67,7 @@ export const Header: React.FC<HeaderProps> = ({
           <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 text-[#E1EBE7]">
             <div className="flex items-center gap-1.5">
               <MapPin className="w-3.5 h-3.5 text-[#D6A84F]" />
-              <span className="truncate max-w-[280px] sm:max-w-none">Ghana Campus: [Hospital Address, Ghana]</span>
+              <span className="truncate max-w-[280px] sm:max-w-none">Hospital Road, Bogoso, Western Region</span>
             </div>
             <div className="hidden lg:flex items-center gap-1.5">
               <Clock className="w-3.5 h-3.5 text-[#D6A84F]" />
@@ -75,19 +75,20 @@ export const Header: React.FC<HeaderProps> = ({
             </div>
           </div>
 
-          {/* Right: Emergency Hotline & Admin Notice */}
-          <div className="flex items-center gap-3">
-            <span className="hidden sm:inline text-xs text-[#D6A84F] font-medium bg-[#075E54] px-2 py-0.5 rounded border border-[#D6A84F]/30">
+          {/* Right: Hospital Helpline */}
+          <div className="flex items-center gap-2 sm:gap-3">
+            <span className="hidden lg:inline text-xs text-[#D6A84F] font-medium bg-[#075E54] px-2 py-0.5 rounded border border-[#D6A84F]/30">
               NHIS & Private Insurance Accepted
             </span>
-            <button 
-              onClick={() => setEmergencyModalOpen(true)}
-              className="flex items-center gap-1.5 text-white bg-red-700/80 hover:bg-red-700 px-2.5 py-1 rounded text-xs font-semibold tracking-wide transition-colors animate-pulse"
-              title="Click for emergency telephone contact"
+
+            <a 
+              href={`tel:${HOSPITAL_INFO.contacts.generalPhone}`}
+              className="flex items-center gap-1.5 text-white bg-[#075E54] hover:bg-[#05453E] border border-[#2F8F83]/50 px-3 py-1 rounded text-xs font-semibold tracking-wide transition-colors font-mono"
+              title="Call Hospital Helpline"
             >
-              <Phone className="w-3.5 h-3.5 text-white" />
-              <span>Emergency: [Emergency Number]</span>
-            </button>
+              <Phone className="w-3.5 h-3.5 text-[#D6A84F]" />
+              <span>Call: {HOSPITAL_INFO.contacts.generalPhone}</span>
+            </a>
           </div>
         </div>
       </div>
@@ -220,16 +221,13 @@ export const Header: React.FC<HeaderProps> = ({
                 <span>Book an Appointment</span>
               </button>
 
-              <button
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  setEmergencyModalOpen(true);
-                }}
-                className="w-full flex items-center justify-center gap-2 bg-red-700 text-white py-2.5 rounded-lg font-semibold text-sm"
+              <a
+                href={`tel:${HOSPITAL_INFO.contacts.generalPhone}`}
+                className="w-full flex items-center justify-center gap-2 bg-[#075E54] hover:bg-[#05453E] text-white py-2.5 rounded-lg font-semibold text-sm font-mono"
               >
-                <Phone className="w-4 h-4" />
-                <span>Emergency: Call Now</span>
-              </button>
+                <Phone className="w-4 h-4 text-[#D6A84F]" />
+                <span>Call Hospital ({HOSPITAL_INFO.contacts.generalPhone})</span>
+              </a>
             </div>
           </div>
         )}
@@ -246,55 +244,52 @@ export const Header: React.FC<HeaderProps> = ({
               <X className="w-5 h-5" />
             </button>
 
-            <div className="flex items-center gap-3 text-red-700 mb-3">
-              <div className="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center">
-                <AlertCircle className="w-6 h-6 text-red-700" />
+            <div className="flex items-center gap-3 text-[#075E54] mb-3">
+              <div className="w-10 h-10 rounded-full bg-[#E7F5F3] flex items-center justify-center">
+                <Phone className="w-5 h-5 text-[#075E54]" />
               </div>
               <div>
-                <h3 className="text-lg font-bold text-red-900 leading-tight">Emergency Assistance</h3>
-                <p className="text-xs text-red-700">Available 24 Hours • 7 Days a Week</p>
+                <h3 className="text-lg font-bold text-[#172321] leading-tight">Hospital Telephone Helpline</h3>
+                <p className="text-xs text-[#64736F]">Direct Clinical & Admissions Desk</p>
               </div>
             </div>
 
             <p className="text-sm text-[#172321] mb-4">
-              If you or someone around you is facing a medical emergency, acute chest pain, severe trauma, or breathing difficulty, reach our emergency triage desk immediately.
+              Connect directly with our admissions and hospital desk for urgent inquiries, outpatient guidance, or immediate assistance.
             </p>
 
-            <div className="bg-red-50 border border-red-200 rounded-xl p-4 mb-4 text-center">
-              <span className="block text-xs uppercase font-semibold text-red-800 tracking-wider mb-1">
-                Hospital Emergency Direct Line
+            <div className="bg-[#E7F5F3] border border-[#2F8F83]/30 rounded-xl p-4 mb-4 text-center">
+              <span className="block text-xs uppercase font-semibold text-[#075E54] tracking-wider mb-1">
+                Hospital Direct Line
               </span>
               <a 
-                href={`tel:${HOSPITAL_INFO.contacts.emergencyPhone}`}
-                className="text-2xl font-extrabold text-red-700 hover:underline block"
+                href={`tel:${HOSPITAL_INFO.contacts.generalPhone}`}
+                className="text-2xl font-extrabold text-[#075E54] hover:underline block font-mono"
               >
-                {HOSPITAL_INFO.contacts.emergencyPhonePlaceholder}
+                {HOSPITAL_INFO.contacts.generalPhone}
               </a>
-              <span className="text-xs text-[#64736F] block mt-1">
-                Default Hotline: {HOSPITAL_INFO.contacts.emergencyPhone}
-              </span>
             </div>
 
             <div className="space-y-2 text-xs text-[#64736F] mb-5">
               <div className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 text-[#075E54] flex-shrink-0 mt-0.5" />
                 <span>
-                  <strong>Emergency Entrance:</strong> Ground Floor Emergency Wing, Direct Ambulance Bay, {HOSPITAL_INFO.contacts.addressPlaceholder}
+                  <strong>Hospital Campus:</strong> {HOSPITAL_INFO.contacts.addressPlaceholder}
                 </span>
               </div>
               <div className="flex items-start gap-2">
                 <Clock className="w-4 h-4 text-[#075E54] flex-shrink-0 mt-0.5" />
-                <span>No prior appointment needed for life-threatening acute cases.</span>
+                <span>OPD & Triage desks are available for patient support.</span>
               </div>
             </div>
 
             <div className="flex gap-2">
               <a
-                href={`tel:${HOSPITAL_INFO.contacts.emergencyPhone}`}
-                className="flex-1 bg-red-700 hover:bg-red-800 text-white font-semibold py-2.5 px-4 rounded-xl text-center text-sm flex items-center justify-center gap-2"
+                href={`tel:${HOSPITAL_INFO.contacts.generalPhone}`}
+                className="flex-1 bg-[#075E54] hover:bg-[#05453E] text-white font-semibold py-2.5 px-4 rounded-xl text-center text-sm flex items-center justify-center gap-2"
               >
                 <Phone className="w-4 h-4" />
-                <span>Call Emergency Now</span>
+                <span>Call Now</span>
               </a>
               <button
                 onClick={() => setEmergencyModalOpen(false)}

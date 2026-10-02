@@ -424,7 +424,7 @@ export const AppointmentPage: React.FC<AppointmentPageProps> = ({
                   {/* Submission Button */}
                   <div className="pt-4 border-t border-[#E1EBE7] flex flex-col sm:flex-row items-center justify-between gap-4">
                     <p className="text-xs text-[#64736F]">
-                      Need immediate help? Call <strong>{HOSPITAL_INFO.contacts.generalPhonePlaceholder}</strong>
+                      Need immediate help? Call <strong>{HOSPITAL_INFO.contacts.generalPhone}</strong>
                     </p>
 
                     <button

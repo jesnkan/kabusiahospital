@@ -123,15 +123,15 @@ export const DepartmentsPage: React.FC<DepartmentsPageProps> = ({ onOpenAppointm
       <section className="py-12 lg:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          {/* Admin Placeholder Note */}
-          <div className="mb-8 p-3.5 rounded-2xl bg-amber-50 border border-amber-200 text-xs text-amber-900 flex items-center justify-between gap-4">
+          {/* Clinical Organization Note */}
+          <div className="mb-8 p-3.5 rounded-2xl bg-[#E7F5F3] border border-[#2F8F83]/30 text-xs text-[#075E54] flex items-center justify-between gap-4">
             <div className="flex items-center gap-2">
-              <ShieldCheck className="w-4 h-4 text-amber-700 flex-shrink-0" />
+              <ShieldCheck className="w-4 h-4 text-[#075E54] flex-shrink-0" />
               <span>
-                <strong>Administrator Content:</strong> Department listings and clinical hours reflect standard hospital organization and can be configured through the hospital data layer.
+                <strong>Clinical Organization:</strong> All clinical and diagnostic units operate under structured patient safety guidelines with dedicated departmental heads.
               </span>
             </div>
-            <span className="text-[11px] font-mono text-amber-800">
+            <span className="text-[11px] font-mono font-bold text-[#075E54]">
               Active: {filteredDepts.length} units
             </span>
           </div>

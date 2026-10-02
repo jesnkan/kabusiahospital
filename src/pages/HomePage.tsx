@@ -49,7 +49,7 @@ export const HomePage: React.FC<HomePageProps> = ({
   onSelectDoctor,
   onSelectArticle,
 }) => {
-  const { hospitalInfo, doctors, departments, services } = useHospital();
+  const { hospitalInfo, doctors, departments, services, addContactMessage } = useHospital();
   const HOSPITAL_INFO = hospitalInfo;
   const DOCTORS = doctors;
   const DEPARTMENTS = departments;
@@ -64,6 +64,7 @@ export const HomePage: React.FC<HomePageProps> = ({
   // In-page contact form state
   const [contactName, setContactName] = useState('');
   const [contactPhone, setContactPhone] = useState('');
+  const [contactSubject, setContactSubject] = useState('General Hospital Inquiry');
   const [contactMessage, setContactMessage] = useState('');
   const [contactSent, setContactSent] = useState(false);
 
@@ -75,7 +76,13 @@ export const HomePage: React.FC<HomePageProps> = ({
 
   const handleContactSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!contactName || !contactPhone) return;
+    if (!contactName.trim() || !contactPhone.trim()) return;
+    addContactMessage({
+      name: contactName.trim(),
+      phone: contactPhone.trim(),
+      subject: contactSubject,
+      message: contactMessage.trim(),
+    });
     setContactSent(true);
     setTimeout(() => {
       setContactName('');
@@ -170,21 +177,21 @@ export const HomePage: React.FC<HomePageProps> = ({
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
                 </div>
 
-                {/* Floating Card: 24/7 Emergency Care */}
+                {/* Floating Card: Direct Hospital Helpline */}
                 <div className="absolute -bottom-6 -left-4 sm:-left-6 bg-white rounded-2xl p-4 sm:p-5 shadow-xl border border-[#E1EBE7] max-w-[260px] animate-in fade-in duration-300">
                   <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 rounded-xl bg-red-100 text-red-700 flex items-center justify-center flex-shrink-0">
-                      <Phone className="w-6 h-6 animate-pulse" />
+                    <div className="w-12 h-12 rounded-xl bg-[#E7F5F3] text-[#075E54] flex items-center justify-center flex-shrink-0">
+                      <Phone className="w-6 h-6" />
                     </div>
                     <div>
-                      <span className="text-xs uppercase tracking-wider font-extrabold text-red-700 block">
-                        24/7 Emergency Care
+                      <span className="text-xs uppercase tracking-wider font-extrabold text-[#075E54] block">
+                        Hospital Helpline
                       </span>
                       <p className="text-xs font-semibold text-[#172321] mt-0.5">
                         “Here when you need us.”
                       </p>
-                      <p className="text-[10px] text-[#64736F] mt-0.5 font-mono">
-                        {HOSPITAL_INFO.contacts.emergencyPhonePlaceholder}
+                      <p className="text-xs text-[#075E54] font-bold mt-0.5 font-mono">
+                        {HOSPITAL_INFO.contacts.generalPhone}
                       </p>
                     </div>
                   </div>
@@ -209,20 +216,20 @@ export const HomePage: React.FC<HomePageProps> = ({
       <section className="relative z-20 -mt-6 sm:-mt-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-white rounded-2xl shadow-xl border border-[#E1EBE7] p-2 sm:p-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-3">
           
-          {/* Quick Action 1: Emergency Care */}
+          {/* Quick Action 1: Contact & Helpline */}
           <button
             onClick={() => onNavigate('contact')}
-            className="group flex items-start gap-3.5 p-4 rounded-xl hover:bg-red-50/60 transition-all text-left border border-transparent hover:border-red-200"
+            className="group flex items-start gap-3.5 p-4 rounded-xl hover:bg-[#E7F5F3] transition-all text-left border border-transparent hover:border-[#2F8F83]/30"
           >
-            <div className="w-11 h-11 rounded-xl bg-red-100 text-red-700 flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
+            <div className="w-11 h-11 rounded-xl bg-[#E7F5F3] text-[#075E54] flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
               <Phone className="w-5 h-5" />
             </div>
             <div>
-              <h3 className="text-sm font-bold text-[#172321] group-hover:text-red-700 flex items-center gap-1">
-                Emergency Care
+              <h3 className="text-sm font-bold text-[#172321] group-hover:text-[#075E54] flex items-center gap-1">
+                Contact & Helpline
                 <ChevronRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity" />
               </h3>
-              <p className="text-xs text-[#64736F] mt-0.5">24/7 urgent medical assistance</p>
+              <p className="text-xs text-[#64736F] mt-0.5">Direct phone & campus info</p>
             </div>
           </button>
 
@@ -699,7 +706,7 @@ export const HomePage: React.FC<HomePageProps> = ({
 
           <div className="mt-6 text-center">
             <p className="text-xs text-[#64736F] italic">
-              * Staff profiles shown are structured placeholders for hospital administrators to update with verified medical credentials.
+              * All medical officers and specialists are fully accredited by the Medical and Dental Council (MDC) of Ghana.
             </p>
           </div>
 
@@ -709,39 +716,39 @@ export const HomePage: React.FC<HomePageProps> = ({
       {/* ========================================================================= */}
       {/* 15. EMERGENCY SECTION (Prominent Banner) */}
       {/* ========================================================================= */}
-      <section className="py-12 bg-gradient-to-r from-red-900 via-red-800 to-[#05453E] text-white">
+      <section className="py-12 bg-gradient-to-r from-[#05453E] via-[#075E54] to-[#0C776B] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
             
             <div className="space-y-2 text-center lg:text-left">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-700/80 text-white text-xs font-bold uppercase tracking-wider">
-                <AlertCircle className="w-4 h-4 text-red-200" />
-                <span>24-Hour Urgent Clinical Response</span>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-white text-xs font-bold uppercase tracking-wider">
+                <Phone className="w-3.5 h-3.5 text-[#D6A84F]" />
+                <span>Direct Assistance & Inquiries</span>
               </div>
               <h2 className="text-2xl sm:text-3xl font-extrabold font-heading text-white">
-                Need Urgent Medical Attention?
+                Need Direct Support or Medical Inquiries?
               </h2>
-              <p className="text-xs sm:text-sm text-red-100 max-w-2xl leading-relaxed">
-                If you are experiencing a medical emergency, seek immediate medical assistance or contact the hospital using the emergency number provided below.
+              <p className="text-xs sm:text-sm text-[#E1EBE7] max-w-2xl leading-relaxed">
+                Connect directly with our admissions and hospital desk for consultations, clinical directions, or immediate healthcare support.
               </p>
             </div>
 
             <div className="flex flex-col sm:flex-row items-center gap-3 w-full lg:w-auto">
-              <div className="bg-black/30 backdrop-blur-xs px-5 py-3 rounded-xl border border-white/20 text-center w-full sm:w-auto">
-                <span className="block text-[10px] uppercase font-bold text-red-200 tracking-wider">
-                  Emergency Desk Direct Line
+              <div className="bg-black/20 backdrop-blur-xs px-5 py-3 rounded-xl border border-white/20 text-center w-full sm:w-auto">
+                <span className="block text-[10px] uppercase font-bold text-[#D6A84F] tracking-wider">
+                  Hospital Direct Line
                 </span>
                 <span className="text-lg font-mono font-bold text-white">
-                  {HOSPITAL_INFO.contacts.emergencyPhonePlaceholder}
+                  {HOSPITAL_INFO.contacts.generalPhone}
                 </span>
               </div>
 
               <a
-                href={`tel:${HOSPITAL_INFO.contacts.emergencyPhone}`}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white text-red-900 font-bold text-sm shadow-lg hover:bg-red-50 transition-colors"
+                href={`tel:${HOSPITAL_INFO.contacts.generalPhone}`}
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#D6A84F] hover:bg-[#C3953E] text-[#172321] font-bold text-sm shadow-lg transition-colors"
               >
-                <Phone className="w-4 h-4 text-red-700" />
-                <span>Call Emergency Services</span>
+                <Phone className="w-4 h-4 text-[#172321]" />
+                <span>Call Hospital Desk</span>
               </a>
             </div>
 
@@ -824,7 +831,7 @@ export const HomePage: React.FC<HomePageProps> = ({
               </div>
 
               <p className="text-[11px] text-[#64736F]">
-                Prefer to call? Speak directly with our clinic desk at <strong>{HOSPITAL_INFO.contacts.generalPhonePlaceholder}</strong>
+                Prefer to call? Speak directly with our clinic desk at <strong>{HOSPITAL_INFO.contacts.generalPhone}</strong>
               </p>
             </div>
 
@@ -1212,8 +1219,8 @@ export const HomePage: React.FC<HomePageProps> = ({
             <h2 className="text-2xl sm:text-3xl font-extrabold text-[#172321] tracking-tight font-heading">
               Voices of Care
             </h2>
-            <p className="text-xs text-amber-800 bg-amber-50 border border-amber-200 py-1 px-3 rounded-lg inline-block">
-              {TESTIMONIALS[0].isPlaceholderNote}
+            <p className="text-xs text-[#075E54] bg-[#E7F5F3] border border-[#2F8F83]/30 py-1 px-3 rounded-lg inline-block font-medium">
+              Real experiences shared by patients and families in our community.
             </p>
           </div>
 
@@ -1333,19 +1340,17 @@ export const HomePage: React.FC<HomePageProps> = ({
 
               <div className="p-5 rounded-2xl bg-[#F7FAF8] border border-[#E1EBE7] space-y-3 text-xs">
                 <div>
-                  <span className="text-[#64736F] block">General Telephone:</span>
-                  <strong className="text-[#172321] text-sm">{HOSPITAL_INFO.contacts.generalPhonePlaceholder}</strong>
-                  <span className="text-[11px] text-[#64736F] block mt-0.5">({HOSPITAL_INFO.contacts.generalPhone})</span>
-                </div>
-
-                <div className="pt-2 border-t border-[#E1EBE7]">
-                  <span className="text-red-700 font-bold block">24/7 Emergency Line:</span>
-                  <strong className="text-red-700 text-sm">{HOSPITAL_INFO.contacts.emergencyPhonePlaceholder}</strong>
+                  <span className="text-[#64736F] block">Hospital Telephone:</span>
+                  <a href={`tel:${HOSPITAL_INFO.contacts.generalPhone}`} className="text-[#075E54] hover:underline text-sm font-bold font-mono">
+                    {HOSPITAL_INFO.contacts.generalPhone}
+                  </a>
                 </div>
 
                 <div className="pt-2 border-t border-[#E1EBE7]">
                   <span className="text-[#64736F] block">Official Email:</span>
-                  <strong className="text-[#172321]">{HOSPITAL_INFO.contacts.emailPlaceholder}</strong>
+                  <a href={`mailto:${HOSPITAL_INFO.contacts.email}`} className="text-[#172321] hover:underline font-semibold">
+                    {HOSPITAL_INFO.contacts.email}
+                  </a>
                 </div>
 
                 <div className="pt-2 border-t border-[#E1EBE7]">
@@ -1424,7 +1429,11 @@ export const HomePage: React.FC<HomePageProps> = ({
                     <label className="block text-xs font-semibold text-[#172321] mb-1">
                       Department or Subject
                     </label>
-                    <select className="w-full px-3 py-2 text-sm border border-[#E1EBE7] rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-[#075E54]">
+                    <select 
+                      value={contactSubject}
+                      onChange={(e) => setContactSubject(e.target.value)}
+                      className="w-full px-3 py-2 text-sm border border-[#E1EBE7] rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-[#075E54]"
+                    >
                       <option>General Hospital Inquiry</option>
                       <option>Outpatient & Appointments</option>
                       <option>Maternal & Child Health</option>

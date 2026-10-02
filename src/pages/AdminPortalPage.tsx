@@ -116,8 +116,10 @@ export const AdminPortalPage: React.FC<AdminPortalPageProps> = ({ onNavigateHome
     e.preventDefault();
     updateHospitalInfo({ name, tagline });
     updateContacts({
+      generalPhone: generalPhone,
       generalPhonePlaceholder: generalPhone,
-      emergencyPhonePlaceholder: emergencyPhone,
+      emergencyPhone: generalPhone,
+      emergencyPhonePlaceholder: generalPhone,
       emailPlaceholder: email,
       addressPlaceholder: address,
       digitalAddress: digitalAddress,
@@ -685,42 +687,25 @@ export const AdminPortalPage: React.FC<AdminPortalPageProps> = ({ onNavigateHome
                 </div>
               </div>
 
-              {/* Emergency Hotline (Highlighted in red) */}
-              <div className="p-4 rounded-2xl bg-red-50 border border-red-200 space-y-2">
-                <label className="block text-xs font-bold text-red-900 uppercase tracking-wide">
-                  24/7 Emergency Telephone Line
-                </label>
-                <div className="relative">
-                  <Phone className="w-4 h-4 text-red-700 absolute left-3 top-3" />
-                  <input
-                    type="text"
-                    value={emergencyPhone}
-                    onChange={(e) => setEmergencyPhone(e.target.value)}
-                    placeholder="e.g. +233 (0) 30 200 9999"
-                    className="w-full pl-9 pr-3 py-2 text-sm border border-red-300 rounded-xl bg-white font-mono font-bold text-red-800 focus:outline-none focus:ring-2 focus:ring-red-600"
-                  />
-                </div>
-                <p className="text-[11px] text-red-700">
-                  Displayed on the sticky emergency banner, top header, and emergency call modal.
-                </p>
-              </div>
-
-              {/* General Phone & Email */}
+              {/* Hospital Phone & Email */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-xs font-semibold text-[#172321] mb-1">
-                    General Phone Number
+                    Hospital Phone Number
                   </label>
                   <div className="relative">
-                    <Phone className="w-4 h-4 text-[#64736F] absolute left-3 top-3" />
+                    <Phone className="w-4 h-4 text-[#075E54] absolute left-3 top-3" />
                     <input
                       type="text"
                       value={generalPhone}
                       onChange={(e) => setGeneralPhone(e.target.value)}
-                      placeholder="e.g. +233 (0) 30 200 1100"
-                      className="w-full pl-9 pr-3 py-2 text-sm border border-[#E1EBE7] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#075E54]"
+                      placeholder="e.g. +233 31 202 4819"
+                      className="w-full pl-9 pr-3 py-2 text-sm border border-[#E1EBE7] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#075E54] font-mono font-medium text-[#172321]"
                     />
                   </div>
+                  <p className="text-[11px] text-[#64736F] mt-1">
+                    Direct phone line displayed on the header, helpline banners, and contact cards.
+                  </p>
                 </div>
 
                 <div>

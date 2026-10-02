@@ -194,19 +194,15 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenAppointment })
               </div>
               <div className="flex items-center gap-2.5">
                 <Phone className="w-4 h-4 text-[#D6A84F] flex-shrink-0" />
-                <span className="text-[#E1EBE7]/90">
-                  {HOSPITAL_INFO.contacts.generalPhonePlaceholder}
-                </span>
-              </div>
-              <div className="flex items-center gap-2.5 text-red-300 font-semibold">
-                <Phone className="w-4 h-4 text-red-400 flex-shrink-0" />
-                <span>Emergency: {HOSPITAL_INFO.contacts.emergencyPhonePlaceholder}</span>
+                <a href={`tel:${HOSPITAL_INFO.contacts.generalPhone}`} className="text-[#E1EBE7]/90 hover:text-white transition-colors">
+                  {HOSPITAL_INFO.contacts.generalPhone}
+                </a>
               </div>
               <div className="flex items-center gap-2.5">
                 <Mail className="w-4 h-4 text-[#D6A84F] flex-shrink-0" />
-                <span className="text-[#E1EBE7]/90 truncate">
-                  {HOSPITAL_INFO.contacts.emailPlaceholder}
-                </span>
+                <a href={`mailto:${HOSPITAL_INFO.contacts.email}`} className="text-[#E1EBE7]/90 hover:text-white transition-colors truncate">
+                  {HOSPITAL_INFO.contacts.email}
+                </a>
               </div>
 
               <div className="pt-2">
@@ -223,12 +219,9 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenAppointment })
         </div>
 
         {/* Medical & Data Disclaimer */}
-        <div className="py-6 border-b border-[#0C776B]/40 text-xs text-[#E1EBE7]/70 space-y-2">
+        <div className="py-6 border-b border-[#0C776B]/40 text-xs text-[#E1EBE7]/70">
           <p>
             <strong>Medical Disclaimer:</strong> The health information provided on this website is for general educational awareness only and does not substitute for professional clinical diagnosis, advice, or treatment. Always consult qualified healthcare professionals at K..A Busia Memorial Hospital or your local health provider regarding medical conditions.
-          </p>
-          <p className="text-[11px] text-[#D6A84F]/90">
-            <strong>Administrator Note:</strong> {HOSPITAL_INFO.adminNotice}
           </p>
         </div>
 
@@ -246,8 +239,8 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenAppointment })
             <span>•</span>
             <button onClick={() => onNavigate('contact')} className="hover:text-white transition-colors">Accessibility</button>
             <span>•</span>
-            <button onClick={() => onNavigate('admin')} className="text-[#D6A84F] hover:underline font-semibold flex items-center gap-1">
-              <span>Staff Admin Portal</span>
+            <button onClick={() => onNavigate('admin')} className="text-[#E1EBE7]/50 hover:text-white transition-colors text-[11px]">
+              Staff Portal
             </button>
           </div>
         </div>

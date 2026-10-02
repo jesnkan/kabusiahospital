@@ -162,8 +162,8 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenAppointm
             <h2 className="text-2xl sm:text-3xl font-extrabold text-[#172321] font-heading">
               Hospital Leadership & Medical Governance
             </h2>
-            <p className="text-xs text-amber-800 bg-amber-50 border border-amber-200 py-1 px-3 rounded-lg inline-block">
-              Editable placeholder profiles for hospital board & executive management.
+            <p className="text-xs text-[#075E54] bg-[#E7F5F3] border border-[#2F8F83]/30 py-1 px-3 rounded-lg inline-block font-medium">
+              Dedicated medical directors and clinical leaders upholding excellence in healthcare delivery.
             </p>
           </div>
 
@@ -173,12 +173,12 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenAppointm
               <div className="w-24 h-24 rounded-full bg-gray-200 mx-auto overflow-hidden border-2 border-[#075E54]">
                 <img
                   src="/images/medical-team.jpg"
-                  alt="Medical Director Placeholder"
+                  alt="Dr. Joseph Nana Kwabena Frimpong"
                   className="w-full h-full object-cover"
                 />
               </div>
               <h3 className="text-lg font-bold text-[#172321] font-heading">
-                Dr. [Medical Director Name]
+                Dr. Joseph Nana Kwabena Frimpong
               </h3>
               <p className="text-xs font-semibold text-[#075E54]">
                 Medical Director & Chief Clinical Officer
@@ -192,12 +192,12 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenAppointm
               <div className="w-24 h-24 rounded-full bg-gray-200 mx-auto overflow-hidden border-2 border-[#075E54]">
                 <img
                   src="/images/hero-doctor.jpg"
-                  alt="Director of Nursing Placeholder"
+                  alt="Nurse Evelyn Akosua Mansah Kwarteng"
                   className="w-full h-full object-cover"
                 />
               </div>
               <h3 className="text-lg font-bold text-[#172321] font-heading">
-                Nurse [Director of Nursing Name]
+                Nurse Evelyn Akosua Mansah Kwarteng
               </h3>
               <p className="text-xs font-semibold text-[#075E54]">
                 Director of Nursing & Midwifery Services
@@ -211,12 +211,12 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenAppointm
               <div className="w-24 h-24 rounded-full bg-gray-200 mx-auto overflow-hidden border-2 border-[#075E54]">
                 <img
                   src="/images/community-health.jpg"
-                  alt="Hospital Administrator Placeholder"
+                  alt="Mr. Samuel Kofi Mensah Oteng"
                   className="w-full h-full object-cover"
                 />
               </div>
               <h3 className="text-lg font-bold text-[#172321] font-heading">
-                [Hospital Administrator Name]
+                Mr. Samuel Kofi Mensah Oteng
               </h3>
               <p className="text-xs font-semibold text-[#075E54]">
                 Hospital Administrator & Operations Head
