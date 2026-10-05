@@ -69,39 +69,22 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenAppointm
             </div>
 
             <div className="lg:col-span-6">
-              <div className="bg-gradient-to-br from-[#075E54] to-[#04332D] text-white rounded-3xl p-8 sm:p-10 shadow-2xl border border-[#D6A84F]/30 relative overflow-hidden">
-                <div className="absolute -top-12 -right-12 w-48 h-48 bg-white/5 rounded-full blur-2xl pointer-events-none" />
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-12 h-12 rounded-2xl bg-[#D6A84F] text-[#075E54] flex items-center justify-center font-bold text-lg shadow-md">
-                    <BookOpen className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <span className="text-xs font-bold text-[#D6A84F] uppercase tracking-wider block">
-                      Civic Legacy & Healthcare Charter
-                    </span>
-                    <span className="text-base font-bold text-white font-heading">
-                      Dr. Kofi Abrefa Busia (1913 – 1978)
-                    </span>
-                  </div>
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white aspect-[4/3] bg-gray-100 group">
+                <img
+                  src="/images/hospital-exterior.jpg"
+                  alt="Modern architectural campus of K.A. Busia Memorial Hospital with ambulance entrance and serene environment"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+                
+                <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-md px-3.5 py-1.5 rounded-full text-xs font-bold text-[#075E54] border border-[#E1EBE7] shadow-sm flex items-center gap-2">
+                  <Building2 className="w-4 h-4 text-[#D6A84F]" />
+                  <span>Hospital Campus • Bogoso, Western Region</span>
                 </div>
 
-                <p className="text-sm text-[#E1EBE7] leading-relaxed mb-6 italic border-l-2 border-[#D6A84F] pl-4">
-                  "The welfare of the ordinary individual is the supreme test of all social and political institutions."
-                </p>
-
-                <div className="space-y-3 pt-4 border-t border-white/15 text-xs text-[#E1EBE7]">
-                  <div className="flex items-center gap-2.5">
-                    <CheckCircle2 className="w-4 h-4 text-[#D6A84F] flex-shrink-0" />
-                    <span>Established to provide modern medical excellence to Wenchi & the Bono Region</span>
-                  </div>
-                  <div className="flex items-center gap-2.5">
-                    <CheckCircle2 className="w-4 h-4 text-[#D6A84F] flex-shrink-0" />
-                    <span>Affiliated with the Ministry of Health and recognized by Health Facilities Regulatory Agency (HeFRA)</span>
-                  </div>
-                  <div className="flex items-center gap-2.5">
-                    <CheckCircle2 className="w-4 h-4 text-[#D6A84F] flex-shrink-0" />
-                    <span>Commitment to non-profit accessibility, equity, and holistic patient welfare</span>
-                  </div>
+                <div className="absolute bottom-5 left-5 right-5 text-white">
+                  <span className="font-bold text-base block font-heading">Modern Clinical Infrastructure</span>
+                  <span className="text-xs text-[#E1EBE7] mt-0.5 block">Emergency ambulance bays, surgical theatres, modern laboratory, and comfortable wards.</span>
                 </div>
               </div>
             </div>
