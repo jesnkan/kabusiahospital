@@ -168,23 +168,23 @@ export const HomePage: React.FC<HomePageProps> = ({
 
             </div>
 
-            {/* Right Hero: Warm Authentic Ghanaian Doctor Image & Clinical Status Badges */}
+            {/* Right Hero: Bogoso Hospital Campus Architecture (Zero People) */}
             <div className="lg:col-span-5 relative">
               <div className="relative mx-auto max-w-md lg:max-w-none">
                 
-                {/* Main Hero Photo: Ghanaian doctor with patient */}
+                {/* Main Hero Photo: Bogoso Hospital Campus */}
                 <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white aspect-[4/3] sm:aspect-square bg-gray-100 group">
                   <img
-                    src="/images/hero-doctor.jpg"
-                    alt="Ghanaian doctor consulting warmly with a patient at K.A. Busia Memorial Hospital"
+                    src="/images/hospital-exterior.jpg"
+                    alt="K.A. Busia Memorial Hospital modern campus in Bogoso, Western Region, Ghana"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                   
                   {/* Bottom Image Caption */}
                   <div className="absolute bottom-4 left-4 right-4 text-white text-xs">
-                    <span className="font-bold text-sm block font-heading">Compassionate Clinical Consultations</span>
-                    <span className="text-[#E1EBE7] text-[11px]">Experienced physicians & patient-centred medical care</span>
+                    <span className="font-bold text-sm block font-heading">Hospital Campus • Bogoso</span>
+                    <span className="text-[#E1EBE7] text-[11px]">Modern clinical infrastructure & 24/7 emergency ambulance bay</span>
                   </div>
                 </div>
 
@@ -308,12 +308,12 @@ export const HomePage: React.FC<HomePageProps> = ({
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
-            {/* Left: Dedicated Ghanaian Clinical Team Photo */}
+            {/* Left: Modern Diagnostic Facility (Zero People) */}
             <div className="lg:col-span-6">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white aspect-[4/3] bg-gray-100 group">
                 <img
-                  src="/images/medical-team.jpg"
-                  alt="A dedicated team of Ghanaian doctors, nurses, and medical specialists at K.A. Busia Memorial Hospital"
+                  src="/images/hospital-facility.jpg"
+                  alt="Modern diagnostic ultrasound suite and clinical examination facility at K.A. Busia Memorial Hospital"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
@@ -321,12 +321,12 @@ export const HomePage: React.FC<HomePageProps> = ({
                 {/* Floating Badge */}
                 <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-md px-3.5 py-1.5 rounded-full text-xs font-bold text-[#075E54] border border-[#E1EBE7] shadow-sm flex items-center gap-2">
                   <ShieldCheck className="w-4 h-4 text-[#D6A84F]" />
-                  <span>MDC Ghana Accredited Medical Team</span>
+                  <span>Advanced Clinical Diagnostics</span>
                 </div>
 
                 <div className="absolute bottom-5 left-5 right-5 text-white">
-                  <span className="font-bold text-base block font-heading">Dedicated Physicians & Nursing Staff</span>
-                  <span className="text-xs text-[#E1EBE7] mt-0.5 block">Committed to safe, responsive, and evidence-based patient healthcare.</span>
+                  <span className="font-bold text-base block font-heading">Modern Diagnostic Suites</span>
+                  <span className="text-xs text-[#E1EBE7] mt-0.5 block">Digital imaging, modern ultrasound, and sterile patient consultation suites.</span>
                 </div>
               </div>
             </div>
@@ -1215,22 +1215,42 @@ export const HomePage: React.FC<HomePageProps> = ({
             </div>
 
             <div className="lg:col-span-6">
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white aspect-[4/3] bg-gray-100 group">
-                <img
-                  src="/images/community-health.jpg"
-                  alt="Ghanaian community health nurse providing pediatric vaccination and health advice at a local outreach clinic"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
-                
-                <div className="absolute top-4 left-4 bg-[#075E54] text-white px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider border border-[#D6A84F]/40 shadow-sm flex items-center gap-1.5">
-                  <Heart className="w-3.5 h-3.5 text-[#D6A84F]" />
-                  <span>District Preventive Health</span>
+              <div className="bg-[#075E54] text-white rounded-3xl p-8 sm:p-10 border border-[#D6A84F]/30 shadow-2xl relative overflow-hidden">
+                <div className="absolute -top-12 -right-12 w-48 h-48 bg-white/5 rounded-full blur-2xl pointer-events-none" />
+                <div className="flex items-center gap-2 mb-4">
+                  <span className="px-3 py-1 rounded-full bg-[#E7F5F3]/15 text-[#D6A84F] text-xs font-bold uppercase tracking-wider border border-[#D6A84F]/30">
+                    PUBLIC HEALTH MISSION
+                  </span>
+                </div>
+                <h3 className="text-2xl font-bold font-heading mb-3">
+                  District Health & Preventive Outreach
+                </h3>
+                <p className="text-xs sm:text-sm text-[#E1EBE7] leading-relaxed mb-6">
+                  Taking healthcare directly to surrounding townships and rural communities through mobile clinical vans, free screening programs, and preventative medical education.
+                </p>
+
+                <div className="grid grid-cols-2 gap-3 mb-6">
+                  <div className="p-3.5 rounded-2xl bg-white/10 backdrop-blur-xs border border-white/15">
+                    <span className="text-xl font-extrabold text-[#D6A84F] block">12+</span>
+                    <span className="text-xs text-[#E1EBE7]">Annual Community Health Camps</span>
+                  </div>
+                  <div className="p-3.5 rounded-2xl bg-white/10 backdrop-blur-xs border border-white/15">
+                    <span className="text-xl font-extrabold text-[#D6A84F] block">Free</span>
+                    <span className="text-xs text-[#E1EBE7]">Hypertension & Blood Sugar Screenings</span>
+                  </div>
+                  <div className="p-3.5 rounded-2xl bg-white/10 backdrop-blur-xs border border-white/15">
+                    <span className="text-xl font-extrabold text-[#D6A84F] block">100%</span>
+                    <span className="text-xs text-[#E1EBE7]">Childhood Immunization Drives</span>
+                  </div>
+                  <div className="p-3.5 rounded-2xl bg-white/10 backdrop-blur-xs border border-white/15">
+                    <span className="text-xl font-extrabold text-[#D6A84F] block">24/7</span>
+                    <span className="text-xs text-[#E1EBE7]">Emergency Triage Helpline</span>
+                  </div>
                 </div>
 
-                <div className="absolute bottom-5 left-5 right-5 text-white">
-                  <span className="font-bold text-base block font-heading">Public Health & Pediatric Outreach</span>
-                  <span className="text-xs text-[#E1EBE7] mt-0.5 block">Bringing immunization, maternal advice, and preventive screenings to local communities.</span>
+                <div className="p-3.5 rounded-xl bg-white/10 border border-white/20 text-xs text-[#E1EBE7] flex items-center gap-2.5">
+                  <CheckCircle2 className="w-4 h-4 text-[#D6A84F] flex-shrink-0" />
+                  <span>In active partnership with District Health Directorates & Ghana Health Service</span>
                 </div>
               </div>
             </div>

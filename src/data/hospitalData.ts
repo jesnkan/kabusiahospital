@@ -321,7 +321,7 @@ export const DEPARTMENTS: Department[] = [
     hours: 'Monday – Friday: 8:00 AM – 4:30 PM (Outreach on Weekends)',
     keyServices: ['Community Health Outreach & Mobile Screenings', 'Malaria Vector Control & Bednet Education', 'School Health Screening Programs', 'Water, Sanitation & Hygiene (WASH) Workshops', 'Epidemic Surveillance & Disease Reporting'],
     icon: 'Users',
-    image: '/images/community-health.jpg',
+    image: '/images/hospital-exterior.jpg',
   },
 ];
 
@@ -337,7 +337,7 @@ export const SERVICES: HealthcareService[] = [
     whatToExpect: ['Friendly nurse triaging (temperature, blood pressure, BMI, pulse check)', 'Thorough consultation and clinical examination with a licensed medical practitioner', 'Immediate on-site diagnostic laboratory or pharmacy routing'],
     preparationTips: 'Bring your Ghana Card, NHIS or insurance card, and any current medications you are taking.',
     icon: 'Stethoscope',
-    image: '/images/hero-doctor.jpg',
+    image: '/images/hospital-facility.jpg',
     isPopular: true,
   },
   {
@@ -351,7 +351,7 @@ export const SERVICES: HealthcareService[] = [
     whatToExpect: ['Individualized antenatal booklet and scheduled check-ups', 'Ultrasound dating scans, blood and iron level monitoring', 'Dignified labor suite with dedicated midwife support and obstetric backup'],
     preparationTips: 'Carry your maternal health record book (Maternal Health Record / RCH card) and any prior ultrasound scans.',
     icon: 'Baby',
-    image: '/images/community-health.jpg',
+    image: '/images/hospital-facility.jpg',
     isPopular: true,
   },
   {
@@ -421,7 +421,7 @@ export const SERVICES: HealthcareService[] = [
     whatToExpect: ['Detailed review of home blood pressure/glucose readings', 'Careful medication titration to optimize results and minimize side effects', 'Nutritionist and lifestyle support tailored to Ghanaian diets'],
     preparationTips: 'Keep a small notebook of your home blood pressure or blood sugar readings to share with your doctor.',
     icon: 'Heart',
-    image: '/images/hero-doctor.jpg',
+    image: '/images/hospital-facility.jpg',
   },
   {
     id: 'preventive-healthcare',
@@ -434,7 +434,7 @@ export const SERVICES: HealthcareService[] = [
     whatToExpect: ['Complete physical examination, BMI, eye check, and vital signs', 'Full diagnostic panel (cholesterol, blood sugar, kidney and liver function)', 'Personalized preventive health summary with actionable lifestyle advice'],
     preparationTips: 'Schedule in advance and prepare for routine blood and urine testing in the morning.',
     icon: 'ShieldCheck',
-    image: '/images/community-health.jpg',
+    image: '/images/hospital-facility.jpg',
   },
 ];
 
@@ -451,7 +451,7 @@ export const DOCTORS: Doctor[] = [
     qualifications: 'MB ChB (UGMS), PGDip Family Medicine (WACP)',
     languages: ['English', 'Twi', 'Ga'],
     availability: 'Mon, Wed, Fri (8:00 AM – 3:00 PM)',
-    image: '/images/hero-doctor.jpg',
+    image: '/images/hospital-facility.jpg',
     isPlaceholder: false,
   },
   {
@@ -546,7 +546,7 @@ export const FACILITIES: FacilityItem[] = [
     category: 'Consultation Rooms',
     description: 'Confidential, well-ventilated consultation rooms equipped with modern examination couches and digital clinical workstations.',
     features: ['Strict soundproofing for patient confidentiality', 'Modern diagnostic sets and patient examination lighting', 'Connected to hospital electronic medical records', 'Hygienic hands-free scrub sinks'],
-    image: '/images/hero-doctor.jpg',
+    image: '/images/hospital-facility.jpg',
   },
   {
     id: 'maternity-suites',
@@ -615,7 +615,7 @@ export const HEALTH_ARTICLES: HealthArticle[] = [
       'Simple steps such as reducing processed bullion seasonings, enjoying fresh local greens (kontomire, gboma), brisk walking 30 minutes daily, and taking prescribed anti-hypertensive drugs consistently can dramatically reduce stroke risk.',
       'Do not stop your blood pressure medicine just because you feel fine — the medication is what keeps you feeling healthy.',
     ],
-    image: '/images/hero-doctor.jpg',
+    image: '/images/hospital-facility.jpg',
   },
   {
     id: 'maternal-health-pregnancy',
@@ -633,7 +633,7 @@ export const HEALTH_ARTICLES: HealthArticle[] = [
       'Warning signs requiring urgent hospital evaluation include vaginal bleeding, severe unremitting headaches, sudden facial swelling, reduced baby movement after 28 weeks, or leakage of fluid.',
       'Our team believes in supportive, gentle maternity where your dignity and emotional peace are prioritized alongside clinical safety.',
     ],
-    image: '/images/community-health.jpg',
+    image: '/images/hospital-facility.jpg',
   },
   {
     id: 'childhood-immunisation',
@@ -651,7 +651,7 @@ export const HEALTH_ARTICLES: HealthArticle[] = [
       'Mild fever or brief tenderness at the injection site is normal and indicates your child’s body is building protective antibodies. A cool cloth and reassurance usually suffice.',
       'If your child has missed any scheduled vaccine, do not worry — visit our Child Health Clinic for a supportive catch-up schedule.',
     ],
-    image: '/images/community-health.jpg',
+    image: '/images/hospital-facility.jpg',
   },
   {
     id: 'malaria-prevention-care',
