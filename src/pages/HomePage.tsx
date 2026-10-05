@@ -168,55 +168,107 @@ export const HomePage: React.FC<HomePageProps> = ({
 
             </div>
 
-            {/* Right Hero: Bogoso Hospital Campus Architecture (Zero People) */}
+            {/* Right Hero: Clinical Hub & Operations Card (No Picture) */}
             <div className="lg:col-span-5 relative">
-              <div className="relative mx-auto max-w-md lg:max-w-none">
-                
-                {/* Main Hero Photo: Bogoso Hospital Campus */}
-                <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white aspect-[4/3] sm:aspect-square bg-gray-100 group">
-                  <img
-                    src="/images/hospital-exterior.jpg"
-                    alt="K.A. Busia Memorial Hospital modern campus in Bogoso, Western Region, Ghana"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                  
-                  {/* Bottom Image Caption */}
-                  <div className="absolute bottom-4 left-4 right-4 text-white text-xs">
-                    <span className="font-bold text-sm block font-heading">Hospital Campus • Bogoso</span>
-                    <span className="text-[#E1EBE7] text-[11px]">Modern clinical infrastructure & 24/7 emergency ambulance bay</span>
+              <div className="relative mx-auto max-w-md lg:max-w-none bg-white rounded-3xl border border-[#E1EBE7] shadow-2xl overflow-hidden">
+                {/* Card Header with Hospital Banner */}
+                <div className="bg-[#075E54] text-white p-6 relative overflow-hidden">
+                  <div className="absolute -right-8 -bottom-8 w-32 h-32 bg-white/5 rounded-full blur-xl pointer-events-none" />
+                  <div className="flex items-center justify-between gap-2 mb-3">
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#E7F5F3]/20 border border-white/20 text-[11px] font-bold tracking-wider uppercase text-[#D6A84F]">
+                      <span className="w-2 h-2 rounded-full bg-[#D6A84F] animate-ping" />
+                      Hospital Operations Hub
+                    </span>
+                    <span className="text-[11px] font-semibold text-[#E1EBE7]">Bogoso, Tarkwa</span>
                   </div>
+                  <h3 className="text-xl sm:text-2xl font-bold font-heading text-white">
+                    Emergency & Clinical Desk
+                  </h3>
+                  <p className="text-xs text-[#E1EBE7] mt-1 leading-relaxed">
+                    Immediate clinical triage, verified medical practitioners, and 24/7 emergency response.
+                  </p>
                 </div>
 
-                {/* Floating Card: Hospital Helpline & 24/7 Care */}
-                <div className="absolute -bottom-6 -left-3 sm:-left-6 bg-white/95 backdrop-blur-md rounded-2xl p-4 shadow-xl border border-[#E1EBE7] max-w-[270px]">
-                  <div className="flex items-center gap-3">
-                    <div className="w-11 h-11 rounded-xl bg-[#E7F5F3] text-[#075E54] flex items-center justify-center flex-shrink-0 shadow-xs">
-                      <Phone className="w-5 h-5 text-[#075E54]" />
+                {/* Operations Status List */}
+                <div className="p-6 space-y-4 bg-gradient-to-b from-[#F7FAF8]/50 to-white">
+                  {/* Status 1: 24/7 Hospital Desk */}
+                  <div className="flex items-start gap-3.5 p-3.5 rounded-2xl bg-[#FBF4E4] border border-[#D6A84F]/30">
+                    <div className="w-10 h-10 rounded-xl bg-[#075E54] text-[#D6A84F] flex items-center justify-center flex-shrink-0 shadow-sm">
+                      <Phone className="w-5 h-5" />
                     </div>
-                    <div>
-                      <span className="text-[10px] uppercase tracking-wider font-extrabold text-[#075E54] block">
-                        24/7 Hospital Desk
-                      </span>
-                      <p className="text-xs font-bold text-[#172321] mt-0.5">
-                        “Always here for you”
-                      </p>
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center justify-between gap-1">
+                        <span className="text-xs font-bold text-[#075E54] uppercase tracking-wider">
+                          24/7 Hospital Desk
+                        </span>
+                        <span className="text-[10px] font-extrabold bg-[#075E54] text-white px-2 py-0.5 rounded-full">
+                          ACTIVE
+                        </span>
+                      </div>
                       <a 
                         href={`tel:${HOSPITAL_INFO.contacts.generalPhone}`}
-                        className="text-xs text-[#075E54] hover:underline mt-0.5 font-mono font-bold block"
+                        className="text-sm font-bold text-[#172321] mt-0.5 font-mono hover:underline block"
                       >
                         {HOSPITAL_INFO.contacts.generalPhone}
                       </a>
+                      <p className="text-[11px] text-[#64736F]">
+                        Direct clinical ambulance, triage, and admissions line
+                      </p>
                     </div>
                   </div>
-                </div>
 
-                {/* Floating Badge: Dignity & Care */}
-                <div className="hidden sm:flex absolute -top-4 -right-3 bg-[#075E54] text-white px-4 py-2 rounded-2xl shadow-lg border border-[#D6A84F]/40 items-center gap-2 text-xs font-semibold">
-                  <Heart className="w-3.5 h-3.5 text-[#D6A84F]" />
-                  <span>Dignity • Respect • Care</span>
-                </div>
+                  {/* Status 2: OPD & Specialist Clinics */}
+                  <div className="p-3.5 rounded-2xl bg-white border border-[#E1EBE7] shadow-xs space-y-2">
+                    <div className="flex items-center justify-between text-xs">
+                      <span className="font-bold text-[#172321] flex items-center gap-1.5">
+                        <Clock className="w-4 h-4 text-[#075E54]" />
+                        <span>Daily Clinic Hours</span>
+                      </span>
+                      <span className="text-[11px] font-semibold text-[#075E54] bg-[#E7F5F3] px-2 py-0.5 rounded-md">
+                        Open Every Day
+                      </span>
+                    </div>
+                    <div className="grid grid-cols-2 gap-2 text-[11px] text-[#64736F] pt-1">
+                      <div className="p-2 rounded-lg bg-[#F7FAF8] border border-[#E1EBE7]">
+                        <span className="block font-bold text-[#172321]">Outpatient (OPD)</span>
+                        <span>07:30 AM – 08:00 PM</span>
+                      </div>
+                      <div className="p-2 rounded-lg bg-[#F7FAF8] border border-[#E1EBE7]">
+                        <span className="block font-bold text-[#172321]">Emergency Bay</span>
+                        <span>24 Hours / 7 Days</span>
+                      </div>
+                    </div>
+                  </div>
 
+                  {/* Trust Badges */}
+                  <div className="grid grid-cols-3 gap-2 pt-1 text-center">
+                    <div className="p-2.5 rounded-xl bg-[#E7F5F3] border border-[#2F8F83]/20">
+                      <ShieldCheck className="w-4 h-4 text-[#075E54] mx-auto mb-1" />
+                      <span className="text-[10px] font-bold text-[#075E54] block leading-tight">MDC Ghana</span>
+                      <span className="text-[9px] text-[#64736F]">Accredited</span>
+                    </div>
+                    <div className="p-2.5 rounded-xl bg-[#E7F5F3] border border-[#2F8F83]/20">
+                      <Heart className="w-4 h-4 text-[#075E54] mx-auto mb-1" />
+                      <span className="text-[10px] font-bold text-[#075E54] block leading-tight">NHIS Tier 1</span>
+                      <span className="text-[9px] text-[#64736F]">Full Support</span>
+                    </div>
+                    <div className="p-2.5 rounded-xl bg-[#E7F5F3] border border-[#2F8F83]/20">
+                      <Activity className="w-4 h-4 text-[#075E54] mx-auto mb-1" />
+                      <span className="text-[10px] font-bold text-[#075E54] block leading-tight">12 Units</span>
+                      <span className="text-[9px] text-[#64736F]">Specialties</span>
+                    </div>
+                  </div>
+
+                  {/* Instant Booking Action */}
+                  <button
+                    onClick={onOpenAppointment}
+                    className="w-full py-3 px-4 rounded-xl bg-[#075E54] hover:bg-[#05453E] text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-md hover:shadow-lg transition-all"
+                  >
+                    <Calendar className="w-4 h-4 text-[#D6A84F]" />
+                    <span>Fast-Track OPD Appointment</span>
+                    <ArrowRight className="w-3.5 h-3.5 text-[#D6A84F]" />
+                  </button>
+                </div>
               </div>
             </div>
 
