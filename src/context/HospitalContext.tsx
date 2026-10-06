@@ -6,13 +6,11 @@ import {
   DOCTORS as DEFAULT_DOCTORS,
   HEALTH_ARTICLES as DEFAULT_ARTICLES,
   TESTIMONIALS as DEFAULT_TESTIMONIALS,
-  FAQS as DEFAULT_FAQS,
   Department,
   HealthcareService,
   Doctor,
   HealthArticle,
-  Testimonial,
-  FAQItem
+  Testimonial
 } from '../data/hospitalData';
 
 export interface PatientAppointment {
@@ -226,12 +224,32 @@ export const HospitalProvider: React.FC<{ children: React.ReactNode }> = ({ chil
 
   const [appointments, setAppointments] = useState<PatientAppointment[]>(() => {
     const saved = localStorage.getItem('kabusia_appointments');
-    return saved ? JSON.parse(saved) : INITIAL_APPOINTMENTS;
+    if (saved) {
+      try {
+        const parsed = JSON.parse(saved);
+        if (Array.isArray(parsed) && parsed.length > 0) {
+          return parsed;
+        }
+      } catch {
+        return INITIAL_APPOINTMENTS;
+      }
+    }
+    return INITIAL_APPOINTMENTS;
   });
 
   const [contactMessages, setContactMessages] = useState<ContactMessage[]>(() => {
     const saved = localStorage.getItem('kabusia_messages');
-    return saved ? JSON.parse(saved) : INITIAL_MESSAGES;
+    if (saved) {
+      try {
+        const parsed = JSON.parse(saved);
+        if (Array.isArray(parsed) && parsed.length > 0) {
+          return parsed;
+        }
+      } catch {
+        return INITIAL_MESSAGES;
+      }
+    }
+    return INITIAL_MESSAGES;
   });
 
   // Save changes to localStorage
@@ -333,7 +351,18 @@ export const HospitalProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     const code = 'KAB-' + Math.floor(100000 + Math.random() * 900000);
     const id = 'apt-' + Date.now();
     const newApt: PatientAppointment = {
-      ...data,
+      fullName: data.fullName || 'Anonymous Patient',
+      phoneNumber: data.phoneNumber || '',
+      emailAddress: data.emailAddress || '',
+      departmentId: data.departmentId || 'opd',
+      departmentName: data.departmentName || 'General Outpatient Department (OPD)',
+      doctorId: data.doctorId,
+      doctorName: data.doctorName,
+      date: data.date || new Date().toISOString().split('T')[0],
+      timeSlot: data.timeSlot || 'Morning (8:00 AM – 11:30 AM)',
+      reason: data.reason || 'Routine Check-up / Consultation',
+      message: data.message || '',
+      insuranceType: data.insuranceType || 'NHIS',
       id,
       referenceId: code,
       status: 'Pending',
@@ -345,7 +374,15 @@ export const HospitalProvider: React.FC<{ children: React.ReactNode }> = ({ chil
         minute: '2-digit',
       }),
     };
-    setAppointments((prev) => [newApt, ...prev]);
+    setAppointments((prev) => {
+      const updated = [newApt, ...prev];
+      try {
+        localStorage.setItem('kabusia_appointments', JSON.stringify(updated));
+      } catch (e) {
+        console.error('Error saving appointment:', e);
+      }
+      return updated;
+    });
     return code;
   };
 

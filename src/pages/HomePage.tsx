@@ -14,28 +14,14 @@ import {
   ChevronDown, 
   Stethoscope, 
   Activity, 
-  Baby, 
-  FlaskConical, 
-  Pill, 
-  Scan, 
-  ExternalLink,
-  Sparkles,
-  Search,
-  Building2,
-  HeartPulse,
-  Award,
-  BookOpen,
-  User
+  Building2
 } from 'lucide-react';
 import { 
   FACILITIES, 
   HEALTH_ARTICLES, 
   TESTIMONIALS, 
   FAQS, 
-  PATIENT_INFORMATION,
-  HealthcareService,
-  Doctor,
-  HealthArticle
+  PATIENT_INFORMATION
 } from '../data/hospitalData';
 import { useHospital } from '../context/HospitalContext';
 
@@ -720,7 +706,7 @@ export const HomePage: React.FC<HomePageProps> = ({
             </div>
           </div>
 
-          {/* Doctor Cards */}
+          {/*  Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {DOCTORS.slice(0, 3).map((doctor) => (
               <div

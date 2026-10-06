@@ -3,10 +3,7 @@ import {
   Phone, 
   Mail, 
   MapPin, 
-  Clock, 
-  Heart, 
   ShieldCheck, 
-  ExternalLink,
   ChevronRight
 } from 'lucide-react';
 import { useHospital } from '../context/HospitalContext';
@@ -30,13 +27,13 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenAppointment })
           
           {/* Col 1 & 2: Hospital Identity & Philosophy */}
           <div className="lg:col-span-2 space-y-4">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-lg bg-[#075E54] border border-[#D6A84F]/40 flex items-center justify-center text-white shadow-sm flex-shrink-0">
-                <svg className="w-6 h-6" viewBox="0 0 32 32" fill="none">
-                  <path d="M16 3L6 7v8c0 7 4.5 12.5 10 14 5.5-1.5 10-7 10-14V7l-10-4z" stroke="#D6A84F" strokeWidth="1.5" fill="#075E54" />
-                  <path d="M14 10h4v4h4v4h-4v4h-4v-4h-4v-4h4v-4z" fill="#FFFFFF" />
-                  <circle cx="16" cy="16" r="2" fill="#D6A84F" />
-                </svg>
+            <div className="flex items-center gap-3.5">
+              <div className="w-11 h-11 rounded-xl bg-white p-1.5 border border-[#D6A84F]/50 flex items-center justify-center shadow-md flex-shrink-0">
+                <img 
+                  src="/images/logo-mark.png" 
+                  alt="K.A. Busia Memorial Hospital Emblem" 
+                  className="w-full h-full object-contain"
+                />
               </div>
               <div>
                 <h3 className="text-xl font-bold text-white font-heading tracking-tight leading-tight">

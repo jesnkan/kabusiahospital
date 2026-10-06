@@ -1,5 +1,5 @@
 import React from 'react';
-import { X, Calendar, Clock, Globe2, Award, ShieldCheck, Stethoscope } from 'lucide-react';
+import { X, Calendar, Clock, Globe2, Award } from 'lucide-react';
 import { Doctor } from '../data/hospitalData';
 
 interface DoctorProfileModalProps {

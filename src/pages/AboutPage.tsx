@@ -1,20 +1,14 @@
 import React from 'react';
 import { 
   Heart, 
-  ShieldCheck, 
-  Award, 
-  Users, 
   Building2, 
-  Calendar, 
-  ArrowRight, 
   CheckCircle2, 
-  Clock, 
   Sparkles,
   BookOpen,
   Stethoscope,
   HeartPulse
 } from 'lucide-react';
-import { HOSPITAL_INFO, DOCTORS } from '../data/hospitalData';
+import { HOSPITAL_INFO } from '../data/hospitalData';
 
 interface AboutPageProps {
   onNavigate: (page: string) => void;

@@ -76,17 +76,12 @@ export const Preloader: React.FC<PreloaderProps> = ({ onLoaded }) => {
           </div>
 
           {/* Central Hospital Emblem */}
-          <div className="relative w-20 h-20 rounded-full bg-gradient-to-br from-[#075E54] to-[#032B27] border-2 border-[#D6A84F] shadow-2xl flex items-center justify-center">
-            <svg className="w-10 h-10 drop-shadow-md" viewBox="0 0 32 32" fill="none">
-              <path
-                d="M16 3L6 7v8c0 7 4.5 12.5 10 14 5.5-1.5 10-7 10-14V7l-10-4z"
-                stroke="#D6A84F"
-                strokeWidth="1.5"
-                fill="#075E54"
-              />
-              <path d="M14 10h4v4h4v4h-4v4h-4v-4h-4v-4h4v-4z" fill="#FFFFFF" />
-              <circle cx="16" cy="16" r="2.5" fill="#D6A84F" />
-            </svg>
+          <div className="relative w-22 h-22 rounded-2xl bg-white p-3 border-2 border-[#D6A84F] shadow-2xl flex items-center justify-center">
+            <img 
+              src="/images/logo-mark.png" 
+              alt="K.A. Busia Memorial Hospital Emblem" 
+              className="w-full h-full object-contain drop-shadow"
+            />
           </div>
         </div>
 

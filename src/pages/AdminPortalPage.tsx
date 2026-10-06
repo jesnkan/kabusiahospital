@@ -1,29 +1,25 @@
 import React, { useState } from 'react';
-import { 
-  ShieldCheck, 
-  Lock, 
-  LogOut, 
-  Calendar, 
-  Phone, 
-  Mail, 
-  MapPin, 
-  Clock, 
-  UserPlus, 
-  Trash2, 
-  Edit3, 
-  CheckCircle2, 
-  AlertCircle, 
-  ExternalLink, 
-  Download, 
-  RotateCcw, 
+import {
+  Lock,
+  LogOut,
+  Calendar,
+  Phone,
+  Mail,
+  MapPin,
+  Clock,
+  UserPlus,
+  Trash2,
+  Edit3,
+  CheckCircle2,
+  ExternalLink,
+  Download,
+  RotateCcw,
   Search,
   MessageSquare,
   Users,
-  Building2,
-  Save,
-  Check
+  Save
 } from 'lucide-react';
-import { useHospital, PatientAppointment, ContactMessage } from '../context/HospitalContext';
+import { useHospital } from '../context/HospitalContext';
 import { Doctor } from '../data/hospitalData';
 
 interface AdminPortalPageProps {
@@ -72,7 +68,6 @@ export const AdminPortalPage: React.FC<AdminPortalPageProps> = ({ onNavigateHome
   const [name, setName] = useState(hospitalInfo.name);
   const [tagline, setTagline] = useState(hospitalInfo.tagline);
   const [generalPhone, setGeneralPhone] = useState(hospitalInfo.contacts.generalPhonePlaceholder);
-  const [emergencyPhone, setEmergencyPhone] = useState(hospitalInfo.contacts.emergencyPhonePlaceholder);
   const [email, setEmail] = useState(hospitalInfo.contacts.emailPlaceholder);
   const [address, setAddress] = useState(hospitalInfo.contacts.addressPlaceholder);
   const [digitalAddress, setDigitalAddress] = useState(hospitalInfo.contacts.digitalAddress);
@@ -196,12 +191,18 @@ export const AdminPortalPage: React.FC<AdminPortalPageProps> = ({ onNavigateHome
 
   // Filtered Appointments
   const filteredAppointments = appointments.filter(a => {
+    if (!a) return false;
     const matchesStatus = appointmentFilter === 'All' || a.status === appointmentFilter;
-    const matchesSearch = 
-      a.fullName.toLowerCase().includes(appointmentSearch.toLowerCase()) ||
-      a.phoneNumber.includes(appointmentSearch) ||
-      a.referenceId.toLowerCase().includes(appointmentSearch.toLowerCase()) ||
-      a.departmentName.toLowerCase().includes(appointmentSearch.toLowerCase());
+    const query = (appointmentSearch || '').trim().toLowerCase();
+    if (!query) return matchesStatus;
+
+    const matchesSearch =
+      (a.fullName || '').toLowerCase().includes(query) ||
+      (a.phoneNumber || '').includes(query) ||
+      (a.referenceId || '').toLowerCase().includes(query) ||
+      (a.departmentName || '').toLowerCase().includes(query) ||
+      (a.doctorName || '').toLowerCase().includes(query) ||
+      (a.reason || '').toLowerCase().includes(query);
     return matchesStatus && matchesSearch;
   });
 
@@ -215,10 +216,14 @@ export const AdminPortalPage: React.FC<AdminPortalPageProps> = ({ onNavigateHome
     return (
       <div className="min-h-screen bg-[#05453E] flex items-center justify-center p-4">
         <div className="bg-white rounded-3xl max-w-md w-full p-8 shadow-2xl border border-[#D6A84F]/40 space-y-6">
-          
+
           <div className="text-center space-y-2">
-            <div className="w-14 h-14 bg-[#075E54] text-white rounded-2xl mx-auto flex items-center justify-center shadow-md">
-              <ShieldCheck className="w-8 h-8 text-[#D6A84F]" />
+            <div className="w-16 h-16 bg-white p-2 border border-[#D6A84F]/40 rounded-2xl mx-auto flex items-center justify-center shadow-md">
+              <img 
+                src="/images/logo-mark.png" 
+                alt="K.A. Busia Memorial Hospital" 
+                className="w-full h-full object-contain"
+              />
             </div>
             <h1 className="text-2xl font-extrabold text-[#172321] font-heading">
               Hospital Admin Portal
@@ -280,7 +285,7 @@ export const AdminPortalPage: React.FC<AdminPortalPageProps> = ({ onNavigateHome
   // =========================================================================
   return (
     <div className="min-h-screen bg-[#F7FAF8]">
-      
+
       {/* Toast Notification */}
       {toastMessage && (
         <div className="fixed top-5 right-5 z-50 bg-[#075E54] text-white px-5 py-3 rounded-2xl shadow-2xl flex items-center gap-2 text-xs font-semibold animate-in slide-in-from-top-2">
@@ -292,10 +297,14 @@ export const AdminPortalPage: React.FC<AdminPortalPageProps> = ({ onNavigateHome
       {/* Admin Top Navigation */}
       <header className="bg-[#05453E] text-white border-b border-[#0C776B] sticky top-0 z-30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
-          
+
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-[#075E54] border border-[#D6A84F]/40 flex items-center justify-center text-white">
-              <ShieldCheck className="w-6 h-6 text-[#D6A84F]" />
+            <div className="w-11 h-11 rounded-xl bg-white p-1.5 border border-[#D6A84F]/40 flex items-center justify-center shadow-sm flex-shrink-0">
+              <img 
+                src="/images/logo-mark.png" 
+                alt="K.A. Busia Emblem" 
+                className="w-full h-full object-contain"
+              />
             </div>
             <div>
               <h2 className="text-base sm:text-lg font-bold font-heading leading-tight">
@@ -331,11 +340,10 @@ export const AdminPortalPage: React.FC<AdminPortalPageProps> = ({ onNavigateHome
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center gap-1 overflow-x-auto text-xs font-semibold scrollbar-none border-t border-[#0C776B]/40 pt-1">
           <button
             onClick={() => setActiveTab('appointments')}
-            className={`px-4 py-2.5 border-b-2 whitespace-nowrap transition-colors flex items-center gap-2 ${
-              activeTab === 'appointments'
-                ? 'border-[#D6A84F] text-[#D6A84F] bg-white/5'
-                : 'border-transparent text-[#E1EBE7] hover:text-white'
-            }`}
+            className={`px-4 py-2.5 border-b-2 whitespace-nowrap transition-colors flex items-center gap-2 ${activeTab === 'appointments'
+              ? 'border-[#D6A84F] text-[#D6A84F] bg-white/5'
+              : 'border-transparent text-[#E1EBE7] hover:text-white'
+              }`}
           >
             <Calendar className="w-3.5 h-3.5" />
             <span>Appointments Inbox</span>
@@ -348,11 +356,10 @@ export const AdminPortalPage: React.FC<AdminPortalPageProps> = ({ onNavigateHome
 
           <button
             onClick={() => setActiveTab('messages')}
-            className={`px-4 py-2.5 border-b-2 whitespace-nowrap transition-colors flex items-center gap-2 ${
-              activeTab === 'messages'
-                ? 'border-[#D6A84F] text-[#D6A84F] bg-white/5'
-                : 'border-transparent text-[#E1EBE7] hover:text-white'
-            }`}
+            className={`px-4 py-2.5 border-b-2 whitespace-nowrap transition-colors flex items-center gap-2 ${activeTab === 'messages'
+              ? 'border-[#D6A84F] text-[#D6A84F] bg-white/5'
+              : 'border-transparent text-[#E1EBE7] hover:text-white'
+              }`}
           >
             <MessageSquare className="w-3.5 h-3.5" />
             <span>Contact Messages</span>
@@ -365,11 +372,10 @@ export const AdminPortalPage: React.FC<AdminPortalPageProps> = ({ onNavigateHome
 
           <button
             onClick={() => setActiveTab('hospital-info')}
-            className={`px-4 py-2.5 border-b-2 whitespace-nowrap transition-colors flex items-center gap-2 ${
-              activeTab === 'hospital-info'
-                ? 'border-[#D6A84F] text-[#D6A84F] bg-white/5'
-                : 'border-transparent text-[#E1EBE7] hover:text-white'
-            }`}
+            className={`px-4 py-2.5 border-b-2 whitespace-nowrap transition-colors flex items-center gap-2 ${activeTab === 'hospital-info'
+              ? 'border-[#D6A84F] text-[#D6A84F] bg-white/5'
+              : 'border-transparent text-[#E1EBE7] hover:text-white'
+              }`}
           >
             <Phone className="w-3.5 h-3.5" />
             <span>Hospital Details & Emergency Lines</span>
@@ -377,11 +383,10 @@ export const AdminPortalPage: React.FC<AdminPortalPageProps> = ({ onNavigateHome
 
           <button
             onClick={() => setActiveTab('doctors')}
-            className={`px-4 py-2.5 border-b-2 whitespace-nowrap transition-colors flex items-center gap-2 ${
-              activeTab === 'doctors'
-                ? 'border-[#D6A84F] text-[#D6A84F] bg-white/5'
-                : 'border-transparent text-[#E1EBE7] hover:text-white'
-            }`}
+            className={`px-4 py-2.5 border-b-2 whitespace-nowrap transition-colors flex items-center gap-2 ${activeTab === 'doctors'
+              ? 'border-[#D6A84F] text-[#D6A84F] bg-white/5'
+              : 'border-transparent text-[#E1EBE7] hover:text-white'
+              }`}
           >
             <Users className="w-3.5 h-3.5" />
             <span>Doctors & Medical Staff ({doctors.length})</span>
@@ -389,11 +394,10 @@ export const AdminPortalPage: React.FC<AdminPortalPageProps> = ({ onNavigateHome
 
           <button
             onClick={() => setActiveTab('export')}
-            className={`px-4 py-2.5 border-b-2 whitespace-nowrap transition-colors flex items-center gap-2 ${
-              activeTab === 'export'
-                ? 'border-[#D6A84F] text-[#D6A84F] bg-white/5'
-                : 'border-transparent text-[#E1EBE7] hover:text-white'
-            }`}
+            className={`px-4 py-2.5 border-b-2 whitespace-nowrap transition-colors flex items-center gap-2 ${activeTab === 'export'
+              ? 'border-[#D6A84F] text-[#D6A84F] bg-white/5'
+              : 'border-transparent text-[#E1EBE7] hover:text-white'
+              }`}
           >
             <Download className="w-3.5 h-3.5" />
             <span>Data Sync & Export</span>
@@ -403,13 +407,13 @@ export const AdminPortalPage: React.FC<AdminPortalPageProps> = ({ onNavigateHome
 
       {/* Main Container */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        
+
         {/* ===================================================================== */}
         {/* TAB 1: APPOINTMENTS INBOX */}
         {/* ===================================================================== */}
         {activeTab === 'appointments' && (
           <div className="space-y-6">
-            
+
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
               <div>
                 <h3 className="text-xl font-bold text-[#172321] font-heading">
@@ -466,7 +470,18 @@ export const AdminPortalPage: React.FC<AdminPortalPageProps> = ({ onNavigateHome
                     {filteredAppointments.length === 0 ? (
                       <tr>
                         <td colSpan={8} className="py-12 text-center text-gray-400 text-sm">
-                          No appointment requests match this filter.
+                          <p className="mb-2">No appointment requests match this filter.</p>
+                          {(appointmentFilter !== 'All' || appointmentSearch.trim()) && (
+                            <button
+                              onClick={() => {
+                                setAppointmentFilter('All');
+                                setAppointmentSearch('');
+                              }}
+                              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#075E54] text-white text-xs font-semibold hover:bg-[#05453E] transition-colors"
+                            >
+                              Show All ({appointments.length}) Appointments
+                            </button>
+                          )}
                         </td>
                       </tr>
                     ) : (
@@ -522,15 +537,14 @@ export const AdminPortalPage: React.FC<AdminPortalPageProps> = ({ onNavigateHome
                                 updateAppointmentStatus(apt.id, e.target.value);
                                 showToast(`Updated status to ${e.target.value} for ${apt.fullName}`);
                               }}
-                              className={`text-[11px] font-bold px-2 py-1 rounded-lg border focus:outline-none ${
-                                apt.status === 'Pending'
-                                  ? 'bg-amber-100 text-amber-800 border-amber-300'
-                                  : apt.status === 'Confirmed'
+                              className={`text-[11px] font-bold px-2 py-1 rounded-lg border focus:outline-none ${apt.status === 'Pending'
+                                ? 'bg-amber-100 text-amber-800 border-amber-300'
+                                : apt.status === 'Confirmed'
                                   ? 'bg-emerald-100 text-emerald-800 border-emerald-300'
                                   : apt.status === 'Completed'
-                                  ? 'bg-blue-100 text-blue-800 border-blue-300'
-                                  : 'bg-gray-100 text-gray-800 border-gray-300'
-                              }`}
+                                    ? 'bg-blue-100 text-blue-800 border-blue-300'
+                                    : 'bg-gray-100 text-gray-800 border-gray-300'
+                                }`}
                             >
                               <option value="Pending">Pending Call</option>
                               <option value="Confirmed">Confirmed</option>
@@ -581,9 +595,8 @@ export const AdminPortalPage: React.FC<AdminPortalPageProps> = ({ onNavigateHome
               {contactMessages.map((msg) => (
                 <div
                   key={msg.id}
-                  className={`bg-white rounded-2xl p-5 border shadow-sm space-y-3 ${
-                    msg.status === 'Unread' ? 'border-[#075E54] ring-1 ring-[#075E54]/20' : 'border-[#E1EBE7]'
-                  }`}
+                  className={`bg-white rounded-2xl p-5 border shadow-sm space-y-3 ${msg.status === 'Unread' ? 'border-[#075E54] ring-1 ring-[#075E54]/20' : 'border-[#E1EBE7]'
+                    }`}
                 >
                   <div className="flex items-start justify-between gap-2">
                     <div>
@@ -594,9 +607,8 @@ export const AdminPortalPage: React.FC<AdminPortalPageProps> = ({ onNavigateHome
                       <p className="text-xs text-[#64736F] font-mono">{msg.phone}</p>
                     </div>
 
-                    <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${
-                      msg.status === 'Unread' ? 'bg-amber-100 text-amber-800' : 'bg-gray-100 text-gray-700'
-                    }`}>
+                    <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${msg.status === 'Unread' ? 'bg-amber-100 text-amber-800' : 'bg-gray-100 text-gray-700'
+                      }`}>
                       {msg.status}
                     </span>
                   </div>
@@ -649,7 +661,7 @@ export const AdminPortalPage: React.FC<AdminPortalPageProps> = ({ onNavigateHome
         {/* ===================================================================== */}
         {activeTab === 'hospital-info' && (
           <div className="max-w-3xl mx-auto space-y-6">
-            
+
             <div>
               <h3 className="text-xl font-bold text-[#172321] font-heading">
                 Hospital Information & Contact Numbers
@@ -660,7 +672,7 @@ export const AdminPortalPage: React.FC<AdminPortalPageProps> = ({ onNavigateHome
             </div>
 
             <form onSubmit={handleSaveHospitalInfo} className="bg-white rounded-3xl p-6 sm:p-8 border border-[#E1EBE7] shadow-sm space-y-5">
-              
+
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-xs font-semibold text-[#172321] mb-1">
@@ -792,7 +804,7 @@ export const AdminPortalPage: React.FC<AdminPortalPageProps> = ({ onNavigateHome
         {/* ===================================================================== */}
         {activeTab === 'doctors' && (
           <div className="space-y-6">
-            
+
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
               <div>
                 <h3 className="text-xl font-bold text-[#172321] font-heading">
@@ -893,7 +905,7 @@ export const AdminPortalPage: React.FC<AdminPortalPageProps> = ({ onNavigateHome
               <p className="text-xs text-[#64736F]">
                 Contains all modified phone numbers, doctors, and department records.
               </p>
-              
+
               <div className="flex gap-3">
                 <button
                   onClick={() => {

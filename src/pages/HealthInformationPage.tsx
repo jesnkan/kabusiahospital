@@ -6,11 +6,9 @@ import {
   ArrowRight, 
   AlertTriangle, 
   Lightbulb, 
-  Calendar,
-  Filter,
-  Heart
+  Filter
 } from 'lucide-react';
-import { HEALTH_ARTICLES, HealthArticle } from '../data/hospitalData';
+import { HEALTH_ARTICLES } from '../data/hospitalData';
 
 interface HealthInformationPageProps {
   onSelectArticle: (articleId: string) => void;
@@ -19,7 +17,7 @@ interface HealthInformationPageProps {
 
 export const HealthInformationPage: React.FC<HealthInformationPageProps> = ({
   onSelectArticle,
-  onOpenAppointment,
+  onOpenAppointment: _onOpenAppointment,
 }) => {
   const [search, setSearch] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');

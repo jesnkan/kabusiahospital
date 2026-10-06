@@ -2,15 +2,13 @@ import React, { useState, useMemo } from 'react';
 import { 
   Search, 
   Filter, 
-  Stethoscope, 
   Clock, 
   Calendar, 
   ShieldCheck, 
   Globe2, 
-  Award,
   UserCheck
 } from 'lucide-react';
-import { DOCTORS, DEPARTMENTS, Doctor } from '../data/hospitalData';
+import { DOCTORS, DEPARTMENTS } from '../data/hospitalData';
 
 interface DoctorsPageProps {
   onSelectDoctor: (doctorId: string) => void;

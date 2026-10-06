@@ -8,10 +8,7 @@ import {
   Building2, 
   Stethoscope, 
   CheckCircle2, 
-  AlertCircle,
-  ShieldCheck,
-  HelpCircle,
-  MapPin
+  AlertCircle
 } from 'lucide-react';
 import { useHospital } from '../context/HospitalContext';
 

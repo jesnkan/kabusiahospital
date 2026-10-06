@@ -1,5 +1,5 @@
 import React from 'react';
-import { X, Clock, Calendar, AlertTriangle, Lightbulb, BookOpen, Share2 } from 'lucide-react';
+import { X, Clock, AlertTriangle, Lightbulb } from 'lucide-react';
 import { HealthArticle } from '../data/hospitalData';
 
 interface ArticleModalProps {

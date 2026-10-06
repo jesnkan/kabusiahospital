@@ -3,19 +3,10 @@ import {
   Search, 
   Stethoscope, 
   Calendar, 
-  ArrowRight, 
-  CheckCircle2, 
-  ShieldCheck, 
-  Baby, 
-  FlaskConical, 
-  Pill, 
-  Scan, 
-  Heart, 
-  Users,
   Filter,
   Activity
 } from 'lucide-react';
-import { SERVICES, HealthcareService, HOSPITAL_INFO } from '../data/hospitalData';
+import { SERVICES } from '../data/hospitalData';
 
 interface ServicesPageProps {
   onSelectService: (serviceId: string) => void;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { X, Calendar, CheckCircle2, HelpCircle, ArrowRight, ShieldCheck } from 'lucide-react';
+import { X, Calendar, CheckCircle2, ShieldCheck } from 'lucide-react';
 import { HealthcareService } from '../data/hospitalData';
 
 interface ServiceDetailModalProps {

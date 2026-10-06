@@ -6,8 +6,7 @@ import {
   Search, 
   Menu, 
   X, 
-  Calendar,
-  ChevronDown
+  Calendar
 } from 'lucide-react';
 import { useHospital } from '../context/HospitalContext';
 
@@ -103,34 +102,14 @@ export const Header: React.FC<HeaderProps> = ({
           {/* Brand Logo & Wordmark */}
           <button 
             onClick={() => handleNavClick('home')}
-            className="flex items-center gap-3 text-left group focus:outline-none"
+            className="flex items-center text-left group focus:outline-none py-0.5"
             aria-label="K.A. Busia Memorial Hospital Home"
           >
-            {/* Custom Healthcare Emblem (Cross + Leaf + Shield Motif) */}
-            <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-[#075E54] flex items-center justify-center shadow-md text-white transition-transform group-hover:scale-105 relative overflow-hidden flex-shrink-0">
-              <div className="absolute inset-0 bg-gradient-to-br from-[#0C776B] to-[#05453E] opacity-90" />
-              {/* Stylized Cross + Heart/Leaf Vector */}
-              <svg className="w-7 h-7 relative z-10" viewBox="0 0 32 32" fill="none">
-                {/* Shield Outline */}
-                <path d="M16 3L6 7v8c0 7 4.5 12.5 10 14 5.5-1.5 10-7 10-14V7l-10-4z" stroke="#D6A84F" strokeWidth="1.5" fill="#075E54" />
-                {/* White Medical Cross */}
-                <path d="M14 10h4v4h4v4h-4v4h-4v-4h-4v-4h4v-4z" fill="#FFFFFF" />
-                {/* Warm Gold Centre Accent */}
-                <circle cx="16" cy="16" r="2" fill="#D6A84F" />
-              </svg>
-            </div>
-
-            <div className="flex flex-col">
-              <span className="font-extrabold text-lg sm:text-xl leading-tight text-[#075E54] tracking-tight font-heading">
-                K.A. Busia
-              </span>
-              <span className="text-xs sm:text-sm font-semibold text-[#172321] tracking-wide uppercase">
-                Memorial Hospital
-              </span>
-              <span className="hidden sm:block text-[10px] text-[#64736F] leading-none mt-0.5">
-                Quality Healthcare • Ghana
-              </span>
-            </div>
+            <img 
+              src="/images/logo.png" 
+              alt="K.A. Busia Memorial Hospital" 
+              className="h-10 sm:h-12 md:h-13 w-auto max-w-[220px] sm:max-w-[260px] object-contain transition-transform duration-200 group-hover:scale-[1.02]" 
+            />
           </button>
 
           {/* Desktop Navigation Links */}

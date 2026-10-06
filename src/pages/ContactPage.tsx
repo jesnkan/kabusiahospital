@@ -1,15 +1,11 @@
 import React, { useState } from 'react';
 import { 
   Phone, 
-  Mail, 
   MapPin, 
   Clock, 
-  AlertCircle, 
   CheckCircle2, 
   Send, 
-  Navigation, 
-  ShieldCheck, 
-  Building2 
+  Navigation 
 } from 'lucide-react';
 import { useHospital } from '../context/HospitalContext';
 

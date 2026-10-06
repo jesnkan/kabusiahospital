@@ -4,13 +4,11 @@ import {
   Clock, 
   MapPin, 
   User, 
-  CheckCircle2, 
   Calendar, 
   ShieldCheck, 
-  Search,
-  Filter
+  Search
 } from 'lucide-react';
-import { DEPARTMENTS, Department } from '../data/hospitalData';
+import { DEPARTMENTS } from '../data/hospitalData';
 
 interface DepartmentsPageProps {
   onOpenAppointment: (departmentId?: string) => void;

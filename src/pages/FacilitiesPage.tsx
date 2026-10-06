@@ -3,20 +3,18 @@ import {
   Building2, 
   CheckCircle2, 
   ShieldCheck, 
-  Sparkles, 
-  Calendar, 
   ArrowRight,
   Zap,
   Wind
 } from 'lucide-react';
-import { FACILITIES, HOSPITAL_INFO, FacilityItem } from '../data/hospitalData';
+import { FACILITIES, FacilityItem } from '../data/hospitalData';
 
 interface FacilitiesPageProps {
   onOpenAppointment: () => void;
   onNavigate: (page: string) => void;
 }
 
-export const FacilitiesPage: React.FC<FacilitiesPageProps> = ({ onOpenAppointment, onNavigate }) => {
+export const FacilitiesPage: React.FC<FacilitiesPageProps> = ({ onOpenAppointment, onNavigate: _onNavigate }) => {
   const [activeCategory, setActiveCategory] = useState<string>('All');
   const [selectedFacility, setSelectedFacility] = useState<FacilityItem | null>(null);
 
