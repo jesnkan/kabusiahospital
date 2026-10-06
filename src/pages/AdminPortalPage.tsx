@@ -711,7 +711,7 @@ export const AdminPortalPage: React.FC<AdminPortalPageProps> = ({ onNavigateHome
                       type="text"
                       value={generalPhone}
                       onChange={(e) => setGeneralPhone(e.target.value)}
-                      placeholder="e.g. +233 31 202 4819"
+                      placeholder="e.g. +233 26 238 10175"
                       className="w-full pl-9 pr-3 py-2 text-sm border border-[#E1EBE7] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#075E54] font-mono font-medium text-[#172321]"
                     />
                   </div>

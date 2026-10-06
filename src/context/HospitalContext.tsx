@@ -158,7 +158,9 @@ export const HospitalProvider: React.FC<{ children: React.ReactNode }> = ({ chil
         const parsed = JSON.parse(saved);
         if (
           !parsed.contacts?.generalPhone ||
+          parsed.contacts.generalPhone !== DEFAULT_HOSPITAL_INFO.contacts.generalPhone ||
           parsed.contacts.generalPhone.includes('200 1100') ||
+          parsed.contacts.generalPhone.includes('202 4819') ||
           parsed.contacts.generalPhonePlaceholder?.includes('[') ||
           parsed.contacts.emergencyPhonePlaceholder?.includes('[') ||
           !parsed.contacts?.addressPlaceholder ||

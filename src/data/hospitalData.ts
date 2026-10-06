@@ -95,11 +95,11 @@ export const HOSPITAL_INFO = {
   contacts: {
     addressPlaceholder: 'Hospital Road, Bogoso, Tarkwa, Western Region, Ghana',
     digitalAddress: 'WP-0024-8192',
-    generalPhone: '+233 31 202 4819',
-    generalPhonePlaceholder: '+233 31 202 4819',
-    emergencyPhone: '+233 31 202 4819',
-    emergencyPhonePlaceholder: '+233 31 202 4819',
-    ambulancePhone: '+233 31 202 4819',
+    generalPhone: '+233 26 238 10175',
+    generalPhonePlaceholder: '+233 26 238 10175',
+    emergencyPhone: '+233 26 238 10175',
+    emergencyPhonePlaceholder: '+233 26 238 10175',
+    ambulancePhone: '+233 26 238 10175',
     email: 'info@kabusiahospital.org.gh',
     emailPlaceholder: 'info@kabusiahospital.org.gh',
     appointmentsEmail: 'appointments@kabusiahospital.org.gh',
@@ -698,7 +698,7 @@ export const HEALTH_ARTICLES: HealthArticle[] = [
     date: 'February 2026',
     author: 'Emergency & Triage Team',
     summary: 'A clear guide to distinguishing between urgent life-threatening symptoms requiring immediate ambulance response and issues suited for OPD booking.',
-    ghanaSpecificTip: 'Keep the hospital telephone number (+233 31 202 4819) saved as a speed-dial on your family mobile phones.',
+    ghanaSpecificTip: 'Keep the hospital telephone number (+233 26 238 10175) saved as a speed-dial on your family mobile phones.',
     content: [
       'Knowing when to act quickly can save a loved one’s life. Never delay seeking emergency care for symptoms such as sudden weakness or numbness on one side of the face or body, sudden speech difficulty, severe crushing chest pain, or coughing up blood.',
       'In children, red-flag symptoms include refusal to drink or breastfeed, uncontrollable vomiting, lethargy or difficulty waking up, and rapid heavy breathing with chest indrawing.',
@@ -740,7 +740,7 @@ export const FAQS: FAQItem[] = [
   {
     category: 'Appointments',
     question: 'How do I book an appointment at K.A. Busia Memorial Hospital?',
-    answer: 'You can request an appointment online through our website booking form, by calling our admissions desk at +233 31 202 4819, or by walking into the hospital admissions desk during regular OPD hours. Online requests are acknowledged promptly and confirmed by telephone or SMS.',
+    answer: 'You can request an appointment online through our website booking form, by calling our admissions desk at +233 26 238 10175, or by walking into the hospital admissions desk during regular OPD hours. Online requests are acknowledged promptly and confirmed by telephone or SMS.',
   },
   {
     category: 'Emergency',
