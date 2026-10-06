@@ -6,7 +6,10 @@ import {
   Sparkles,
   BookOpen,
   Stethoscope,
-  HeartPulse
+  HeartPulse,
+  Landmark,
+  ShieldCheck,
+  MapPin
 } from 'lucide-react';
 import { HOSPITAL_INFO } from '../data/hospitalData';
 
@@ -63,23 +66,99 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenAppointm
             </div>
 
             <div className="lg:col-span-6">
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white aspect-[4/3] bg-gray-100 group">
-                <img
-                  src="/images/hospital-exterior.jpg"
-                  alt="Modern architectural campus of K.A. Busia Memorial Hospital with ambulance entrance and serene environment"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+              <div className="bg-gradient-to-br from-[#05453E] via-[#075E54] to-[#04332D] text-white rounded-3xl p-6 sm:p-8 shadow-2xl border border-[#D6A84F]/40 relative overflow-hidden space-y-5">
                 
-                <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-md px-3.5 py-1.5 rounded-full text-xs font-bold text-[#075E54] border border-[#E1EBE7] shadow-sm flex items-center gap-2">
-                  <Building2 className="w-4 h-4 text-[#D6A84F]" />
-                  <span>Hospital Campus • Bogoso, Western Region</span>
+                {/* Decorative ambient background accents */}
+                <div className="absolute -top-16 -right-16 w-48 h-48 bg-[#D6A84F]/10 rounded-full blur-3xl pointer-events-none" />
+                <div className="absolute -bottom-16 -left-16 w-48 h-48 bg-[#2F8F83]/15 rounded-full blur-3xl pointer-events-none" />
+
+                {/* Card Header with Hospital Emblem */}
+                <div className="flex items-start justify-between gap-4 border-b border-white/10 pb-4 relative z-10">
+                  <div className="flex items-center gap-3">
+                    <div className="w-12 h-12 rounded-2xl bg-white p-2 border border-[#D6A84F]/60 flex items-center justify-center shadow-md flex-shrink-0">
+                      <img 
+                        src="/images/logo-mark.png" 
+                        alt="K.A. Busia Emblem" 
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+                    <div>
+                      <span className="text-[10px] font-bold text-[#D6A84F] tracking-widest uppercase block">
+                        LIVING CIVIC MEMORIAL • BOGOSO
+                      </span>
+                      <h3 className="text-lg font-bold font-heading text-white leading-tight">
+                        Founding Ideals of Prof. K.A. Busia
+                      </h3>
+                    </div>
+                  </div>
+                  <span className="hidden sm:inline-flex px-2.5 py-1 rounded-full bg-white/10 text-[11px] font-semibold text-[#E1EBE7] border border-white/10">
+                    Est. Bogoso
+                  </span>
                 </div>
 
-                <div className="absolute bottom-5 left-5 right-5 text-white">
-                  <span className="font-bold text-base block font-heading">Modern Clinical Infrastructure</span>
-                  <span className="text-xs text-[#E1EBE7] mt-0.5 block">Emergency ambulance bays, surgical theatres, modern laboratory, and comfortable wards.</span>
+                {/* The 3 Core Pillars */}
+                <div className="space-y-3 relative z-10">
+                  <div className="p-3.5 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
+                    <div className="flex items-start gap-3">
+                      <div className="w-8 h-8 rounded-xl bg-[#D6A84F]/20 text-[#D6A84F] flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <Heart className="w-4 h-4" />
+                      </div>
+                      <div className="space-y-1">
+                        <h4 className="text-xs font-bold text-white uppercase tracking-wider">
+                          1. Human Dignity in Patient Care
+                        </h4>
+                        <p className="text-xs text-[#E1EBE7] leading-relaxed">
+                          Upholding the belief that healing must be delivered with profound respect, empathy, and patient dignity for every Ghanaian family.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="p-3.5 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
+                    <div className="flex items-start gap-3">
+                      <div className="w-8 h-8 rounded-xl bg-[#2F8F83]/30 text-[#8CE3D7] flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <Landmark className="w-4 h-4" />
+                      </div>
+                      <div className="space-y-1">
+                        <h4 className="text-xs font-bold text-white uppercase tracking-wider">
+                          2. District Health Equity & Access
+                        </h4>
+                        <p className="text-xs text-[#E1EBE7] leading-relaxed">
+                          Extending advanced diagnostic suites and acute emergency care directly into Bogoso and surrounding Western Region mining & farming communities.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="p-3.5 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
+                    <div className="flex items-start gap-3">
+                      <div className="w-8 h-8 rounded-xl bg-[#D6A84F]/20 text-[#D6A84F] flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <BookOpen className="w-4 h-4" />
+                      </div>
+                      <div className="space-y-1">
+                        <h4 className="text-xs font-bold text-white uppercase tracking-wider">
+                          3. Evidence-Based Clinical Rigour
+                        </h4>
+                        <p className="text-xs text-[#E1EBE7] leading-relaxed">
+                          Marrying modern scientific medical standards, verified pharmaceutical protocols, and strict Ghana Health Service & HeFRA regulatory compliance.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
+
+                {/* Campus Verification Footnote */}
+                <div className="pt-3.5 border-t border-white/10 flex flex-wrap items-center justify-between gap-3 text-[11px] text-[#E1EBE7]/90 relative z-10">
+                  <div className="flex items-center gap-1.5 font-medium">
+                    <MapPin className="w-3.5 h-3.5 text-[#D6A84F]" />
+                    <span>Hospital Road, Bogoso • Western Region</span>
+                  </div>
+                  <div className="flex items-center gap-1.5 font-semibold text-[#D6A84F]">
+                    <ShieldCheck className="w-3.5 h-3.5" />
+                    <span>MDC & HeFRA Regulated</span>
+                  </div>
+                </div>
+
               </div>
             </div>
 
@@ -261,7 +340,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenAppointm
                   Community Medical Missions
                 </h3>
                 <p className="text-xs sm:text-sm text-[#E1EBE7] leading-relaxed mb-6">
-                  Providing mobile primary health screenings, early diagnostic testing, and healthcare education across Wenchi and rural Bono communities.
+                  Providing mobile primary health screenings, early diagnostic testing, and healthcare education across Bogoso, Prestea Huni-Valley, and rural Western Region communities.
                 </p>
 
                 <div className="grid grid-cols-2 gap-3 pt-4 border-t border-white/15">
