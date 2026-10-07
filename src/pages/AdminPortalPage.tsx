@@ -419,9 +419,15 @@ export const AdminPortalPage: React.FC<AdminPortalPageProps> = ({ onNavigateHome
                 <h3 className="text-xl font-bold text-[#172321] font-heading">
                   Patient Appointment Requests
                 </h3>
-                <p className="text-xs text-[#64736F]">
-                  Real-time queue of outpatient requests submitted through the website portal.
-                </p>
+                <div className="flex items-center gap-2 mt-1">
+                  <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[11px] font-semibold border border-emerald-300">
+                    <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                    Live Cloud Database Connected
+                  </span>
+                  <span className="text-xs text-[#64736F]">
+                    Real-time cross-device sync active
+                  </span>
+                </div>
               </div>
 
               {/* Status Filter */}
@@ -504,6 +510,20 @@ export const AdminPortalPage: React.FC<AdminPortalPageProps> = ({ onNavigateHome
                               <Phone className="w-3 h-3 text-[#D6A84F]" />
                               {apt.phoneNumber}
                             </a>
+                            {apt.phoneNumber && (
+                              <a
+                                href={`https://wa.me/${apt.phoneNumber.replace(/[^0-9]/g, '')}?text=${encodeURIComponent(
+                                  `Hello ${apt.fullName}, this is K.A. Busia Memorial Hospital regarding your appointment request (${apt.referenceId}).`
+                                )}`}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-emerald-700 hover:text-emerald-900 font-semibold flex items-center gap-1 text-[10px] mt-0.5"
+                                title="Open WhatsApp chat with patient"
+                              >
+                                <MessageSquare className="w-2.5 h-2.5 text-emerald-600" />
+                                <span>WhatsApp</span>
+                              </a>
+                            )}
                             {apt.emailAddress && (
                               <span className="block text-[10px] text-gray-500 font-sans truncate max-w-[140px]">
                                 {apt.emailAddress}

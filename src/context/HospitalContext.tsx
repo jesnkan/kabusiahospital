@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
+import { db, collection, doc, onSnapshot, setDoc, updateDoc, deleteDoc } from '../lib/firebase';
 import { 
   HOSPITAL_INFO as DEFAULT_HOSPITAL_INFO,
   DEPARTMENTS as DEFAULT_DEPARTMENTS,
@@ -275,7 +276,66 @@ export const HospitalProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     localStorage.setItem('kabusia_messages', JSON.stringify(contactMessages));
   }, [contactMessages]);
 
-  // Real-time cross-tab synchronization
+  // Real-time Cloud Firestore synchronization for appointments
+  useEffect(() => {
+    try {
+      const unsubscribe = onSnapshot(
+        collection(db, 'appointments'),
+        (snapshot) => {
+          if (!snapshot.empty) {
+            const remoteAppointments: PatientAppointment[] = [];
+            snapshot.forEach((docSnap) => {
+              const data = docSnap.data() as PatientAppointment;
+              remoteAppointments.push({ ...data, id: docSnap.id });
+            });
+            // Newest appointments first
+            remoteAppointments.sort((a, b) => (b.createdAt || '').localeCompare(a.createdAt || ''));
+            setAppointments(remoteAppointments);
+            try {
+              localStorage.setItem('kabusia_appointments', JSON.stringify(remoteAppointments));
+            } catch {}
+          }
+        },
+        (error) => {
+          console.warn('Firestore appointments listener error:', error);
+        }
+      );
+      return () => unsubscribe();
+    } catch (e) {
+      console.warn('Failed to attach Firestore appointments listener:', e);
+    }
+  }, []);
+
+  // Real-time Cloud Firestore synchronization for contact inquiries
+  useEffect(() => {
+    try {
+      const unsubscribe = onSnapshot(
+        collection(db, 'messages'),
+        (snapshot) => {
+          if (!snapshot.empty) {
+            const remoteMessages: ContactMessage[] = [];
+            snapshot.forEach((docSnap) => {
+              const data = docSnap.data() as ContactMessage;
+              remoteMessages.push({ ...data, id: docSnap.id });
+            });
+            remoteMessages.sort((a, b) => (b.createdAt || '').localeCompare(a.createdAt || ''));
+            setContactMessages(remoteMessages);
+            try {
+              localStorage.setItem('kabusia_messages', JSON.stringify(remoteMessages));
+            } catch {}
+          }
+        },
+        (error) => {
+          console.warn('Firestore messages listener error:', error);
+        }
+      );
+      return () => unsubscribe();
+    } catch (e) {
+      console.warn('Failed to attach Firestore messages listener:', e);
+    }
+  }, []);
+
+  // Cross-tab local fallback synchronization
   useEffect(() => {
     const handleStorageChange = (e: StorageEvent) => {
       if (e.key === 'kabusia_appointments' && e.newValue) {
@@ -376,8 +436,10 @@ export const HospitalProvider: React.FC<{ children: React.ReactNode }> = ({ chil
         minute: '2-digit',
       }),
     };
+
+    // Update local state and localStorage instantly
     setAppointments((prev) => {
-      const updated = [newApt, ...prev];
+      const updated = [newApt, ...prev.filter(a => a.id !== id)];
       try {
         localStorage.setItem('kabusia_appointments', JSON.stringify(updated));
       } catch (e) {
@@ -385,6 +447,16 @@ export const HospitalProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       }
       return updated;
     });
+
+    // Sync to Cloud Firestore in real time so admin on ANY device receives it
+    try {
+      setDoc(doc(db, 'appointments', id), newApt).catch((e) => {
+        console.warn('Cloud Firestore sync error:', e);
+      });
+    } catch (err) {
+      console.warn('Firestore write failed:', err);
+    }
+
     return code;
   };
 
@@ -392,16 +464,23 @@ export const HospitalProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     setAppointments((prev) =>
       prev.map((a) => (a.id === id ? { ...a, status } : a))
     );
+    try {
+      updateDoc(doc(db, 'appointments', id), { status }).catch(() => {});
+    } catch {}
   };
 
   const deleteAppointment = (id: string) => {
     setAppointments((prev) => prev.filter((a) => a.id !== id));
+    try {
+      deleteDoc(doc(db, 'appointments', id)).catch(() => {});
+    } catch {}
   };
 
   const addContactMessage = (data: Omit<ContactMessage, 'id' | 'status' | 'createdAt'>) => {
+    const id = 'msg-' + Date.now();
     const newMsg: ContactMessage = {
       ...data,
-      id: 'msg-' + Date.now(),
+      id,
       status: 'Unread',
       createdAt: new Date().toLocaleString('en-GB', {
         year: 'numeric',
@@ -412,12 +491,18 @@ export const HospitalProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       }),
     };
     setContactMessages((prev) => [newMsg, ...prev]);
+    try {
+      setDoc(doc(db, 'messages', id), newMsg).catch(() => {});
+    } catch {}
   };
 
   const updateMessageStatus = (id: string, status: ContactMessage['status']) => {
     setContactMessages((prev) =>
       prev.map((m) => (m.id === id ? { ...m, status } : m))
     );
+    try {
+      updateDoc(doc(db, 'messages', id), { status }).catch(() => {});
+    } catch {}
   };
 
   const resetAllToDefaults = () => {

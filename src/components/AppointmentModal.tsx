@@ -9,7 +9,8 @@ import {
   Building2, 
   Stethoscope, 
   CheckCircle2, 
-  AlertCircle 
+  AlertCircle,
+  MessageSquare 
 } from 'lucide-react';
 import { useHospital } from '../context/HospitalContext';
 
@@ -182,10 +183,22 @@ export const AppointmentModal: React.FC<AppointmentModalProps> = ({
                 <strong>Please Note:</strong> Submitting this form does not guarantee an appointment. Our clinical scheduling team will call or SMS you on <strong>{phoneNumber}</strong> within 4 business hours to confirm physician availability.
               </div>
 
-              <div className="pt-2">
+              <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3 max-w-md mx-auto">
+                <a
+                  href={`https://wa.me/2332623810175?text=${encodeURIComponent(
+                    `Hello K.A. Busia Memorial Hospital, I have submitted an appointment request online.\n\n*Reference:* ${referenceId}\n*Patient Name:* ${fullName}\n*Phone:* ${phoneNumber}\n*Preferred Date:* ${date} (${time})\n*Department:* ${DEPARTMENTS.find(d => d.id === department)?.name || department}\n*Reason:* ${reason}`
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-[#25D366] hover:bg-[#1EBE5D] text-white font-bold text-xs shadow-md transition-all"
+                >
+                  <MessageSquare className="w-4 h-4" />
+                  <span>Notify Hospital WhatsApp Desk</span>
+                </a>
+
                 <button
                   onClick={handleReset}
-                  className="bg-[#075E54] hover:bg-[#05453E] text-white px-6 py-2.5 rounded-xl font-semibold text-sm transition-all"
+                  className="w-full sm:w-auto bg-[#075E54] hover:bg-[#05453E] text-white px-5 py-2.5 rounded-xl font-semibold text-xs whitespace-nowrap transition-all"
                 >
                   Done & Close
                 </button>
