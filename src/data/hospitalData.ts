@@ -167,7 +167,7 @@ export const DEPARTMENTS: Department[] = [
     hours: 'Monday – Saturday: 7:30 AM – 8:00 PM',
     keyServices: ['General Physician Consultations', 'Triage & Vital Signs Monitoring', 'Pre-Employment Health Screenings', 'Chronic Disease Monitoring (Hypertension/Diabetes)', 'Referral Coordination'],
     icon: 'Stethoscope',
-    image: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=800&q=80',
+    image: '/images/logo.png',
   },
   {
     id: 'emergency',
@@ -181,7 +181,7 @@ export const DEPARTMENTS: Department[] = [
     hours: '24 Hours / 7 Days a Week',
     keyServices: ['24/7 Resuscitation & Stabilization', 'Trauma & Wound Care Unit', 'Cardiac Monitoring & Defibrillation', 'Ambulance & Transfer Services', 'Poisoning & Acute Toxin Care'],
     icon: 'Ambulance',
-    image: 'https://images.unsplash.com/photo-1587745416684-47953f16f02f?auto=format&fit=crop&w=800&q=80',
+    image: '/images/logo.png',
   },
   {
     id: 'maternity',
@@ -195,7 +195,7 @@ export const DEPARTMENTS: Department[] = [
     hours: 'Consultations: 8:00 AM – 5:00 PM | Labour & Delivery: 24/7',
     keyServices: ['Comprehensive Antenatal Clinics', 'Modern Labour & Delivery Suites', 'Postnatal & Neonatal Follow-Up', 'High-Risk Pregnancy Management', 'Reproductive Health & Cervical Screening'],
     icon: 'HeartPulse',
-    image: 'https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=800&q=80',
+    image: '/images/logo.png',
   },
   {
     id: 'paediatrics',
@@ -209,7 +209,7 @@ export const DEPARTMENTS: Department[] = [
     hours: 'Daily: 8:00 AM – 6:00 PM (Emergency 24/7)',
     keyServices: ['Well-Baby & Growth Monitoring', 'Ghana EPI Immunisation Clinics', 'Childhood Infectious Disease Care', 'Neonatal Phototherapy & Nursery Care', 'Pediatric Nutrition Guidance'],
     icon: 'Baby',
-    image: 'https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&w=800&q=80',
+    image: '/images/logo.png',
   },
   {
     id: 'surgery',
@@ -223,7 +223,7 @@ export const DEPARTMENTS: Department[] = [
     hours: 'Elective Surgeries: Mon–Fri | Emergency Surgeries: 24/7',
     keyServices: ['Abdominal & Hernia Surgery', 'Emergency Appendectomy & Trauma Surgery', 'Minor Ambulatory Procedures', 'Pre-operative & Post-operative Nursing', 'Wound Management Clinics'],
     icon: 'Activity',
-    image: 'https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&w=800&q=80',
+    image: '/images/logo.png',
   },
   {
     id: 'laboratory',
@@ -237,7 +237,7 @@ export const DEPARTMENTS: Department[] = [
     hours: '24 Hours Daily (Routine Sample Collection: 7:00 AM – 7:00 PM)',
     keyServices: ['Complete Blood Count (CBC) & Sickle Cell Screen', 'Malaria RDT & Microscopy Gold Standard', 'Liver, Kidney & Lipid Profiles', 'HbA1c & Fasting Blood Glucose', 'Blood Transfusion Screening & Cross-Match'],
     icon: 'FlaskConical',
-    image: 'https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=800&q=80',
+    image: '/images/logo.png',
   },
   {
     id: 'pharmacy',
@@ -251,7 +251,7 @@ export const DEPARTMENTS: Department[] = [
     hours: '24 Hours Daily (Inpatient & Outpatient)',
     keyServices: ['Prescription Dispensing & Verification', 'Medication Counseling & Drug Interaction Review', 'Chronic Medication Refill Program', 'Over-The-Counter Family Health Remedies', 'Pediatric Medicine Formulations'],
     icon: 'Pill',
-    image: 'https://images.unsplash.com/photo-1631549916768-4119b2e5f926?auto=format&fit=crop&w=800&q=80',
+    image: '/images/logo.png',
   },
   {
     id: 'radiology',
@@ -265,7 +265,7 @@ export const DEPARTMENTS: Department[] = [
     hours: 'Monday – Saturday: 8:00 AM – 6:00 PM (Emergency 24/7)',
     keyServices: ['Digital Chest & Skeletal X-Ray', 'Obstetric & Gynecological 3D/4D Ultrasound', 'Abdominal & Pelvic Sonography', 'Vascular & Doppler Blood Flow Studies', 'Emergency Trauma Imaging'],
     icon: 'Scan',
-    image: 'https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=800&q=80',
+    image: '/images/logo.png',
   },
   {
     id: 'internal-medicine',
@@ -279,7 +279,7 @@ export const DEPARTMENTS: Department[] = [
     hours: 'Monday – Friday: 8:30 AM – 4:30 PM',
     keyServices: ['Hypertension & Cardiovascular Clinics', 'Diabetes & Endocrine Care', 'Respiratory & Asthma Management', 'Gastrointestinal & Liver Health', 'Senior & Geriatric Medical Review'],
     icon: 'Heart',
-    image: 'https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=800&q=80',
+    image: '/images/logo.png',
   },
   {
     id: 'dental',
@@ -293,7 +293,7 @@ export const DEPARTMENTS: Department[] = [
     hours: 'Monday – Friday: 8:00 AM – 5:00 PM',
     keyServices: ['Routine Dental Cleaning & Scaling', 'Dental Fillings & Root Canal Therapy', 'Safe Tooth Extractions', 'Pediatric Oral Assessments', 'Emergency Maxillofacial First-Aid'],
     icon: 'Smile',
-    image: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=800&q=80',
+    image: '/images/logo.png',
   },
   {
     id: 'physiotherapy',
@@ -307,7 +307,7 @@ export const DEPARTMENTS: Department[] = [
     hours: 'Monday – Friday: 8:00 AM – 5:00 PM',
     keyServices: ['Post-Stroke Neuro-Rehabilitation', 'Musculoskeletal & Sports Injury Therapy', 'Back & Neck Pain Management', 'Post-Fracture & Joint Mobility Programs', 'Ergonomic & Home Exercise Guidance'],
     icon: 'ShieldCheck',
-    image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80',
+    image: '/images/logo.png',
   },
   {
     id: 'public-health',
@@ -321,7 +321,7 @@ export const DEPARTMENTS: Department[] = [
     hours: 'Monday – Friday: 8:00 AM – 4:30 PM (Outreach on Weekends)',
     keyServices: ['Community Health Outreach & Mobile Screenings', 'Malaria Vector Control & Bednet Education', 'School Health Screening Programs', 'Water, Sanitation & Hygiene (WASH) Workshops', 'Epidemic Surveillance & Disease Reporting'],
     icon: 'Users',
-    image: '/images/hospital-exterior.jpg',
+    image: '/images/logo.png',
   },
 ];
 
@@ -337,7 +337,7 @@ export const SERVICES: HealthcareService[] = [
     whatToExpect: ['Friendly nurse triaging (temperature, blood pressure, BMI, pulse check)', 'Thorough consultation and clinical examination with a licensed medical practitioner', 'Immediate on-site diagnostic laboratory or pharmacy routing'],
     preparationTips: 'Bring your Ghana Card, NHIS or insurance card, and any current medications you are taking.',
     icon: 'Stethoscope',
-    image: '/images/hospital-facility.jpg',
+    image: '/images/logo.png',
     isPopular: true,
   },
   {
@@ -351,7 +351,7 @@ export const SERVICES: HealthcareService[] = [
     whatToExpect: ['Individualized antenatal booklet and scheduled check-ups', 'Ultrasound dating scans, blood and iron level monitoring', 'Dignified labor suite with dedicated midwife support and obstetric backup'],
     preparationTips: 'Carry your maternal health record book (Maternal Health Record / RCH card) and any prior ultrasound scans.',
     icon: 'Baby',
-    image: '/images/hospital-facility.jpg',
+    image: '/images/logo.png',
     isPopular: true,
   },
   {
@@ -365,7 +365,7 @@ export const SERVICES: HealthcareService[] = [
     whatToExpect: ['Immediate triage by emergency nursing staff without administrative delays', 'Prompt assessment by on-duty medical officers and emergency specialists', 'Immediate blood tests, digital imaging, oxygen therapy, or emergency surgery if necessary'],
     preparationTips: 'For critical emergencies, proceed directly to the Emergency Entrance or call the emergency desk.',
     icon: 'Ambulance',
-    image: 'https://images.unsplash.com/photo-1587745416684-47953f16f02f?auto=format&fit=crop&w=800&q=80',
+    image: '/images/logo.png',
     isPopular: true,
   },
   {
@@ -379,7 +379,7 @@ export const SERVICES: HealthcareService[] = [
     whatToExpect: ['Clean, sterile, gentle sample collection in private sampling cubicles', 'Digital barcode specimen tracking to prevent sample mix-ups', 'Fast turnaround time with results sent directly to your consulting doctor or WhatsApp/SMS notification'],
     preparationTips: 'Check if your test requires overnight fasting (such as fasting blood glucose or lipid profiles). Drink plenty of water.',
     icon: 'FlaskConical',
-    image: 'https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=800&q=80',
+    image: '/images/logo.png',
     isPopular: true,
   },
   {
@@ -393,7 +393,7 @@ export const SERVICES: HealthcareService[] = [
     whatToExpect: ['Double-checked prescription dispensing with clear dosage instructions in English and local languages', 'Personal counseling on potential side effects and timing of doses', 'Transparent pricing with NHIS co-pay support where applicable'],
     preparationTips: 'Always inform the dispensing pharmacist about any allergies you have or herbal preparations you are currently using.',
     icon: 'Pill',
-    image: 'https://images.unsplash.com/photo-1631549916768-4119b2e5f926?auto=format&fit=crop&w=800&q=80',
+    image: '/images/logo.png',
     isPopular: true,
   },
   {
@@ -407,7 +407,7 @@ export const SERVICES: HealthcareService[] = [
     whatToExpect: ['Guided preparation by polite radiographers and sonographers', 'Quick, painless scan procedures with immediate digital image acquisition', 'Formal radiology reports reviewed by physician specialists'],
     preparationTips: 'For pelvic and early pregnancy ultrasounds, you may be requested to drink water and maintain a full bladder prior to scanning.',
     icon: 'Scan',
-    image: 'https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=800&q=80',
+    image: '/images/logo.png',
     isPopular: true,
   },
   {
@@ -421,7 +421,7 @@ export const SERVICES: HealthcareService[] = [
     whatToExpect: ['Detailed review of home blood pressure/glucose readings', 'Careful medication titration to optimize results and minimize side effects', 'Nutritionist and lifestyle support tailored to Ghanaian diets'],
     preparationTips: 'Keep a small notebook of your home blood pressure or blood sugar readings to share with your doctor.',
     icon: 'Heart',
-    image: '/images/hospital-facility.jpg',
+    image: '/images/logo.png',
   },
   {
     id: 'preventive-healthcare',
@@ -434,7 +434,7 @@ export const SERVICES: HealthcareService[] = [
     whatToExpect: ['Complete physical examination, BMI, eye check, and vital signs', 'Full diagnostic panel (cholesterol, blood sugar, kidney and liver function)', 'Personalized preventive health summary with actionable lifestyle advice'],
     preparationTips: 'Schedule in advance and prepare for routine blood and urine testing in the morning.',
     icon: 'ShieldCheck',
-    image: '/images/hospital-facility.jpg',
+    image: '/images/logo.png',
   },
 ];
 
@@ -451,7 +451,7 @@ export const DOCTORS: Doctor[] = [
     qualifications: 'MB ChB (UGMS), PGDip Family Medicine (WACP)',
     languages: ['English', 'Twi', 'Ga'],
     availability: 'Mon, Wed, Fri (8:00 AM – 3:00 PM)',
-    image: '/images/hospital-facility.jpg',
+    image: '/images/logo.png',
     isPlaceholder: false,
   },
   {
@@ -466,7 +466,7 @@ export const DOCTORS: Doctor[] = [
     qualifications: 'MB ChB, FWACS (Fellow, West African College of Surgeons)',
     languages: ['English', 'Twi', 'Fante'],
     availability: 'Tue, Thu, Sat (9:00 AM – 4:00 PM)',
-    image: 'https://images.unsplash.com/photo-1594824813508-d2279140994d?auto=format&fit=crop&w=800&q=80',
+    image: '/images/logo.png',
     isPlaceholder: false,
   },
   {
@@ -481,7 +481,7 @@ export const DOCTORS: Doctor[] = [
     qualifications: 'MB ChB, FGCP (Fellow, Ghana College of Physicians)',
     languages: ['English', 'Twi', 'Ewe'],
     availability: 'Mon, Tue, Thu (8:30 AM – 3:30 PM)',
-    image: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=800&q=80',
+    image: '/images/logo.png',
     isPlaceholder: false,
   },
   {
@@ -496,7 +496,7 @@ export const DOCTORS: Doctor[] = [
     qualifications: 'MB ChB, FWACS, FGCS (Ghana College of Surgeons)',
     languages: ['English', 'Twi'],
     availability: 'Wed, Fri (Consultations) | Mon, Thu (Theatre Days)',
-    image: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=800&q=80',
+    image: '/images/logo.png',
     isPlaceholder: false,
   },
   {
@@ -511,7 +511,7 @@ export const DOCTORS: Doctor[] = [
     qualifications: 'BSc Nursing (UG), Emergency Nursing Specialist',
     languages: ['English', 'Twi', 'Ga'],
     availability: 'Rotating Roster (24/7 Departmental Presence)',
-    image: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=800&q=80',
+    image: '/images/logo.png',
     isPlaceholder: false,
   },
   {
@@ -526,7 +526,7 @@ export const DOCTORS: Doctor[] = [
     qualifications: 'MB ChB, FWACP (Internal Medicine)',
     languages: ['English', 'Twi', 'Fante'],
     availability: 'Tue, Wed, Fri (9:00 AM – 3:00 PM)',
-    image: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=800&q=80',
+    image: '/images/logo.png',
     isPlaceholder: false,
   },
 ];
@@ -538,7 +538,7 @@ export const FACILITIES: FacilityItem[] = [
     category: 'Reception',
     description: 'A serene, air-conditioned reception and admissions hall designed for immediate greeting, organized ticketing, and comfortable waiting.',
     features: ['Accessible ramps & wide automatic entrances', 'Digital queue management system', 'Helpful patient relations and language interpreters (Twi, Ga, Ewe)', 'Dedicated NHIS verification and private insurance desks'],
-    image: '/images/hospital-exterior.jpg',
+    image: '/images/logo.png',
   },
   {
     id: 'consultation-rooms',
@@ -546,7 +546,7 @@ export const FACILITIES: FacilityItem[] = [
     category: 'Consultation Rooms',
     description: 'Confidential, well-ventilated consultation rooms equipped with modern examination couches and digital clinical workstations.',
     features: ['Strict soundproofing for patient confidentiality', 'Modern diagnostic sets and patient examination lighting', 'Connected to hospital electronic medical records', 'Hygienic hands-free scrub sinks'],
-    image: '/images/hospital-facility.jpg',
+    image: '/images/logo.png',
   },
   {
     id: 'maternity-suites',
@@ -554,7 +554,7 @@ export const FACILITIES: FacilityItem[] = [
     category: 'Maternity',
     description: 'Clean, soothing maternity suites prioritizing safe deliveries, mother-baby bonding, and family privacy.',
     features: ['Private labor and recovery rooms', 'Continuous fetal heartbeat Doppler monitors', 'Immediate neonatal resuscitation and warming cribs', 'Dedicated partner-friendly birth spaces'],
-    image: 'https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=800&q=80',
+    image: '/images/logo.png',
   },
   {
     id: 'laboratory-unit',
@@ -562,7 +562,7 @@ export const FACILITIES: FacilityItem[] = [
     category: 'Laboratory',
     description: 'Modern diagnostic facility with automated hematology, biochemistry, and microbiology equipment.',
     features: ['Automated 5-part differential blood analyzers', 'Microbiology sterile laminar flow hoods', 'Dedicated temperature-monitored blood bank storage', 'Digital result delivery to consulting physicians'],
-    image: 'https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=800&q=80',
+    image: '/images/logo.png',
   },
   {
     id: 'pharmacy-dispensary',
@@ -570,7 +570,7 @@ export const FACILITIES: FacilityItem[] = [
     category: 'Pharmacy',
     description: 'Fully stocked with genuine, FDA-approved essential and specialized medicines, maintaining unbroken cold-chain storage.',
     features: ['Solar-backed continuous medical refrigeration', 'Private patient counseling cubicle', 'Direct electronic prescription receiving from OPD', 'Transparent medication labeling and safety instructions'],
-    image: 'https://images.unsplash.com/photo-1631549916768-4119b2e5f926?auto=format&fit=crop&w=800&q=80',
+    image: '/images/logo.png',
   },
   {
     id: 'patient-wards',
@@ -578,7 +578,7 @@ export const FACILITIES: FacilityItem[] = [
     category: 'Patient Wards',
     description: 'Bright, hygienic recovery wards with 24-hour nurse call systems, comfortable adjustable beds, and proper natural ventilation.',
     features: ['Ergonomic multi-position hospital beds', 'Bedside oxygen and suction outlets', 'Curtained patient privacy partitions', 'Individual bedside lockers and visitor seating'],
-    image: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=800&q=80',
+    image: '/images/logo.png',
   },
   {
     id: 'treatment-areas',
@@ -586,7 +586,7 @@ export const FACILITIES: FacilityItem[] = [
     category: 'Treatment Areas',
     description: 'Equipped with HEPA air filtration, LED surgical illuminators, anesthesia machines, and rapid recovery bays.',
     features: ['Laminar air flow sterilization', 'Emergency backup UPS power and dual industrial generators', 'Modern multi-parameter vital signs monitors', 'Adjoining post-anesthesia recovery unit'],
-    image: 'https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&w=800&q=80',
+    image: '/images/logo.png',
   },
   {
     id: 'waiting-areas',
@@ -594,7 +594,7 @@ export const FACILITIES: FacilityItem[] = [
     category: 'Waiting Areas',
     description: 'Designed to prevent crowded indoor conditions, featuring lush green gardens, outdoor shaded verandas, and clean sanitization points.',
     features: ['High-volume low-speed ventilation fans', 'Educational health broadcast screens', 'Handwashing and sanitizing stations', 'Wheelchair-friendly pathways throughout'],
-    image: '/images/hospital-exterior.jpg',
+    image: '/images/logo.png',
   },
 ];
 
@@ -615,7 +615,7 @@ export const HEALTH_ARTICLES: HealthArticle[] = [
       'Simple steps such as reducing processed bullion seasonings, enjoying fresh local greens (kontomire, gboma), brisk walking 30 minutes daily, and taking prescribed anti-hypertensive drugs consistently can dramatically reduce stroke risk.',
       'Do not stop your blood pressure medicine just because you feel fine — the medication is what keeps you feeling healthy.',
     ],
-    image: '/images/hospital-facility.jpg',
+    image: '/images/logo.png',
   },
   {
     id: 'maternal-health-pregnancy',
@@ -633,7 +633,7 @@ export const HEALTH_ARTICLES: HealthArticle[] = [
       'Warning signs requiring urgent hospital evaluation include vaginal bleeding, severe unremitting headaches, sudden facial swelling, reduced baby movement after 28 weeks, or leakage of fluid.',
       'Our team believes in supportive, gentle maternity where your dignity and emotional peace are prioritized alongside clinical safety.',
     ],
-    image: '/images/hospital-facility.jpg',
+    image: '/images/logo.png',
   },
   {
     id: 'childhood-immunisation',
@@ -651,7 +651,7 @@ export const HEALTH_ARTICLES: HealthArticle[] = [
       'Mild fever or brief tenderness at the injection site is normal and indicates your child’s body is building protective antibodies. A cool cloth and reassurance usually suffice.',
       'If your child has missed any scheduled vaccine, do not worry — visit our Child Health Clinic for a supportive catch-up schedule.',
     ],
-    image: '/images/hospital-facility.jpg',
+    image: '/images/logo.png',
   },
   {
     id: 'malaria-prevention-care',
@@ -669,7 +669,7 @@ export const HEALTH_ARTICLES: HealthArticle[] = [
       'Clearing choked gutters, emptying standing water in old tires or buckets around the compound, and installing wire-mesh window screens drastically reduce mosquito exposure.',
       'If fever, chills, or severe fatigue occurs, visit the clinic immediately for a verified diagnosis so the exact right treatment can be administered.',
     ],
-    image: 'https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=800&q=80',
+    image: '/images/logo.png',
   },
   {
     id: 'healthy-eating-ghana',
@@ -687,7 +687,7 @@ export const HEALTH_ARTICLES: HealthArticle[] = [
       'Minimizing heavy palm oil bleaching and cutting down on sweetened soft drinks or overly sweetened bakery goods will keep blood sugar and cholesterol in optimal balance.',
       'Hydrate with pure water throughout the day, especially in our warm climate.',
     ],
-    image: 'https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=800&q=80',
+    image: '/images/logo.png',
   },
   {
     id: 'when-to-seek-emergency-care',
@@ -705,7 +705,7 @@ export const HEALTH_ARTICLES: HealthArticle[] = [
       'For non-emergency conditions such as mild skin rashes, chronic mild joint pains, or routine prescription renewals, booking an OPD appointment ensures you receive dedicated, unhurried attention.',
       'Our emergency doors never close. If in doubt, come in or call us — our triage nurses will immediately evaluate your condition.',
     ],
-    image: 'https://images.unsplash.com/photo-1587745416684-47953f16f02f?auto=format&fit=crop&w=800&q=80',
+    image: '/images/logo.png',
   },
 ];
 

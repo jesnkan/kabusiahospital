@@ -182,7 +182,7 @@ export const AdminPortalPage: React.FC<AdminPortalPageProps> = ({ onNavigateHome
         qualifications: docQualifications,
         availability: docAvailability,
         languages: languagesArr,
-        image: '/images/hospital-facility.jpg',
+        image: '/images/logo.png',
       });
       showToast(`Added ${docName} to Medical Team`);
     }

@@ -101,7 +101,7 @@ export const HomePage: React.FC<HomePageProps> = ({
               
               {/* Eyebrow */}
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#E7F5F3] border border-[#2F8F83]/30">
-                <span className="w-2 h-2 rounded-full bg-[#075E54] animate-ping" />
+                <span className="w-2 h-2 rounded-full bg-[#075E54]" />
                 <span className="text-xs font-bold text-[#075E54] tracking-wider uppercase font-heading">
                   WELCOME TO K.A. BUSIA MEMORIAL HOSPITAL (KA BUSIA)
                 </span>
@@ -162,7 +162,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                   <div className="absolute -right-8 -bottom-8 w-32 h-32 bg-white/5 rounded-full blur-xl pointer-events-none" />
                   <div className="flex items-center justify-between gap-2 mb-3">
                     <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#E7F5F3]/20 border border-white/20 text-[11px] font-bold tracking-wider uppercase text-[#D6A84F]">
-                      <span className="w-2 h-2 rounded-full bg-[#D6A84F] animate-ping" />
+                      <span className="w-2 h-2 rounded-full bg-[#D6A84F]" />
                       Hospital Operations Hub
                     </span>
                     <span className="text-[11px] font-semibold text-[#E1EBE7]">Bogoso, Tarkwa</span>
@@ -346,25 +346,87 @@ export const HomePage: React.FC<HomePageProps> = ({
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
-            {/* Left: Modern Diagnostic Facility (Zero People) */}
+            {/* Left: Clinical Infrastructure & Diagnostic Excellence Showcase (Zero Pictures) */}
             <div className="lg:col-span-6">
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white aspect-[4/3] bg-gray-100 group">
-                <img
-                  src="/images/hospital-facility.jpg"
-                  alt="Modern diagnostic ultrasound suite and clinical examination facility at K.A. Busia Memorial Hospital"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
-                
-                {/* Floating Badge */}
-                <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-md px-3.5 py-1.5 rounded-full text-xs font-bold text-[#075E54] border border-[#E1EBE7] shadow-sm flex items-center gap-2">
-                  <ShieldCheck className="w-4 h-4 text-[#D6A84F]" />
-                  <span>Advanced Clinical Diagnostics</span>
+              <div className="relative rounded-3xl bg-gradient-to-br from-[#075E54] to-[#04332D] text-white p-7 sm:p-9 shadow-2xl border border-[#2F8F83]/30 overflow-hidden">
+                {/* Subtle background ambient accents */}
+                <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-2xl pointer-events-none" />
+                <div className="absolute bottom-0 left-0 w-48 h-48 bg-[#D6A84F]/10 rounded-full blur-2xl pointer-events-none" />
+
+                {/* Card Header */}
+                <div className="relative z-10 space-y-3">
+                  <div className="flex items-center justify-between gap-3 flex-wrap">
+                    <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-[#D6A84F] text-xs font-bold uppercase tracking-wider border border-white/15">
+                      <ShieldCheck className="w-4 h-4 text-[#D6A84F]" />
+                      Accredited Clinical Infrastructure
+                    </span>
+                    <span className="text-xs text-[#E1EBE7] font-medium">Bogoso • Tarkwa</span>
+                  </div>
+
+                  <h3 className="text-2xl sm:text-3xl font-extrabold font-heading text-white tracking-tight">
+                    Diagnostic & Medical Infrastructure
+                  </h3>
+                  <p className="text-sm text-[#E1EBE7] leading-relaxed">
+                    Designed to provide fast, reliable clinical diagnostics and compassionate primary and emergency healthcare for Western Region families.
+                  </p>
                 </div>
 
-                <div className="absolute bottom-5 left-5 right-5 text-white">
-                  <span className="font-bold text-base block font-heading">Modern Diagnostic Suites</span>
-                  <span className="text-xs text-[#E1EBE7] mt-0.5 block">Digital imaging, modern ultrasound, and sterile patient consultation suites.</span>
+                {/* 4 Core Pillars Grid */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-6 relative z-10">
+                  <div className="p-4 rounded-2xl bg-white/10 border border-white/10 space-y-1.5 backdrop-blur-xs">
+                    <div className="flex items-center gap-2 text-[#D6A84F] font-bold text-sm">
+                      <Activity className="w-4 h-4" />
+                      <span>Digital Ultrasound & Imaging</span>
+                    </div>
+                    <p className="text-xs text-[#E1EBE7]">
+                      High-resolution abdominal, obstetric, and pelvic imaging with timely clinical reporting.
+                    </p>
+                  </div>
+
+                  <div className="p-4 rounded-2xl bg-white/10 border border-white/10 space-y-1.5 backdrop-blur-xs">
+                    <div className="flex items-center gap-2 text-[#D6A84F] font-bold text-sm">
+                      <CheckCircle2 className="w-4 h-4" />
+                      <span>Automated Laboratory</span>
+                    </div>
+                    <p className="text-xs text-[#E1EBE7]">
+                      Full blood count, biochemistry, malaria microscopy, and certified blood banking.
+                    </p>
+                  </div>
+
+                  <div className="p-4 rounded-2xl bg-white/10 border border-white/10 space-y-1.5 backdrop-blur-xs">
+                    <div className="flex items-center gap-2 text-[#D6A84F] font-bold text-sm">
+                      <Clock className="w-4 h-4" />
+                      <span>24/7 Clinical Emergency</span>
+                    </div>
+                    <p className="text-xs text-[#E1EBE7]">
+                      Continuous triage, acute trauma care, and dedicated resuscitation equipment on standby.
+                    </p>
+                  </div>
+
+                  <div className="p-4 rounded-2xl bg-white/10 border border-white/10 space-y-1.5 backdrop-blur-xs">
+                    <div className="flex items-center gap-2 text-[#D6A84F] font-bold text-sm">
+                      <Building2 className="w-4 h-4" />
+                      <span>Sterile Patient Wards</span>
+                    </div>
+                    <p className="text-xs text-[#E1EBE7]">
+                      Clean, well-ventilated maternity suites and patient recovery wards prioritizing patient dignity.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Bottom Trust Strip */}
+                <div className="mt-6 pt-5 border-t border-white/15 flex flex-wrap items-center justify-between gap-3 text-xs text-[#E1EBE7] relative z-10">
+                  <div className="flex items-center gap-2 font-medium">
+                    <span className="w-2 h-2 rounded-full bg-[#D6A84F]" />
+                    <span>Registered with Health Facilities Regulatory Agency (HeFRA)</span>
+                  </div>
+                  <button
+                    onClick={() => onNavigate('facilities')}
+                    className="text-[#D6A84F] hover:text-white font-bold inline-flex items-center gap-1 transition-colors"
+                  >
+                    <span>View all facilities</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </button>
                 </div>
               </div>
             </div>
