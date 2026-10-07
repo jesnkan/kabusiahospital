@@ -33,7 +33,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenAppointm
             About K.A. Busia Memorial Hospital
           </h1>
           <p className="text-base sm:text-lg text-[#E1EBE7] leading-relaxed">
-            {HOSPITAL_INFO.tagline}
+            {HOSPITAL_INFO.tagline} • Serving Bogoso, Tarkwa & the Western Region as KA Busia Hospital
           </p>
         </div>
       </section>

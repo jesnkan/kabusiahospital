@@ -31,16 +31,17 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenAppointment })
               <div className="w-11 h-11 rounded-xl bg-white p-1.5 border border-[#D6A84F]/50 flex items-center justify-center shadow-md flex-shrink-0">
                 <img 
                   src="/images/logo-mark.png" 
-                  alt="K.A. Busia Memorial Hospital Emblem" 
+                  alt="K.A. Busia Memorial Hospital Emblem — KA Busia Hospital Bogoso" 
                   className="w-full h-full object-contain"
                 />
               </div>
               <div>
                 <h3 className="text-xl font-bold text-white font-heading tracking-tight leading-tight">
                   {HOSPITAL_INFO.name}
+                  <span className="sr-only"> (KA Busia Memorial Hospital)</span>
                 </h3>
                 <p className="text-xs text-[#D6A84F] font-medium tracking-wide">
-                  {HOSPITAL_INFO.tagline}
+                  {HOSPITAL_INFO.tagline} • Bogoso, Tarkwa
                 </p>
               </div>
             </div>

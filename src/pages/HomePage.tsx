@@ -103,7 +103,7 @@ export const HomePage: React.FC<HomePageProps> = ({
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#E7F5F3] border border-[#2F8F83]/30">
                 <span className="w-2 h-2 rounded-full bg-[#075E54] animate-ping" />
                 <span className="text-xs font-bold text-[#075E54] tracking-wider uppercase font-heading">
-                  WELCOME TO K.A. BUSIA MEMORIAL HOSPITAL
+                  WELCOME TO K.A. BUSIA MEMORIAL HOSPITAL (KA BUSIA)
                 </span>
               </div>
 
@@ -114,7 +114,7 @@ export const HomePage: React.FC<HomePageProps> = ({
 
               {/* Supporting Copy */}
               <p className="text-base sm:text-lg text-[#64736F] leading-relaxed max-w-2xl">
-                Providing accessible, patient-centred healthcare with compassion, professionalism and respect for the communities we serve.
+                K.A. Busia Memorial Hospital (KA Busia Hospital) delivers accredited 24/7 patient-centred healthcare, specialist outpatient clinics, and emergency triage in Bogoso, Tarkwa, Western Region, Ghana.
               </p>
 
               {/* Buttons */}

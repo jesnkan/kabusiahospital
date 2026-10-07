@@ -103,13 +103,14 @@ export const Header: React.FC<HeaderProps> = ({
           <button 
             onClick={() => handleNavClick('home')}
             className="flex items-center text-left group focus:outline-none py-0.5"
-            aria-label="K.A. Busia Memorial Hospital Home"
+            aria-label="K.A. Busia Memorial Hospital (KA Busia Hospital) Home"
           >
             <img 
               src="/images/logo.png" 
-              alt="K.A. Busia Memorial Hospital" 
+              alt="K.A. Busia Memorial Hospital — KA Busia Hospital Bogoso" 
               className="h-10 sm:h-12 md:h-13 w-auto max-w-[220px] sm:max-w-[260px] object-contain transition-transform duration-200 group-hover:scale-[1.02]" 
             />
+            <span className="sr-only">K.A. Busia Memorial Hospital | KA Busia Hospital Bogoso, Ghana</span>
           </button>
 
           {/* Desktop Navigation Links */}

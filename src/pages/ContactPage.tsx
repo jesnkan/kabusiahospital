@@ -46,10 +46,10 @@ export const ContactPage: React.FC = () => {
             CONNECT WITH US
           </span>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-heading tracking-tight text-white">
-            Contact & Directions
+            Contact & Campus Directions
           </h1>
           <p className="text-sm sm:text-base text-[#E1EBE7] leading-relaxed">
-            We are here to assist with directions to campus, outpatient bookings, insurance verification, and general inquiries.
+            Reach K.A. Busia Memorial Hospital (KA Busia Hospital) on Hospital Road, Bogoso, Western Region, Ghana. 24/7 emergency dispatch and outpatient assistance.
           </p>
         </div>
       </section>
